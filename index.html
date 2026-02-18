@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Land in Grenada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F2',
+            forest: '#1b2e2b',
+            terra: '#c8956c',
+            sand: '#e8d5c4',
+            leaf: '#3d6b5e',
+            deep: '#0f1f1d',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-bg {
+      background-image:
+        linear-gradient(to bottom, rgba(15,31,29,0.3) 0%, rgba(15,31,29,0.15) 40%, rgba(15,31,29,0.5) 100%),
+        url('https://images.unsplash.com/photo-1709348369040-c83f3f9e4a5d?w=1920&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .divider-bg-1 {
+      background-image:
+        linear-gradient(to bottom, rgba(15,31,29,0.2) 0%, rgba(15,31,29,0.4) 100%),
+        url('https://images.unsplash.com/photo-1678377401936-1e08fe8b2bb7?w=1920&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .divider-bg-2 {
+      background-image:
+        linear-gradient(to bottom, rgba(15,31,29,0.25) 0%, rgba(15,31,29,0.45) 100%),
+        url('https://images.unsplash.com/photo-1685101144016-301f2fa7671c?w=1920&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .ref-img {
+      transition: transform 0.4s ease;
+    }
+    .ref-img:hover {
+      transform: scale(1.02);
+    }
+
+    .ref-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #c8956c;
+    }
+
+    @media (max-width: 768px) {
+      .hero-bg {
+        background-position: 60% center;
+      }
+    }
+  </style>
+</head>
+<body class="bg-cream text-forest font-sans leading-relaxed">
+
+  <!-- ============================================ -->
+  <!-- HERO                                         -->
+  <!-- ============================================ -->
+  <section class="hero-bg relative min-h-screen flex items-center justify-center">
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl">
+      <p class="font-sans text-sm md:text-base tracking-[0.25em] uppercase mb-6 text-white/70">Simon, St. Andrew Parish</p>
+      <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">The Land<br>in Grenada</h1>
+      <p class="font-sans text-lg md:text-xl font-light tracking-wide text-white/80">A family project</p>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- INTRO                                        -->
+  <!-- ============================================ -->
+  <section class="max-w-3xl mx-auto px-6 py-20 md:py-28">
+    <div class="fade-in">
+      <p class="font-serif text-2xl md:text-3xl lg:text-4xl leading-snug text-forest">
+        We have seven acres of hillside in Grenada. A house. Land. A view of the hills rolling down toward the coast.
+      </p>
+      <p class="mt-8 text-lg text-forest/60 max-w-2xl">
+        Right now it costs money and earns nothing. I want to change that &mdash; with you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE PROPERTY — SATELLITE VIEWS               -->
+  <!-- ============================================ -->
+  <section class="px-6 pb-20 md:pb-28">
+    <div class="max-w-6xl mx-auto">
+      <div class="fade-in mb-12">
+        <p class="ref-label mb-2">The property</p>
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold">Where it is</h2>
+      </div>
+
+      <div class="fade-in grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Wide area satellite -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <img src="images/satellite-wide.png" alt="Satellite view showing property location near Pearls, Simon, St. Andrew" class="w-full" loading="lazy">
+          <div class="p-5">
+            <p class="text-sm text-forest/70">Between Pearls airstrip and the northeast coast. Ten minutes from the beach. Green, rural, and unhurried.</p>
+          </div>
+        </div>
+
+        <!-- Plot boundary -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <img src="images/satellite-plot.png" alt="Satellite view showing 7-acre plot boundary" class="w-full" loading="lazy">
+          <div class="p-5">
+            <p class="text-sm text-forest/70">The blue line marks the property &mdash; roughly seven acres running from Sunshine Lane up into the hillside. The house sits at the road, with land rising behind it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- WHY SIMON?                                   -->
+  <!-- ============================================ -->
+  <section class="px-6 pb-20 md:pb-28">
+    <div class="max-w-6xl mx-auto">
+      <div class="fade-in mb-12">
+        <p class="ref-label mb-2">The location</p>
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold">Why Simon?</h2>
+        <p class="mt-4 text-lg text-forest/70 max-w-3xl">Simon isn&rsquo;t remote &mdash; it&rsquo;s positioned. The northeast is where Grenada&rsquo;s next wave of investment is landing, and we&rsquo;re already there.</p>
+      </div>
+
+      <div class="fade-in grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+          <p class="font-serif text-lg font-semibold mb-2">Grenville</p>
+          <p class="text-sm text-forest/70">Parish capital and Grenada&rsquo;s third-largest town &mdash; ten minutes away. Markets, services, transport, restaurants, the nutmeg processing station. The economic hub of the east coast.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+          <p class="font-serif text-lg font-semibold mb-2">Seamoon Industrial Park</p>
+          <p class="text-sm text-forest/70">12.5-acre GIDC business park less than a mile from the property. KM2 Solutions BPO employs 800+ people here. ICT, agro-processing, manufacturing. This is a working area, not a backwater.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+          <p class="font-serif text-lg font-semibold mb-2">Seamoon Cultural Centre</p>
+          <p class="text-sm text-forest/70">A $4M+ reconstruction into a first-class theatre and arts centre with training facilities. The historic home of Grenada&rsquo;s calypso competitions. Cultural infrastructure arriving on our doorstep.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+          <p class="font-serif text-lg font-semibold mb-2">Pearls</p>
+          <p class="text-sm text-forest/70">The old airport sits adjacent to the property &mdash; visible on the satellite view. Now a heritage site and tourist attraction with its Cold War&ndash;era planes. The runway and its history draw visitors to the area daily.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+          <p class="font-serif text-lg font-semibold mb-2">Levera Development</p>
+          <p class="text-sm text-forest/70">A $1 billion resort under construction at the north of the island &mdash; 500 suites, golf course, casino, marina. The biggest tourism investment in Grenada&rsquo;s history, pulling the entire northeast into focus.</p>
+        </div>
+
+        <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+          <p class="font-serif text-lg font-semibold mb-2">Prospect Park</p>
+          <p class="text-sm text-forest/70">A first-class cricket ground right here in the parish. Combined with Simon as the site for the Grenada FA&rsquo;s training facility, this puts serious sports infrastructure on our doorstep &mdash; and visiting teams need somewhere to stay.</p>
+        </div>
+
+      </div>
+
+      <p class="fade-in mt-8 text-forest/60 max-w-3xl">St. Andrew is Grenada&rsquo;s largest parish, and Simon sits at a convergence: cultural heritage, industrial development, and a billion-dollar tourism investment all within reach. The infrastructure is coming to us &mdash; we&rsquo;re already on the ground.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE HOUSE TODAY                              -->
+  <!-- ============================================ -->
+  <section class="px-6 pb-20 md:pb-28">
+    <div class="max-w-6xl mx-auto">
+      <div class="fade-in grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <!-- Floor plan -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <img src="images/floorplan.png" alt="Floor plan of the existing house" class="w-full" loading="lazy">
+        </div>
+
+        <!-- Description -->
+        <div>
+          <p class="ref-label mb-2">What we have</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-6">The house today</h2>
+          <div class="space-y-4 text-forest/80">
+            <p>Three bedrooms. Two bathrooms. Kitchen and dining room. A reception room. Verandahs on two sides.</p>
+            <p>It's a solid Caribbean house that needs love, not surgery. Cosmetic work, furnishing, and a few upgrades could have it earning within months.</p>
+            <p class="text-forest/50 text-sm italic">The reception room becomes redundant once the outdoor living space is built &mdash; and that changes everything.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE JOURNEY — PHASES OVERVIEW                -->
+  <!-- ============================================ -->
+  <section class="bg-sand/20 border-y border-sand/40 px-6 py-20 md:py-28">
+    <div class="max-w-6xl mx-auto">
+      <div class="fade-in mb-12 text-center">
+        <p class="ref-label mb-2">The journey</p>
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold">How this unfolds</h2>
+      </div>
+
+      <div class="fade-in grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Phase 0 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border-2 border-terra/30 relative">
+          <div class="absolute -top-3 left-6 bg-terra text-white text-xs font-semibold px-3 py-1 rounded-full">Phase 0</div>
+          <h3 class="font-serif text-xl font-semibold mt-3 mb-1">The Holiday Let</h3>
+          <p class="text-xs text-forest/50 uppercase tracking-wider mb-4">Together</p>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Investment</span>
+              <span class="font-semibold">$27K&ndash;36K shared</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Revenue (40% occ.)</span>
+              <span class="font-semibold">~$28K/year</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Running costs</span>
+              <span class="font-semibold">~$14K/year</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Net income</span>
+              <span class="font-semibold text-leaf">~$14.5K/year</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Payback</span>
+              <span class="font-semibold">~2 years</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-forest/60">After payback</span>
+              <span class="font-semibold text-leaf">Income to family</span>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-forest/50">Self-sustaining from day one. Covers its own costs even at 30% occupancy.</p>
+        </div>
+
+        <!-- Phase 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-sand/40 relative">
+          <div class="absolute -top-3 left-6 bg-leaf text-white text-xs font-semibold px-3 py-1 rounded-full">Phase 1</div>
+          <h3 class="font-serif text-xl font-semibold mt-3 mb-1">Rob&rsquo;s Builds</h3>
+          <p class="text-xs text-forest/50 uppercase tracking-wider mb-4">Rob&rsquo;s budget</p>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Investment</span>
+              <span class="font-semibold">&pound;20K (Rob solo)</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Adds</span>
+              <span class="font-semibold">Home + ops + tent</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Property sleeps</span>
+              <span class="font-semibold">12+</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">New capability</span>
+              <span class="font-semibold">Groups &amp; events</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Family cost</span>
+              <span class="font-semibold text-leaf">$0</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-forest/60">If it stops here</span>
+              <span class="font-semibold text-leaf">Enhanced asset</span>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-forest/50">Every outcome improves what the family owns. Main house fully freed for bookings.</p>
+        </div>
+
+        <!-- Phase 2+ -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-sand/40 border-dashed relative">
+          <div class="absolute -top-3 left-6 bg-forest/60 text-white text-xs font-semibold px-3 py-1 rounded-full">Phase 2+</div>
+          <h3 class="font-serif text-xl font-semibold mt-3 mb-1">The Retreat</h3>
+          <p class="text-xs text-forest/50 uppercase tracking-wider mb-4">Rob&rsquo;s future venture</p>
+
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Investment</span>
+              <span class="font-semibold">Rob&rsquo;s future funding</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Adds</span>
+              <span class="font-semibold">Tent clusters, eco-retreat</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Full capacity</span>
+              <span class="font-semibold">36 guests</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Land used</span>
+              <span class="font-semibold">Part of the 7 acres</span>
+            </div>
+            <div class="flex justify-between border-b border-sand/40 pb-2">
+              <span class="text-forest/60">Family cost</span>
+              <span class="font-semibold text-leaf">$0</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-forest/60">Land ownership</span>
+              <span class="font-semibold text-leaf">Family &mdash; always</span>
+            </div>
+          </div>
+
+          <p class="mt-4 text-xs text-forest/50">Micro-resort clusters on part of the land &mdash; not all of it. Requires consent, not cash. Built only once Phases 0 and 1 prove the concept.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DIVIDER — GRENADA LANDSCAPE                  -->
+  <!-- ============================================ -->
+  <section class="divider-bg-1 h-[40vh] md:h-[50vh] flex items-center justify-center">
+    <div class="text-center text-white px-6">
+      <p class="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold italic">&ldquo;What if it actually earned?&rdquo;</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PHASE 0 — THE HOLIDAY LET                    -->
+  <!-- ============================================ -->
+  <section class="px-6 py-20 md:py-28">
+    <div class="max-w-6xl mx-auto">
+      <div class="fade-in max-w-3xl mb-14">
+        <p class="ref-label mb-2">Phase 0 &mdash; together</p>
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">Turn the house into a holiday let</h2>
+        <p class="text-lg text-forest/70">Convert the reception room to bedroom four. Build a large deck with an outdoor kitchen and a plunge pool. That pushes us into <strong class="text-forest">&ldquo;sleeps 8+&rdquo;</strong> territory &mdash; the sweet spot for family groups, and the whole reason this property will stand out.</p>
+      </div>
+
+      <!-- Reference imagery grid -->
+      <div class="fade-in grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <!-- Plunge pool -->
+        <div class="group">
+          <div class="rounded-xl overflow-hidden shadow-md bg-white">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1567491634123-460945ea86dd?w=800&q=80&auto=format&fit=crop"
+                alt="Reference: tropical plunge pool"
+                class="ref-img w-full h-full object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="p-4">
+              <p class="font-serif text-lg font-medium">Private plunge pool</p>
+              <p class="text-sm text-forest/60 mt-1">The single biggest differentiator on Airbnb. &ldquo;Private pool&rdquo; is the first filter group travellers hit.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deck + outdoor dining -->
+        <div class="group">
+          <div class="rounded-xl overflow-hidden shadow-md bg-white">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1743804636528-7c06da018916?w=800&q=80&auto=format&fit=crop"
+                alt="Reference: tropical outdoor dining deck"
+                class="ref-img w-full h-full object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="p-4">
+              <p class="font-serif text-lg font-medium">Large deck &amp; outdoor kitchen</p>
+              <p class="text-sm text-forest/60 mt-1">Where people actually live. Cooking, eating, and being together &mdash; outside, under the sky. This is the Caribbean way.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Villa / the listing -->
+        <div class="group">
+          <div class="rounded-xl overflow-hidden shadow-md bg-white">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1651206923402-72159f112dc3?w=800&q=80&auto=format&fit=crop"
+                alt="Reference: tropical villa"
+                class="ref-img w-full h-full object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="p-4">
+              <p class="font-serif text-lg font-medium">A destination, not a stopover</p>
+              <p class="text-sm text-forest/60 mt-1">A 4-bed with a pool and outdoor kitchen in rural Grenada, sleeping 8+. Family reunions, group trips, gatherings. It&rsquo;s rare in this market.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-forest/40 italic">Reference imagery &mdash; similar Caribbean properties showing the feel, not the exact specification.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE NUMBERS — LIGHT TOUCH                    -->
+  <!-- ============================================ -->
+  <section class="bg-forest text-white">
+    <div class="max-w-6xl mx-auto px-6 py-14 md:py-16">
+      <div class="fade-in grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl md:text-4xl font-serif font-bold text-terra">4</p>
+          <p class="text-sm text-white/60 mt-1">Bedrooms</p>
+        </div>
+        <div>
+          <p class="text-3xl md:text-4xl font-serif font-bold text-terra">8+</p>
+          <p class="text-sm text-white/60 mt-1">Guests</p>
+        </div>
+        <div>
+          <p class="text-3xl md:text-4xl font-serif font-bold text-terra">$220-300</p>
+          <p class="text-sm text-white/60 mt-1">Per night, peak season</p>
+        </div>
+        <div>
+          <p class="text-3xl md:text-4xl font-serif font-bold text-terra">~2 yrs</p>
+          <p class="text-sm text-white/60 mt-1">Payback at 40% occupancy</p>
+        </div>
+      </div>
+      <p class="text-center text-white/40 text-xs mt-8">Revenue-neutral at 30% occupancy. Covering its own costs from day one.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SHARED INVESTMENT                            -->
+  <!-- ============================================ -->
+  <section class="px-6 py-20 md:py-28">
+    <div class="max-w-3xl mx-auto">
+      <div class="fade-in">
+        <p class="ref-label mb-2">The shared investment</p>
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-8">What Phase 0 costs</h2>
+
+        <div class="space-y-4 text-forest/80">
+          <p>Furnishing, repairs, the outdoor build, listing setup, and a contingency buffer. The full budget is available &mdash; here are the headlines:</p>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+            <p class="text-sm text-forest/50 uppercase tracking-wider">Furnishing &amp; fit-out</p>
+            <p class="font-serif text-xl font-semibold mt-1">$7,000 &ndash; 11,000</p>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+            <p class="text-sm text-forest/50 uppercase tracking-wider">Repairs &amp; cosmetic</p>
+            <p class="font-serif text-xl font-semibold mt-1">$4,000 &ndash; 8,000</p>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+            <p class="text-sm text-forest/50 uppercase tracking-wider">Outdoor build</p>
+            <p class="font-serif text-xl font-semibold mt-1">$8,000 &ndash; 15,000</p>
+            <p class="text-xs text-forest/40 mt-1">Pool, deck, outdoor kitchen</p>
+          </div>
+          <div class="bg-white rounded-lg p-5 shadow-sm border border-sand/50">
+            <p class="text-sm text-forest/50 uppercase tracking-wider">Infrastructure + listing</p>
+            <p class="font-serif text-xl font-semibold mt-1">$3,800 &ndash; 7,000</p>
+            <p class="text-xs text-forest/40 mt-1">WiFi, hot water, backup power, photos</p>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-sand/30 rounded-lg p-6 border border-sand/50">
+          <div class="flex items-baseline justify-between">
+            <p class="font-serif text-lg font-semibold">Total (lean but solid)</p>
+            <p class="font-serif text-2xl font-bold text-terra">$27,000 &ndash; 36,000</p>
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-4 text-center text-sm text-forest/60">
+            <div>
+              <p class="font-semibold text-forest">$9,000 &ndash; 12,000</p>
+              <p>Split 3 ways</p>
+            </div>
+            <div>
+              <p class="font-semibold text-forest">$6,750 &ndash; 9,000</p>
+              <p>Split 4 ways</p>
+            </div>
+            <div>
+              <p class="font-semibold text-forest">$13,500 &ndash; 18,000</p>
+              <p>Split 2 ways</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-sm text-forest/50 italic">These are estimates. The real numbers depend on a condition assessment of the house &mdash; which is the first thing that needs to happen on the ground.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- HOW IT RUNS ITSELF                           -->
+  <!-- ============================================ -->
+  <section class="bg-forest/5 border-y border-sand/30 px-6 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto">
+      <div class="fade-in">
+        <p class="ref-label mb-2">After setup</p>
+        <h2 class="font-serif text-2xl md:text-3xl font-semibold mb-6">How the property runs itself</h2>
+        <p class="text-forest/70 mb-8">Once the house is set up and listed, nobody needs to send money. It covers its own costs and builds a reserve.</p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="bg-white rounded-lg p-5 shadow-sm">
+            <p class="font-serif font-semibold mb-2">Local caretaker &amp; cleaner</p>
+            <p class="text-sm text-forest/60">Someone from Simon or nearby who handles guest turnovers, cleaning, check-in, and basic maintenance. Employed from booking revenue &mdash; not a favour, a paid role.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-5 shadow-sm">
+            <p class="font-serif font-semibold mb-2">Property manager</p>
+            <p class="text-sm text-forest/60">Manages the Airbnb listing, responds to guest queries, coordinates bookings. Can be local or remote. Once I&rsquo;m on-island, I oversee this directly.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-5 shadow-sm">
+            <p class="font-serif font-semibold mb-2">Maintenance fund</p>
+            <p class="text-sm text-forest/60">A percentage of every booking goes into a ringfenced fund for repairs, replacements, and upkeep. The pool, the deck, the appliances &mdash; all covered by the property&rsquo;s own earnings.</p>
+          </div>
+
+          <div class="bg-white rounded-lg p-5 shadow-sm">
+            <p class="font-serif font-semibold mb-2">Insurance &amp; utilities</p>
+            <p class="text-sm text-forest/60">Electric, water, internet, property insurance &mdash; all paid from booking revenue. Running costs of ~$13K&ndash;16K/year are covered even at conservative occupancy.</p>
+          </div>
+        </div>
+
+        <div class="mt-8 bg-white rounded-lg p-6 shadow-sm border border-leaf/20">
+          <p class="font-serif font-semibold text-leaf mb-2">The principle</p>
+          <p class="text-forest/70">After the initial fit-out, the property is an independent enterprise. It employs local staff, maintains itself, insures itself, and distributes any surplus to the family. Nobody subsidises it. If bookings drop, costs flex down. If bookings grow, income grows. The house works for us, not the other way round.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- DIVIDER 2                                    -->
+  <!-- ============================================ -->
+  <section class="divider-bg-2 h-[35vh] md:h-[45vh]"></section>
+
+  <!-- ============================================ -->
+  <!-- PHASE 2 — MY BUILDS                         -->
+  <!-- ============================================ -->
+  <section class="px-6 py-20 md:py-28">
+    <div class="max-w-6xl mx-auto">
+      <div class="fade-in max-w-3xl mb-14">
+        <p class="ref-label mb-2">Phase 2 &mdash; mine</p>
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold mb-6">What I&rsquo;m building on the wider land</h2>
+        <p class="text-lg text-forest/70">Three structures, from my own budget, on part of the wider land &mdash; not all of it. My cost, my risk. But every outcome, including the one where I change my mind, improves the family asset.</p>
+      </div>
+
+      <div class="fade-in grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <!-- Container home -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1729687875912-40d7e35f0231?w=800&q=80&auto=format&fit=crop"
+              alt="Reference: container home conversion"
+              class="ref-img w-full h-full object-cover"
+              loading="lazy"
+            >
+          </div>
+          <div class="p-5">
+            <p class="font-serif text-xl font-medium mb-2">My home</p>
+            <p class="text-sm text-forest/70">A container conversion &mdash; one or two bedrooms, kitchen, bathroom, verandah. This is where I live, and it frees the main house completely for bookings and family visits.</p>
+          </div>
+        </div>
+
+        <!-- Operations container -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="aspect-[4/3] bg-gradient-to-br from-forest/10 to-leaf/10 flex items-center justify-center">
+            <div class="text-center px-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-leaf/40 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+              <p class="text-sm text-forest/50">Kitchen &middot; Laundry &middot; Bar</p>
+            </div>
+          </div>
+          <div class="p-5">
+            <p class="font-serif text-xl font-medium mb-2">Operations container</p>
+            <p class="text-sm text-forest/70">Commercial kitchen, laundry, and bar with an outdoor serving hatch. The backbone for group hosting &mdash; and it adds capability the main house alone can&rsquo;t offer.</p>
+          </div>
+        </div>
+
+        <!-- Gathering tent -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1770549872541-889645b719bb?w=800&q=80&auto=format&fit=crop"
+              alt="Reference: outdoor event tent"
+              class="ref-img w-full h-full object-cover"
+              loading="lazy"
+            >
+          </div>
+          <div class="p-5">
+            <p class="font-serif text-xl font-medium mb-2">Gathering tent</p>
+            <p class="text-sm text-forest/70">A large marquee for group dining, yoga, retreats, events, staging. The flexible &ldquo;big room&rdquo; the property doesn&rsquo;t have. Seats 40&ndash;60.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-xs text-forest/40 italic">Reference imagery. The container home and tent show the type of structure, not exact specifications.</p>
+
+      <!-- What this means for everyone -->
+      <div class="fade-in mt-14 max-w-3xl">
+        <h3 class="font-serif text-xl font-semibold mb-4">Why this benefits everyone</h3>
+        <ul class="space-y-3 text-forest/70">
+          <li class="flex gap-3">
+            <span class="text-terra font-bold shrink-0">&rarr;</span>
+            <span>The main house earns at full capacity from day one &mdash; I&rsquo;m not in it.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-terra font-bold shrink-0">&rarr;</span>
+            <span>The property can host groups and events before any glamping tents arrive.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-terra font-bold shrink-0">&rarr;</span>
+            <span>If I decide to stop, the property has two dwellings sleeping 12+, a commercial kitchen, and a gathering space &mdash; on part of the land, not all of it. A fundamentally more valuable family asset.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE OPPORTUNITY                              -->
+  <!-- ============================================ -->
+  <section class="bg-forest text-white">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <div class="fade-in">
+        <p class="ref-label text-terra/80 mb-2">The opportunity</p>
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-8">Why Grenada, why now</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div>
+              <p class="text-3xl font-serif font-bold text-terra">51%</p>
+              <p class="text-white/60 text-sm mt-1">Tourism growth year-on-year. Grenada is having a moment.</p>
+            </div>
+            <div>
+              <p class="text-3xl font-serif font-bold text-terra">Zero</p>
+              <p class="text-white/60 text-sm mt-1">Glamping or eco-retreat competition in the northeast parish. We&rsquo;d be first.</p>
+            </div>
+            <div>
+              <p class="text-3xl font-serif font-bold text-terra">15 years</p>
+              <p class="text-white/60 text-sm mt-1">Government tax holiday for qualifying eco-tourism projects.</p>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-white/70">
+            <p>The target market isn&rsquo;t individual couples. It&rsquo;s <strong class="text-white">groups</strong>.</p>
+            <p>At full capacity the retreat sleeps <strong class="text-white">36 guests</strong> &mdash; that&rsquo;s three sports teams, or one large family reunion, or multiple retreat groups simultaneously. Small clusters of safari tents in the landscape, not a hotel block.</p>
+            <p>Simon already has a first-class cricket ground at Prospect Park and the Grenada FA training facility. <strong class="text-white">Visiting teams need somewhere to stay</strong> &mdash; and we&rsquo;re a five-minute walk away with group accommodation, catering, and a gathering space.</p>
+            <p>Beyond sports: family reunions, Carnival groups, diaspora reconnection trips. And <strong class="text-white">courses, themed arts getaways, and healing retreats</strong> &mdash; the Seamoon Cultural Centre rebuild next door makes this a natural fit for creative and wellness programming.</p>
+            <p>A whole-property rental at $25&ndash;38 per person per night. A 4-bed villa with a pool, outdoor kitchen, and gathering space is rare in the Eastern Caribbean &mdash; nearly non-existent in St. Andrew.</p>
+            <p class="text-white/50 text-sm">The retreat uses part of the seven acres, not all of it. And land that sits unused in the Caribbean doesn&rsquo;t stay unused forever &mdash; there&rsquo;s development pressure, squatting, neglect. Active stewardship protects what the family owns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FROM ROB                                     -->
+  <!-- ============================================ -->
+  <section class="px-6 py-20 md:py-28">
+    <div class="max-w-3xl mx-auto">
+      <div class="fade-in">
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-10">A note from Rob</h2>
+
+        <div class="space-y-5 text-forest/80 text-lg leading-relaxed">
+          <p>I&rsquo;ve spent a year researching this. Business plans, accommodation costing, sourcing specs, market analysis &mdash; all available if you want to dig in. But I wanted to lead with what actually matters: the land, the potential, and the ask.</p>
+
+          <p>I&rsquo;m moving to Grenada. Not next week, and not blindly. But I&rsquo;ve worked through the doubts, and what I&rsquo;ve arrived at is this: <strong class="text-forest">I can&rsquo;t do this if it&rsquo;s my entire life there.</strong> I need work, a role, a reason to be on the island beyond waiting for the next booking. The retreat becomes something I build alongside a life, not instead of one.</p>
+
+          <p>Phase 0 &mdash; the house &mdash; is the first step. And it&rsquo;s the one I want us to do together.</p>
+        </div>
+
+        <!-- What I'm asking -->
+        <div class="mt-12 space-y-8">
+          <div>
+            <h3 class="font-serif text-xl font-semibold mb-4 text-leaf">What I&rsquo;m asking for</h3>
+            <div class="space-y-3 text-forest/70">
+              <p><strong class="text-forest">For the house:</strong> Investment (modest, shared between us), your input on how to set it up well, and sweat if you&rsquo;re willing &mdash; even if that&rsquo;s a long weekend, a few video calls, or just strong opinions on furnishing.</p>
+              <p><strong class="text-forest">For the land:</strong> Your consent for me to develop the eco-retreat on the wider property, with the understanding that the land stays in the family regardless.</p>
+              <p><strong class="text-forest">For my networks:</strong> Any Caribbean connections &mdash; academic, NGO, tourism, government &mdash; that could lead to work. And honest market feedback from your circles: would your friends actually book a group week in Grenada?</p>
+              <p><strong class="text-forest">For me:</strong> Your belief that I can do this. And honesty if you think I&rsquo;m getting something wrong.</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-serif text-xl font-semibold mb-4 text-forest/50">What I&rsquo;m not asking for</h3>
+            <div class="space-y-2 text-forest/50">
+              <p>Funding for the retreat. That&rsquo;s mine.</p>
+              <p>Anyone to move to Grenada. This is my life change, not yours.</p>
+              <p>A decision today.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- CLOSE                                        -->
+  <!-- ============================================ -->
+  <section class="bg-sand/30 border-t border-sand/50">
+    <div class="max-w-3xl mx-auto px-6 py-16 text-center">
+      <p class="font-serif text-2xl md:text-3xl text-forest/80 italic leading-relaxed">
+        Take your time. Think about it. Talk to each other.<br>
+        Come back to me with questions, concerns, or counter-proposals.
+      </p>
+      <p class="mt-6 text-forest/40 text-sm">I&rsquo;d rather have a real conversation than a rushed yes.</p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                       -->
+  <!-- ============================================ -->
+  <footer class="bg-deep text-white/40 text-center py-8 px-6">
+    <p class="text-sm">Rob Berkeley &middot; 2026</p>
+    <p class="text-xs mt-2">Full budget, business plans, and sourcing specifications available on request.</p>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- SCROLL FADE-IN                               -->
+  <!-- ============================================ -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
