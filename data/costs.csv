@@ -1,0 +1,16 @@
+Category,Item,Estimate_Low,Estimate_High,Currency,Source,Status,Actual,Date,Notes
+Phase 0 Renovation,General build/renovation,,,XCD,Gilbert's builder,Quoted soon,,,Whole house refresh: Jack & Jill ensuite; solarium; deck; plunge pool
+Phase 0 Renovation,Plunge pool,,,XCD,Gilbert's builder,Unknown,,,Small pool or plunge pool; check local water
+Phase 0 Renovation,Deck expansion,,,XCD,Gilbert's builder,Unknown,,,Outdoor living space; hurricane-rated materials
+Phase 0 Renovation,Solarium,,,XCD,Gilbert's builder,Unknown,,,Enclosed sunroom / light feature
+Running Costs,Property tax,,,XCD,Govt,Unknown,,,Annual
+Running Costs,Electricity,,,XCD,Until,,Unknown,,,Solar potential?
+Running Costs,Water,,,XCD,Until,,Unknown,,,Rain catchment potential?
+Running Costs,Internet,,,XCD,Flow / Digicel,Unknown,,,Rural reliability?
+Running Costs,Maintenance fund,,,XCD,Best practice: 5-10% of revenue,Unknown,,,Holdback
+Running Costs,Insurance,,,XCD,Broker,Unknown,,,Hurricane cover critical; liability for guests
+Prefab Benchmark,Container build,,,USD,Research,Unknown,,,Hurricane-rated containers
+Prefab Benchmark,Modular timber,,,USD,Research,Unknown,,,Local availability in Grenada?
+Prefab Benchmark,Bamboo structure,,,USD,Research,Unknown,,,Grenada-sourced bamboo?
+Revenue,4-bed nightly rate (high season),,,USD,Comparable research,Unknown,,,Dec-Apr
+Revenue,4-bed nightly rate (low season),,,USD,Comparable research,Unknown,,,May-Nov
