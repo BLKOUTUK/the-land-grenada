@@ -3,7 +3,7 @@
   "lastSynced": "2026-06-26",
   "config": {
     "videoEmbedUrl": "",
-    "contactEmail": "hello@example.com",
+    "contactEmail": "rob@blkoutuk.com",
     "n8nWebhookUrl": "",
     "siteUrl": ""
   },
@@ -24,7 +24,9 @@
     "marginRealistic": "~30%",
     "artsKit": "£31k",
     "studio": "£38k",
-    "fullyBuiltOut": "~£322k"
+    "fullyBuiltOut": "~£322k",
+    "photoQuote": "Walk through the front door of the house Dad built.",
+    "photoCredit": "Simon · St Andrew · June 2026"
   },
   "source_usd": {
     "openingPhase": "$90.9k",
@@ -50,5 +52,8 @@
     "capitalTotal": "EC$980k",
     "y5NetConservative": "EC$147k",
     "y5NetRealistic": "EC$265k"
-  }
+  },
+  "_dispatches_howto": "Add vertical clips here, NEWEST FIRST. Each item: { \"id\": \"YOUTUBE_ID\", \"title\": \"Warehouse keys\", \"caption\": \"The barn opens for the first time in years.\", \"date\": \"Jun 2026\" }. The id is the bit after watch?v= or youtu.be/ or shorts/. Unlisted videos work fine. Leave the list empty to keep the 'first dispatch incoming' placeholder.",
+  "dispatches": [],
+  "_photos_howto": "Put four photos named land-1.jpg, land-2.jpg, land-3.jpg, land-4.jpg into the repo ALONGSIDE index.html (same place, no folder). They appear in order in the dispatches section. Any size works; upright 4:5 crops cleanest. Change the displayed line via figures.photoQuote / photoCredit."
 }
