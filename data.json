@@ -57,23 +57,28 @@
   "feed": [
     {
       "type": "photo",
-      "src": "land-1.jpg",
-      "caption": "The house Dad built."
+      "src": "building-house.jpg",
+      "caption": "The house Dad built — the verandah, looking out over the garden."
     },
     {
       "type": "photo",
-      "src": "land-2.jpg",
-      "caption": "The barn, waiting."
+      "src": "building-chattel.jpg",
+      "caption": "The older board house, still up on its piers."
+    },
+    {
+      "type": "photo",
+      "src": "building-barn.jpg",
+      "caption": "The barn at the back, under the fig — owner quarters one day."
+    },
+    {
+      "type": "photo",
+      "src": "building-house-terrace.jpg",
+      "caption": "The balustrade, waiting for chairs again."
     },
     {
       "type": "photo",
       "src": "land-3.jpg",
       "caption": "The river boundary."
-    },
-    {
-      "type": "photo",
-      "src": "land-4.jpg",
-      "caption": "The bay below."
     }
   ]
 }
