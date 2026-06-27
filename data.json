@@ -56,6 +56,13 @@
   "_feed_howto": "ONE woven stream of stills and clips, shown in this order. Photo item:  { \"type\":\"photo\", \"src\":\"land-1.jpg\", \"caption\":\"optional line\" }. Clip item:   { \"type\":\"video\", \"id\":\"YOUTUBE_ID\", \"title\":\"Warehouse keys\", \"caption\":\"optional\", \"date\":\"Jun 2026\" }. To intersperse a clip, just drop a video item between two photo items. id = the bit after watch?v= / youtu.be/ / shorts/. Unlisted is fine.",
   "feed": [
     {
+      "type": "video",
+      "id": "JC1uf56UOpA",
+      "title": "Stone, Timber, Water",
+      "caption": "Episode 8 — the old mill, the warehouse, and a river found at the far edge of the seven acres.",
+      "date": "Jun 2026"
+    },
+    {
       "type": "photo",
       "src": "land-1.jpg",
       "caption": "The house Dad built."
