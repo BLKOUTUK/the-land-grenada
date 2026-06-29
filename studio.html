@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>The Land — Vlog Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=Work+Sans:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --green:#274736; --green-d:#1c3328; --terra:#C46A40; --cream:#F4ECDA; --cream-d:#d8cdb4; --ink:#20180f; --line:rgba(244,236,218,.16); }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Work Sans',sans-serif;background:var(--green-d);color:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:20px 16px 90px}
+  header{display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}
+  .mark{font-family:'Fraunces',serif;font-style:italic;font-size:13px;color:var(--terra);letter-spacing:.04em;margin-bottom:6px}
+  .epline{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  select.ep{font-family:'Work Sans';font-weight:700;font-size:13px;background:var(--green);color:var(--cream);border:1px solid var(--line);border-radius:8px;padding:7px 9px}
+  input.title{font-family:'Fraunces',serif;font-weight:500;font-size:26px;line-height:1.1;background:transparent;border:0;border-bottom:1px dashed transparent;color:var(--cream);width:100%;margin-top:8px;padding:2px 0}
+  input.title:focus{outline:0;border-bottom-color:var(--terra)}
+  .eqwrap{font-family:'Fraunces',serif;font-style:italic;color:var(--terra);font-size:15px;margin-top:6px;display:flex;gap:6px;align-items:baseline}
+  .eqwrap span{color:var(--cream-d);font-style:normal;font-family:'Work Sans';font-size:12px;text-transform:uppercase;letter-spacing:.08em;flex:0 0 auto}
+  input.eq{font-family:'Fraunces',serif;font-style:italic;color:var(--terra);font-size:15px;background:transparent;border:0;border-bottom:1px dashed transparent;width:100%}
+  input.eq:focus{outline:0;border-bottom-color:var(--terra)}
+  .ring{margin-left:auto;text-align:center;flex:0 0 auto}
+  .ring small{display:block;font-size:11px;color:var(--cream-d);text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+  .bar{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
+  .stage{flex:1;min-width:104px;background:var(--green);border:1px solid var(--line);border-radius:12px;padding:11px 11px 12px;cursor:pointer;transition:.15s;position:relative}
+  .stage:hover{border-color:var(--terra)}
+  .stage.sel{border-color:var(--terra);box-shadow:0 0 0 1px var(--terra)}
+  .stage .n{font-size:10px;color:var(--cream-d);letter-spacing:.1em;text-transform:uppercase}
+  .stage .t{font-weight:700;font-size:14px;margin-top:3px}
+  .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle;border:1.5px solid var(--cream-d)}
+  .done .dot{background:var(--terra);border-color:var(--terra)}
+  .active .dot{background:#e8b04a;border-color:#e8b04a;box-shadow:0 0 0 3px rgba(232,176,74,.22)}
+  .lock{position:absolute;top:9px;right:10px;font-size:12px;opacity:.7}
+  .panel{background:var(--green);border:1px solid var(--line);border-radius:16px;padding:20px 20px 16px}
+  .panel h2{font-family:'Fraunces',serif;font-weight:500;font-size:20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .pill{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;cursor:pointer;border:1px solid var(--cream-d);color:var(--cream-d);user-select:none}
+  .pill.done{background:var(--terra);border-color:var(--terra);color:#fff}
+  .pill.active{background:#e8b04a;border-color:#e8b04a;color:var(--ink)}
+  .lockrow{font-size:12px;color:#e8b04a;margin:14px 0 4px;font-weight:600;display:flex;gap:7px;align-items:center}
+  .lockrow.ok{color:var(--terra)}
+  input.lock-in{flex:1;background:transparent;border:0;border-bottom:1px dashed var(--line);color:inherit;font:inherit}
+  input.lock-in:focus{outline:0;border-bottom-color:currentColor}
+  .qa{margin:14px 0;border-left:2px solid var(--terra);padding-left:11px;position:relative}
+  .qa input.q{font-weight:700;font-size:13px;color:var(--cream);background:transparent;border:0;width:calc(100% - 24px);padding:1px 0}
+  .qa input.q:focus{outline:0}
+  .qa textarea{font-size:14px;color:var(--cream-d);background:transparent;border:0;width:100%;resize:none;font-family:inherit;line-height:1.45;margin-top:2px;overflow:hidden}
+  .qa textarea:focus{outline:0}
+  .qa textarea::placeholder{color:#8a9b8f;font-style:italic}
+  .rm{position:absolute;top:0;right:0;cursor:pointer;color:#8a9b8f;font-size:14px;border:0;background:0;padding:2px 4px}
+  .rm:hover{color:var(--terra)}
+  .addq{font-size:12px;color:var(--terra);background:0;border:0;cursor:pointer;padding:4px 0;font-weight:600}
+  .lbl{font-size:10px;color:var(--cream-d);letter-spacing:.1em;text-transform:uppercase;margin:16px 0 4px}
+  textarea.block{font-size:13px;color:var(--cream-d);background:var(--green-d);border:1px solid var(--line);border-radius:10px;padding:11px 13px;width:100%;resize:none;font-family:inherit;line-height:1.5;overflow:hidden}
+  textarea.block:focus{outline:0;border-color:var(--terra)}
+  textarea.prompt{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--cream-d);background:#11201a;border:1px dashed var(--line);border-radius:8px;padding:10px 12px;width:100%;resize:none;line-height:1.5;overflow:hidden}
+  textarea.prompt:focus{outline:0;border-color:var(--terra)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center}
+  button.act{font-family:'Work Sans';font-weight:700;font-size:12px;letter-spacing:.04em;background:var(--terra);color:#fff;border:0;border-radius:8px;padding:9px 14px;cursor:pointer}
+  button.ghost{background:transparent;color:var(--cream);border:1px solid var(--line);font:inherit;font-weight:700;font-size:12px;border-radius:8px;padding:8px 13px;cursor:pointer}
+  button.act:hover{filter:brightness(1.08)}
+  .learn{margin-top:24px}
+  .learn h3{font-family:'Fraunces',serif;font-weight:500;font-size:18px;margin-bottom:8px}
+  .lrow{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid var(--line)}
+  .lrow input.stg{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--terra);text-transform:uppercase;flex:0 0 84px;background:transparent;border:0;border-bottom:1px dashed transparent}
+  .lrow input.stg:focus{outline:0;border-bottom-color:var(--terra)}
+  .lrow textarea{flex:1;font-size:13px;color:var(--cream-d);background:transparent;border:0;resize:none;font-family:inherit;line-height:1.45;overflow:hidden}
+  .lrow textarea:focus{outline:0}
+  .savebar{position:fixed;left:0;right:0;bottom:0;background:rgba(28,51,40,.94);backdrop-filter:blur(6px);border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:14px;align-items:center;font-size:12px;color:#8a9b8f;z-index:9}
+  .savebar .status{font-weight:700;color:var(--cream-d)}
+  .savebar .status.ok{color:var(--terra)}
+  .savebar .status.warn{color:#e8b04a}
+  @media(max-width:680px){.bar{display:grid;grid-template-columns:1fr 1fr}input.title{font-size:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="flex:1;min-width:240px">
+      <div class="mark">the LAND · vlog studio</div>
+      <div class="epline">
+        <select class="ep" id="epsel"></select>
+        <button class="ghost" onclick="newEpisode()">＋ New episode</button>
+      </div>
+      <input class="title" id="title" placeholder="Episode title…" oninput="D.title=this.value;autosave()">
+      <div class="eqwrap"><span>engine ?</span><input class="eq" id="eq" placeholder="What happens to the Land?…" oninput="D.engineQuestion=this.value;autosave()"></div>
+    </div>
+    <div class="ring">
+      <svg width="60" height="60" viewBox="0 0 64 64"><circle cx="32" cy="32" r="27" fill="none" stroke="rgba(244,236,218,.14)" stroke-width="6"/><circle id="prog" cx="32" cy="32" r="27" fill="none" stroke="#C46A40" stroke-width="6" stroke-linecap="round" stroke-dasharray="170" stroke-dashoffset="170" transform="rotate(-90 32 32)"/></svg>
+      <small id="pct">0% locked</small>
+    </div>
+  </header>
+
+  <div class="bar" id="bar"></div>
+  <div class="panel" id="panel"></div>
+
+  <div class="learn">
+    <h3>Learnings — what the Studio carries forward</h3>
+    <div id="learnlist"></div>
+    <button class="addq" onclick="addLearning()" style="margin-top:8px">＋ add learning</button>
+  </div>
+</div>
+
+<div class="savebar">
+  <span class="status" id="status">loading…</span>
+  <button class="ghost" onclick="reload()" style="padding:5px 11px">↻ Reload</button>
+  <span style="margin-left:auto">Autosaves to Supabase · Claude reads the same rows</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SB_URL='https://bgjengudzfickgomjqmz.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnamVuZ3VkemZpY2tnb21qcW16Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU2MTI3NjcsImV4cCI6MjA3MTE4ODc2N30.kYQ2oFuQBGmu4V_dnj_1zDMDVsd-qpDZJwNvswzO6M0';
+const TABLE='land_studio_episodes';
+const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+let episodes=[];   // [{episode, data}]
+let D=null;        // current episode data object
+let sel=0;         // selected stage index
+let saveTimer=null;
+const order={pending:0,active:1,done:2};
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toISOString().slice(0,10);
+
+// ---- standard 8-stage pipeline scaffold for a NEW episode ----
+const TEMPLATE=[
+  {id:'footage',name:'Footage',status:'active',gate:'open',lock:'Catalogued + every location confirmed (ID gate)',questions:[{q:'Which day(s) / folder is the shoot?',a:''}],notes:'',prompt:'Catalogue footage/epNN (contact sheets + video durations), then confirm every location with Rob before locking.'},
+  {id:'story',name:'Story',status:'pending',gate:'open',lock:'Arc + engine question locked',questions:[{q:'Subject?',a:''},{q:'Arc / spine?',a:''},{q:'Engine question?',a:''}],notes:'',prompt:'Research the subject (web), then draft the arc to the Land voice; confirm the engine question.'},
+  {id:'script',name:'Script',status:'pending',gate:'open',lock:'VO recorded',questions:[{q:'Edits to the draft?',a:''},{q:'Recorded + dropped?',a:''}],notes:'',prompt:'Draft the VO to the arc in the Land register; paste it for Rob to record; ingest ZOOM00xx.MP3.'},
+  {id:'assemble',name:'Assemble',status:'pending',gate:'open',lock:'Cut rendered 16:9 + 9:16',questions:[],notes:'',prompt:'Transcribe VO (GROQ segment timings) → EDL → render 16:9 + 9:16 via land-flexclip-kit + brand cards.'},
+  {id:'verify',name:'Verify',status:'pending',gate:'open',lock:'Frame-check passed + Rob watched it first',questions:[{q:'Frame-check sync / plates / content?',a:''},{q:'Rob watched before review?',a:''}],notes:'',prompt:'Frame-check each beat for sync + content + plate quality; copy the cut to a C:\\ path and have Rob watch BEFORE any review.'},
+  {id:'review',name:'Review',status:'pending',gate:'open',lock:'Council notes triaged',questions:[{q:'Which notes to action?',a:''}],notes:'',prompt:'Run the 5-lens council (story/brand/pacing/values/factual) on the verified cut; synthesise into a prioritised keep/fix/cut list.'},
+  {id:'polish',name:'Polish',status:'pending',gate:'open',lock:'Polish applied (speed / music / grade)',questions:[{q:'Speed?',a:''},{q:'Music?',a:''},{q:'Plate / grade fixes?',a:''}],notes:'',prompt:'Apply the agreed speed factor to 16:9 + 9:16; lay the music test bed; apply any grade/plate swaps.'},
+  {id:'publish',name:'Publish',status:'pending',gate:'open',lock:'Published unlisted + on the dispatches feed',questions:[{q:'Unlisted YouTube?',a:''},{q:'Dispatches feed?',a:''}],notes:'',prompt:'Upload 16:9 + 9:16 unlisted to BLKOUTUK; append the 9:16 to the-land-grenada data.json dispatches feed.'}
+];
+function blankEpisode(num,title){
+  return {episode:num,title:title||'',engineQuestion:'',updated:today(),
+    stages:JSON.parse(JSON.stringify(TEMPLATE)),learnings:[]};
+}
+
+// ---- helpers ----
+const esc=s=>(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+function setStatus(t,cls){ const e=$('status'); e.textContent=t; e.className='status'+(cls?' '+cls:''); }
+function grow(el){ el.style.height='auto'; el.style.height=(el.scrollHeight)+'px'; }
+function growAll(){ document.querySelectorAll('textarea').forEach(grow); }
+
+function autosave(){ clearTimeout(saveTimer); setStatus('saving…'); saveTimer=setTimeout(commit,700); }
+async function commit(){
+  D.updated=today();
+  const {error}=await sb.from(TABLE).upsert({episode:D.episode,data:D,updated_at:new Date().toISOString()});
+  if(error){ setStatus('⚠ '+error.message,'warn'); }
+  else { setStatus('✓ saved '+new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}),'ok'); }
+}
+
+// ---- edit handlers (no re-render while typing) ----
+function editQ(i,j,field,val){ D.stages[i].questions[j][field]=val; autosave(); }
+function editLock(i,val){ D.stages[i].lock=val; autosave(); }
+function editNotes(i,val){ D.stages[i].notes=val; autosave(); }
+function editPrompt(i,val){ D.stages[i].prompt=val; autosave(); }
+function editLearn(k,field,val){ D.learnings[k][field]=val; autosave(); }
+
+function cycle(i){ const s=D.stages[i]; s.status=s.status==='pending'?'active':s.status==='active'?'done':'pending'; commit(); render(); }
+function toggleGate(i){ const s=D.stages[i]; s.gate=s.gate==='locked'?'open':'locked'; commit(); render(); }
+function addQ(i){ D.stages[i].questions.push({q:'',a:''}); commit(); render(); }
+function rmQ(i,j){ D.stages[i].questions.splice(j,1); commit(); render(); }
+function addLearning(){ D.learnings.unshift({date:today(),stage:D.stages[sel].id,lesson:''}); commit(); render(); }
+function rmLearn(k){ D.learnings.splice(k,1); commit(); render(); }
+function copyPrompt(){ navigator.clipboard.writeText(D.stages[sel].prompt).then(()=>setStatus('✓ prompt copied','ok')); }
+
+// ---- episode switching ----
+async function newEpisode(){
+  let num=prompt('New episode number (e.g. 10):'); if(!num) return;
+  num=num.trim().padStart(2,'0');
+  if(episodes.find(e=>e.episode===num)){ alert('Episode '+num+' already exists.'); return; }
+  const title=prompt('Working title:')||'';
+  const ep=blankEpisode(num,title);
+  const {error}=await sb.from(TABLE).insert({episode:num,data:ep});
+  if(error){ alert('Could not create: '+error.message); return; }
+  episodes.push({episode:num,data:ep}); episodes.sort((a,b)=>a.episode.localeCompare(b.episode));
+  D=ep; location.hash='ep='+num; selDefault(); render();
+}
+function switchEp(num){ const r=episodes.find(e=>e.episode===num); if(!r)return; D=r.data; location.hash='ep='+num; selDefault(); render(); }
+function selDefault(){ sel=D.stages.findIndex(s=>s.status==='active'); if(sel<0)sel=0; }
+
+// ---- render ----
+function render(){
+  // episode dropdown
+  $('epsel').innerHTML=episodes.map(e=>`<option value="${e.episode}" ${e.episode===D.episode?'selected':''}>Ep ${e.episode} — ${esc(e.data.title)||'untitled'}</option>`).join('');
+  $('title').value=D.title||''; $('eq').value=D.engineQuestion||'';
+  const done=D.stages.filter(s=>s.status==='done').length, tot=D.stages.length, frac=tot?done/tot:0;
+  $('prog').setAttribute('stroke-dashoffset',170-170*frac); $('pct').textContent=Math.round(frac*100)+'% locked';
+  // rail
+  $('bar').innerHTML=D.stages.map((s,i)=>`
+    <div class="stage ${s.status} ${i===sel?'sel':''}" onclick="sel=${i};render()">
+      ${s.gate==='locked'?'<span class="lock">🔒</span>':''}
+      <div class="n">${i+1}</div><div class="t"><span class="dot"></span>${esc(s.name)}</div>
+    </div>`).join('');
+  // panel
+  const s=D.stages[sel], ok=s.status==='done';
+  $('panel').innerHTML=`
+    <h2>${esc(s.name)}
+      <span class="pill ${s.status}" onclick="cycle(${sel})" title="click to cycle status">${s.status}</span>
+      <span class="pill" onclick="toggleGate(${sel})" title="gate">${s.gate==='locked'?'🔒 gated':'gate open'}</span>
+    </h2>
+    <div class="lockrow ${ok?'ok':''}">${ok?'✓':'▢'} Lock when: <input class="lock-in" value="${esc(s.lock)}" oninput="editLock(${sel},this.value)"></div>
+    ${s.questions.map((q,j)=>`<div class="qa">
+      <button class="rm" onclick="rmQ(${sel},${j})" title="remove">✕</button>
+      <input class="q" value="${esc(q.q)}" placeholder="question…" oninput="editQ(${sel},${j},'q',this.value)">
+      <textarea placeholder="— awaiting —" oninput="editQ(${sel},${j},'a',this.value);grow(this)">${esc(q.a)}</textarea>
+    </div>`).join('')}
+    <button class="addq" onclick="addQ(${sel})">＋ add question</button>
+    <div class="lbl">Notes</div>
+    <textarea class="block" placeholder="notes…" oninput="editNotes(${sel},this.value);grow(this)">${esc(s.notes)}</textarea>
+    <div class="lbl">Prompt for Claude</div>
+    <textarea class="prompt" oninput="editPrompt(${sel},this.value);grow(this)">${esc(s.prompt)}</textarea>
+    <div class="row"><button class="act" onclick="copyPrompt()">Copy prompt for Claude</button><button class="ghost" onclick="cycle(${sel})">Advance status →</button></div>`;
+  // learnings
+  $('learnlist').innerHTML=D.learnings.map((l,k)=>`<div class="lrow">
+    <input class="stg" value="${esc(l.stage)}" oninput="editLearn(${k},'stage',this.value)">
+    <textarea oninput="editLearn(${k},'lesson',this.value);grow(this)">${esc(l.lesson)}</textarea>
+    <button class="rm" style="position:static" onclick="rmLearn(${k})">✕</button>
+  </div>`).join('');
+  growAll();
+}
+
+async function boot(){
+  setStatus('loading…');
+  const {data,error}=await sb.from(TABLE).select('episode,data').order('episode');
+  if(error){ setStatus('⚠ load failed: '+error.message,'warn'); return; }
+  if(!data.length){ D=blankEpisode('01',''); await sb.from(TABLE).insert({episode:'01',data:D}); episodes=[{episode:'01',data:D}]; }
+  else { episodes=data; }
+  const pick=(location.hash.match(/ep=(\w+)/)||[])[1];
+  const row=episodes.find(e=>e.episode===pick)||episodes[episodes.length-1];
+  D=row.data; selDefault(); render(); setStatus('✓ loaded','ok');
+}
+function reload(){ boot(); }
+$('epsel').addEventListener('change',e=>switchEp(e.target.value));
+// flush pending save when backgrounding (mobile)
+document.addEventListener('visibilitychange',()=>{ if(document.hidden&&saveTimer){ clearTimeout(saveTimer); commit(); } });
+boot();
+</script>
+</body>
+</html>
