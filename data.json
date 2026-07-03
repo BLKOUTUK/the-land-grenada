@@ -57,9 +57,30 @@
   "feed": [
     {
       "type": "video",
+      "id": "jWyIMe9hqA0",
+      "title": "The Homecoming",
+      "caption": "Episode 8 — the whole country throws its arms open and calls its children home. I went — and found the whole island asking my question.",
+      "date": "Jul 2026"
+    },
+    {
+      "type": "video",
+      "id": "s_nhknRR4Wg",
+      "title": "The Business of Coming Home",
+      "caption": "Episode 9 — the morning after, the same hall becomes a business forum. Belonging, or a balance sheet?",
+      "date": "Jul 2026"
+    },
+    {
+      "type": "video",
+      "id": "vgMCnVW5BYc",
+      "title": "Two Grenadas",
+      "caption": "Episode 10 — the Grenada on the postcards against the one that's just lived in. The one being sold, and the one being kept.",
+      "date": "Jul 2026"
+    },
+    {
+      "type": "video",
       "id": "JC1uf56UOpA",
       "title": "Stone, Timber, Water",
-      "caption": "Episode 8 — the old mill, the warehouse, and a river found at the far edge of the seven acres.",
+      "caption": "Episode 6 — the old mill, the warehouse, and a river found at the far edge of the seven acres.",
       "date": "Jun 2026"
     },
     {
