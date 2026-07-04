@@ -57,31 +57,87 @@
   "feed": [
     {
       "type": "video",
-      "id": "jWyIMe9hqA0",
+      "id": "TAetVAG7ekg",
+      "title": "Journey to Grenada",
+      "caption": "Episode 1 — the flight down, the last mile past the Welcome-to-Paradise sign, and the first sight of the seven acres.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "aE8CwGa0Z3g",
+      "title": "The Building",
+      "caption": "Episode 2 — the house Dad built, the warehouse behind it, and what each structure could still become.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "9OjShFGoR7w",
+      "title": "A Short History",
+      "caption": "Episode 3 — ten things that made Grenada, from the first peoples to independence.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "0TW40OoOAv4",
+      "title": "Grenada History — 10 Things",
+      "caption": "Episode 3a — a second pass through the island's story, told in ten turns.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "LMsnh6k8Ots",
+      "title": "The Locality",
+      "caption": "Episode 4 — Simon, St Andrew: the road, the neighbours, the bay below.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "I1nXR870R50",
+      "title": "Inside the House — the vote",
+      "caption": "Episode 5 — four ways to bring the house back. You get a vote.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "0RC5jVftE3s",
+      "title": "Option A",
+      "caption": "Episode 5a — a walk through Option A, room by room.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "3M5mMmNuYrI",
+      "title": "Stone, Timber, Water",
+      "caption": "Episode 6 — the old mill, the warehouse, and a river found at the far edge of the seven acres.",
+      "date": "Jun 2026"
+    },
+    {
+      "type": "video",
+      "id": "ikSM4nt6r-Y",
+      "title": "No Small Undertaking",
+      "caption": "Episode 7 — reckoning with the size of it: what it really takes to bring a place back.",
+      "date": "Jul 2026"
+    },
+    {
+      "type": "video",
+      "id": "6V2hsK8rwrs",
       "title": "The Homecoming",
       "caption": "Episode 8 — the whole country throws its arms open and calls its children home. I went — and found the whole island asking my question.",
       "date": "Jul 2026"
     },
     {
       "type": "video",
-      "id": "s_nhknRR4Wg",
+      "id": "WItFWQ4Alcw",
       "title": "The Business of Coming Home",
       "caption": "Episode 9 — the morning after, the same hall becomes a business forum. Belonging, or a balance sheet?",
       "date": "Jul 2026"
     },
     {
       "type": "video",
-      "id": "vgMCnVW5BYc",
+      "id": "kWrf8IXuEQg",
       "title": "Two Grenadas",
       "caption": "Episode 10 — the Grenada on the postcards against the one that's just lived in. The one being sold, and the one being kept.",
       "date": "Jul 2026"
-    },
-    {
-      "type": "video",
-      "id": "JC1uf56UOpA",
-      "title": "Stone, Timber, Water",
-      "caption": "Episode 6 — the old mill, the warehouse, and a river found at the far edge of the seven acres.",
-      "date": "Jun 2026"
     },
     {
       "type": "photo",
