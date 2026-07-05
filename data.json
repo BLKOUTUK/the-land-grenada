@@ -1,6 +1,6 @@
 {
   "_comment": "SINGLE SOURCE OF TRUTH for the web prospectus. Figures derived from Yukayeke_Financial_Model.xlsx. Primary 'figures' block is GBP-led (the family reads in £/EC$). Re-run the generator (or let n8n overwrite this file) whenever the model changes.",
-  "lastSynced": "2026-07-04",
+  "lastSynced": "2026-07-05",
   "config": {
     "videoEmbedUrl": "",
     "contactEmail": "rob@blkoutuk.com",
