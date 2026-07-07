@@ -1,5 +1,5 @@
 {
-  "_comment": "SINGLE SOURCE OF TRUTH for the web prospectus. Figures derived from Yukayeke_Financial_Model.xlsx. Primary 'figures' block is GBP-led (the family reads in £/EC$). Re-run the generator (or let n8n overwrite this file) whenever the model changes.",
+  "_comment": "SINGLE SOURCE OF TRUTH for the web prospectus. Figures derived from Yukayeke_Financial_Model.xlsx. Primary 'figures' block is GBP-led (the family reads in \u00a3/EC$). Re-run the generator (or let n8n overwrite this file) whenever the model changes.",
   "lastSynced": "2026-07-05",
   "config": {
     "videoEmbedUrl": "",
@@ -10,28 +10,28 @@
   "place": {
     "acres": "7",
     "lettableRooms": "8",
-    "guests": "16–18",
-    "location": "Simon · St Andrew · Grenada"
+    "guests": "16\u201318",
+    "location": "Simon \u00b7 St Andrew \u00b7 Grenada"
   },
   "figures": {
-    "tenureRange": "£414k–£862k",
-    "programmeIndicative": "~£780k",
+    "tenureRange": "\u00a3414k\u2013\u00a3862k",
+    "programmeIndicative": "~\u00a3780k",
     "phase0Refurb": "TBC",
-    "livelihoodTarget": "£35k/yr",
+    "livelihoodTarget": "\u00a335k/yr",
     "photoQuote": "Walk through the front door of the house Dad built.",
-    "photoCredit": "Simon · St Andrew · June 2026"
+    "photoCredit": "Simon \u00b7 St Andrew \u00b7 June 2026"
   },
   "fx": {
     "usd_per_gbp": 1.316,
     "xcd_per_usd": 2.7,
-    "note": "£1 = US$1.316 = EC$3.553. GBP floats — refresh; EC$ pegged at 2.70."
+    "note": "\u00a31 = US$1.316 = EC$3.553. GBP floats \u2014 refresh; EC$ pegged at 2.70."
   },
   "_feed_howto": "ONE woven stream of stills and clips, shown in this order. Photo item:  { \"type\":\"photo\", \"src\":\"land-1.jpg\", \"caption\":\"optional line\" }. Clip item:   { \"type\":\"video\", \"id\":\"YOUTUBE_ID\", \"title\":\"Warehouse keys\", \"caption\":\"optional\", \"date\":\"Jun 2026\" }. To intersperse a clip, just drop a video item between two photo items. id = the bit after watch?v= / youtu.be/ / shorts/. Unlisted is fine.",
   "feed": [
     {
       "type": "video",
       "id": "CbmPOLhlwJs",
-      "title": "the LAND — trailer",
+      "title": "the LAND \u2014 trailer",
       "caption": "Start here: a door in London that opens onto seven acres in Grenada.",
       "date": "2026"
     },
@@ -39,91 +39,91 @@
       "type": "video",
       "id": "ngB_DJh1CSA",
       "title": "Journey to Grenada",
-      "caption": "Episode 1 — the flight down, the last mile past the Welcome-to-Paradise sign, and the first sight of the seven acres.",
+      "caption": "Episode 1 \u2014 the flight down, the last mile past the Welcome-to-Paradise sign, and the first sight of the seven acres.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "7I1quJFrhSs",
       "title": "The Building",
-      "caption": "Episode 2 — the house Dad built, the warehouse behind it, and what each structure could still become.",
+      "caption": "Episode 2 \u2014 the house Dad built, the warehouse behind it, and what each structure could still become.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "OoRR5ODKQgc",
       "title": "Grenada History",
-      "caption": "Episode 3 — the island's story in full, from the first peoples through colonisation to independence.",
+      "caption": "Episode 3 \u2014 the island's story in full, from the first peoples through colonisation to independence.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "0TW40OoOAv4",
-      "title": "Grenada History — 10 Things",
-      "caption": "Episode 3a — a second pass through the island's story, told in ten turns.",
+      "title": "Grenada History \u2014 10 Things",
+      "caption": "Episode 3a \u2014 a second pass through the island's story, told in ten turns.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "LMsnh6k8Ots",
       "title": "The Locality",
-      "caption": "Episode 4 — Simon, St Andrew: the road, the neighbours, the bay below.",
+      "caption": "Episode 4 \u2014 Simon, St Andrew: the road, the neighbours, the bay below.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "I1nXR870R50",
-      "title": "Inside the House — the vote",
-      "caption": "Episode 5 — four ways to bring the house back. You get a vote.",
+      "title": "Inside the House \u2014 the vote",
+      "caption": "Episode 5 \u2014 four ways to bring the house back. You get a vote.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "0RC5jVftE3s",
       "title": "Option A",
-      "caption": "Episode 5a — a walk through Option A, room by room.",
+      "caption": "Episode 5a \u2014 a walk through Option A, room by room.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "3M5mMmNuYrI",
       "title": "Stone, Timber, Water",
-      "caption": "Episode 6 — the old mill, the warehouse, and a river found at the far edge of the seven acres.",
+      "caption": "Episode 6 \u2014 the old mill, the warehouse, and a river found at the far edge of the seven acres.",
       "date": "Jun 2026"
     },
     {
       "type": "video",
       "id": "ikSM4nt6r-Y",
       "title": "No Small Undertaking",
-      "caption": "Episode 7 — reckoning with the size of it: what it really takes to bring a place back.",
+      "caption": "Episode 7 \u2014 reckoning with the size of it: what it really takes to bring a place back.",
       "date": "Jul 2026"
     },
     {
       "type": "video",
       "id": "yQJWIMBZ0zs",
       "title": "The Homecoming",
-      "caption": "Episode 8 — the whole country throws its arms open and calls its children home. I went — and found the whole island asking my question.",
+      "caption": "Episode 8 \u2014 the whole country throws its arms open and calls its children home. I went \u2014 and found the whole island asking my question.",
       "date": "Jul 2026"
     },
     {
       "type": "video",
       "id": "5RQZhG0umTg",
       "title": "The Business of Coming Home",
-      "caption": "Episode 9 — the morning after, the same hall becomes a business forum. Belonging, or a balance sheet?",
+      "caption": "Episode 9 \u2014 the morning after, the same hall becomes a business forum. Belonging, or a balance sheet?",
       "date": "Jul 2026"
     },
     {
       "type": "video",
       "id": "Oqo_XfJRgAc",
       "title": "Two Grenadas",
-      "caption": "Episode 10 — the Grenada on the postcards against the one that's just lived in. The one being sold, and the one being kept.",
+      "caption": "Episode 10 \u2014 the Grenada on the postcards against the one that's just lived in. The one being sold, and the one being kept.",
       "date": "Jul 2026"
     },
     {
       "type": "video",
       "id": "vuCi7I1ONPo",
       "title": "The First Wash",
-      "caption": "Episode 11 — the house my parents built, thirty years in the weather. Not an architect, not a plan the size of a building — a Saturday, a pressure washer, and a man willing to climb up onto the roof.",
+      "caption": "Episode 11 \u2014 the house my parents built, thirty years in the weather. Not an architect, not a plan the size of a building \u2014 a Saturday, a pressure washer, and a man willing to climb up onto the roof.",
       "date": "Jul 2026"
     },
     {
@@ -150,7 +150,21 @@
       "type": "video",
       "id": "L4uzVvnQTBg",
       "title": "The Northern Lime",
-      "caption": "Coconut Fest in Victoria, the Tivoli Drummers' Salaka — and, on a wall found by accident, the week the flag went up.",
+      "caption": "Coconut Fest in Victoria, the Tivoli Drummers' Salaka \u2014 and, on a wall found by accident, the week the flag went up.",
+      "date": "Jul 2026"
+    },
+    {
+      "type": "video",
+      "id": "KjnY9Syk0PA",
+      "title": "Eleven Things About Food",
+      "caption": "The Spice Isle exported food for 300 years, and now imports its dinner. What it means to grow for ourselves.",
+      "date": "Jul 2026"
+    },
+    {
+      "type": "video",
+      "id": "oiYI1My9-6M",
+      "title": "Eleven Things About Health",
+      "caption": "The pharmacy, or the garden? Bush medicine, the nurse-export paradox, and growing the cure.",
       "date": "Jul 2026"
     }
   ]
