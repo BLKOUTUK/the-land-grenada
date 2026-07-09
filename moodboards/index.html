@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Moodboards — TheLand, Simon</title>
+<meta name="description" content="Room-by-room moodboards for the house at Simon, Grenada — one Caribbean-Scandi direction across the great room, kitchen, bedrooms and bathrooms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE7D6; --card:#F6F0E2; --ink:#1B201A; --muted:#6b6a5c;
+    --line:rgba(27,32,26,.14); --accent:#D8A12E;
+    --yellow:#D8A12E; --green:#7E8C6E; --timber:#A9793F;
+    --maxw:1040px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#171812; --card:#20211a; --ink:#EDE8DC; --muted:#a7a291; --line:rgba(237,232,220,.14); }
+  }
+  :root[data-theme="dark"]{ --paper:#171812; --card:#20211a; --ink:#EDE8DC; --muted:#a7a291; --line:rgba(237,232,220,.14); }
+  :root[data-theme="light"]{ --paper:#EFE7D6; --card:#F6F0E2; --ink:#1B201A; --muted:#6b6a5c; --line:rgba(27,32,26,.14); }
+
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Work Sans",system-ui,sans-serif; line-height:1.62; -webkit-font-smoothing:antialiased; }
+  .font-display{ font-family:"Fraunces",Georgia,serif; font-variation-settings:"opsz" 120; letter-spacing:-.015em; }
+  a{ color:inherit; }
+
+  /* top bar */
+  .bar{ border-bottom:1px solid var(--line); }
+  .bar .in{ max-width:var(--maxw); margin:0 auto; padding:16px 22px; display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
+  .bar a.mark{ text-decoration:none; font-family:"DM Mono",monospace; letter-spacing:.22em; font-size:.82rem; }
+  .bar a.mark b{ color:var(--accent); font-weight:500; }
+  .bar .back{ font-size:.8rem; color:var(--muted); text-decoration:none; }
+  .bar .back:hover{ color:var(--accent); }
+
+  main{ max-width:var(--maxw); margin:0 auto; padding:0 22px 90px; }
+  .eyebrow{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); }
+
+  .mast{ padding:60px 0 40px; border-bottom:1px solid var(--line); }
+  .mast .kicker{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); }
+  .mast h1{ font-weight:600; font-size:clamp(2.1rem,5.4vw,3.3rem); line-height:1.03; margin:.5rem 0 .8rem; text-wrap:balance; }
+  .mast p{ color:var(--muted); max-width:60ch; margin:0; font-size:1.08rem; }
+  .mast p b{ color:var(--ink); font-weight:600; }
+  .legend{ display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:24px; font-size:.86rem; color:var(--muted); }
+  .legend span{ display:inline-flex; align-items:center; gap:8px; }
+  .dot{ width:13px; height:13px; border-radius:50%; box-shadow:0 0 0 1px var(--line); }
+
+  section.blk{ padding:56px 0; border-bottom:1px solid var(--line); }
+  .head{ margin-bottom:24px; }
+  .head h2{ font-weight:600; font-size:clamp(1.55rem,3.6vw,2.2rem); line-height:1.08; margin:.35rem 0 0; }
+  .head h2::after{ content:""; display:block; width:48px; height:3px; background:var(--accent); margin-top:14px; border-radius:2px; }
+  .head .theme{ color:var(--muted); max-width:62ch; margin:1rem 0 0; }
+  .head .theme b{ color:var(--ink); font-weight:600; }
+
+  figure{ margin:0; }
+  figure img{ width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 6px 30px rgba(0,0,0,.16); }
+  figcaption{ font-size:.78rem; color:var(--muted); margin-top:9px; }
+  figcaption b{ color:var(--ink); font-weight:600; }
+  .shot{ margin-bottom:26px; }
+
+  .trio{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .real{ display:inline-block; margin-left:6px; padding:1px 8px; border-radius:20px; font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; font-weight:600; background:var(--green); color:#fff; vertical-align:middle; }
+
+  .palette{ display:flex; flex-wrap:wrap; gap:12px; margin:0 0 30px; }
+  .sw{ width:104px; }
+  .sw .chip{ height:56px; border-radius:8px; box-shadow:inset 0 0 0 1px var(--line); }
+  .sw .name{ font-size:.73rem; font-weight:600; margin-top:7px; line-height:1.25; }
+  .sw .hex{ font-family:"DM Mono",monospace; font-size:.68rem; color:var(--muted); }
+
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+  .cols h3{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+  .cols ul{ list-style:none; margin:0; padding:0; }
+  .cols li{ padding:7px 0; border-top:1px solid var(--line); font-size:.96rem; }
+  .cols li:first-child{ border-top:none; }
+  .cols li b{ font-weight:600; }
+
+  footer.note{ padding:34px 0 0; color:var(--muted); font-size:.86rem; max-width:66ch; }
+  footer.note strong{ color:var(--ink); }
+  footer.note a{ color:var(--accent); }
+
+  @media (max-width:720px){ .trio{ grid-template-columns:1fr; } }
+  @media (max-width:640px){ .cols{ grid-template-columns:1fr; gap:24px; } .sw{ width:calc(33.333% - 8px); } .sw .chip{ height:48px; } }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="in">
+    <a class="mark" href="../"><b>YUKAYEKE</b> · TheLand</a>
+    <a class="back" href="../">← Back to the prospectus</a>
+  </div>
+</div>
+
+<main>
+  <header class="mast">
+    <p class="kicker">The house · Simon, St Andrew, Grenada</p>
+    <h1 class="font-display">Room moodboards</h1>
+    <p>One direction across the house — <b>Caribbean-Scandi</b>: Scandinavian calm and function, met by Caribbean
+      light, timber and greenery. Warm whitewash, pale woods, cane and natural fibre — lifted by a sunny yellow
+      through the living and sleeping rooms, and a spa green in the bathrooms.</p>
+    <div class="legend">
+      <span><span class="dot" style="background:#D8A12E"></span> Yellow accent — great room &amp; bedrooms</span>
+      <span><span class="dot" style="background:#7E8C6E"></span> Green accent — bathrooms</span>
+      <span><span class="dot" style="background:#A9793F"></span> Warm timber — throughout</span>
+    </div>
+  </header>
+
+  <!-- THE PLACE -->
+  <section class="blk" style="--accent:var(--green)">
+    <div class="head">
+      <span class="eyebrow">The place</span>
+      <h2 class="font-display">Grounded here</h2>
+      <p class="theme">The direction isn't imported — it answers this ground. <b>The house as it stands</b>, the
+        <b>view</b> it looks onto, and the <b>Caribbean vernacular</b> nearby: fretwork verandahs, pastel timber,
+        pitched roofs raised off the earth. The rooms that follow take their cue from these.</p>
+    </div>
+    <div class="trio">
+      <figure>
+        <img src="./front-elevation.jpg" alt="The front of the house at Simon — a single-storey home with a stone-arched verandah and balustraded parapet.">
+        <figcaption><b>Front elevation</b> — the house today: stone-arched verandah, balustraded parapet.<span class="real">Real</span></figcaption>
+      </figure>
+      <figure>
+        <img src="./view.jpg" alt="The valley view from the house — farmland, greenery and misty mountains.">
+        <figcaption><b>The view</b> — the valley and mountains the great room opens onto.<span class="real">Real</span></figcaption>
+      </figure>
+      <figure>
+        <img src="./chattel-house.jpg" alt="A traditional Grenadian chattel house — raised verandah, timber fretwork and faded pastel paint.">
+        <figcaption><b>Chattel house</b> — the local vernacular: verandah, fretwork, faded pastels.<span class="real">Real</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- GREAT ROOM -->
+  <section class="blk" style="--accent:var(--yellow)">
+    <div class="head">
+      <span class="eyebrow">Great room</span>
+      <h2 class="font-display">Bring the outside in</h2>
+      <p class="theme">The shared heart of the house — <b>relaxation and activity in one room</b>. Sofas and a
+        games table by day, film nights by evening, glass doors thrown open to the garden so the vaulted room and
+        the outside read as one. Comfort first, uncluttered, unmistakably Caribbean-Scandi.</p>
+    </div>
+    <figure class="shot">
+      <img src="./great-room.jpg" alt="Vaulted great room with timber ceiling, linen sofa, cane chairs and glass doors open to a tropical garden, with yellow accent cushions and a games table.">
+      <figcaption>Mood reference — the feeling and materials, not the actual room.</figcaption>
+    </figure>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#F4F0E8"></div><div class="name">Whitewash</div><div class="hex">#F4F0E8</div></div>
+      <div class="sw"><div class="chip" style="background:#D8C4A0"></div><div class="name">Pale oak</div><div class="hex">#D8C4A0</div></div>
+      <div class="sw"><div class="chip" style="background:#C29B63"></div><div class="name">Cane / jute</div><div class="hex">#C29B63</div></div>
+      <div class="sw"><div class="chip" style="background:#4E6B3E"></div><div class="name">Garden green</div><div class="hex">#4E6B3E</div></div>
+      <div class="sw"><div class="chip" style="background:#D8A12E"></div><div class="name">Sunny yellow</div><div class="hex">#D8A12E</div></div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Materials &amp; texture</h3>
+        <ul>
+          <li>Whitewashed plaster &amp; <b>exposed pale timber ceiling</b></li>
+          <li>Light oak + woven cane furniture</li>
+          <li>Jute / sisal rug, linen upholstery</li>
+          <li>Terracotta pots, big leafy plants</li>
+          <li>Full-height glass sliding doors to garden</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Key pieces</h3>
+        <ul>
+          <li>Low <b>oatmeal-linen modular sofa</b></li>
+          <li>Cane lounge chairs + mustard-yellow armchair</li>
+          <li>Round timber coffee table</li>
+          <li>Timber <b>games table</b> · discreet wall TV</li>
+          <li>Ceiling fans for passive cooling</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- KITCHEN -->
+  <section class="blk" style="--accent:var(--timber)">
+    <div class="head">
+      <span class="eyebrow">Kitchen</span>
+      <h2 class="font-display">Sturdy, practical, shared</h2>
+      <p class="theme">A working kitchen built for <b>many hands</b> — communal preparation and gathering around
+        one solid island. Honest materials that take daily use, everything in easy reach, made for the shared
+        experience of cooking together.</p>
+    </div>
+    <figure class="shot">
+      <img src="./kitchen.jpg" alt="Communal kitchen with warm timber butcher-block worktops, a large central island with wooden stools, sage-grey cabinetry and open shelves of crockery.">
+      <figcaption>Mood reference — the feeling and materials, not the actual room.</figcaption>
+    </figure>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#C89A5E"></div><div class="name">Butcher-block</div><div class="hex">#C89A5E</div></div>
+      <div class="sw"><div class="chip" style="background:#B07A45"></div><div class="name">Warm timber</div><div class="hex">#B07A45</div></div>
+      <div class="sw"><div class="chip" style="background:#A7AE97"></div><div class="name">Sage cabinet</div><div class="hex">#A7AE97</div></div>
+      <div class="sw"><div class="chip" style="background:#EDE6D6"></div><div class="name">Off-white tile</div><div class="hex">#EDE6D6</div></div>
+      <div class="sw"><div class="chip" style="background:#B4623C"></div><div class="name">Terracotta</div><div class="hex">#B4623C</div></div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Materials &amp; texture</h3>
+        <ul>
+          <li><b>Solid / butcher-block timber</b> worktops</li>
+          <li>Reclaimed-timber island</li>
+          <li>Simple sage shaker cabinetry</li>
+          <li>Open timber shelving</li>
+          <li>Handmade tile splashback · terracotta floor</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Key pieces</h3>
+        <ul>
+          <li>Large <b>central island + timber stools</b></li>
+          <li>Open shelves of everyday crockery</li>
+          <li>Induction hob &amp; range</li>
+          <li>Deep sink under the window</li>
+          <li>Generous larder / storage</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEDROOMS -->
+  <section class="blk" style="--accent:var(--yellow)">
+    <div class="head">
+      <span class="eyebrow">Bedrooms</span>
+      <h2 class="font-display">Character, calm, Scandi</h2>
+      <p class="theme">Restful and simple, with <b>character</b> — light wood, natural linen, local art on
+        whitewashed walls, and a warm yellow lift. Rooms that feel personal and quiet rather than hotel-generic.</p>
+    </div>
+    <figure class="shot">
+      <img src="./bedroom.jpg" alt="Scandinavian bedroom with light oak bed, white and linen bedding, mustard knit throw and lampshade, rattan pendant, timber louvered shutters and Caribbean art.">
+      <figcaption>Mood reference — the feeling and materials, not the actual room.</figcaption>
+    </figure>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#F4F0E8"></div><div class="name">Whitewash</div><div class="hex">#F4F0E8</div></div>
+      <div class="sw"><div class="chip" style="background:#D8C4A0"></div><div class="name">Pale oak</div><div class="hex">#D8C4A0</div></div>
+      <div class="sw"><div class="chip" style="background:#E4DAC8"></div><div class="name">Natural linen</div><div class="hex">#E4DAC8</div></div>
+      <div class="sw"><div class="chip" style="background:#5A3B26"></div><div class="name">Timber shutter</div><div class="hex">#5A3B26</div></div>
+      <div class="sw"><div class="chip" style="background:#D8A12E"></div><div class="name">Mustard yellow</div><div class="hex">#D8A12E</div></div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Materials &amp; texture</h3>
+        <ul>
+          <li>Light oak bed &amp; bedside tables</li>
+          <li>White cotton + <b>natural linen</b>, chunky knit throw</li>
+          <li>Woven rattan pendant</li>
+          <li>Timber <b>louvered shutters</b></li>
+          <li>Jute rug, framed local art</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Key pieces</h3>
+        <ul>
+          <li>Light <b>oak bed frame</b></li>
+          <li>Yellow lampshade + mustard knit throw</li>
+          <li>Rattan pendant light</li>
+          <li><b>Characterful Caribbean artwork</b></li>
+          <li>Potted plant, bedside reading light</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BATHROOMS -->
+  <section class="blk" style="--accent:var(--green)">
+    <div class="head">
+      <span class="eyebrow">Bathrooms</span>
+      <h2 class="font-display">Simple spa, in green</h2>
+      <p class="theme">Calm, clean and <b>practical</b> — natural stone and timber, plenty of greenery, and a
+        walk-in rain shower. A spa feeling kept simple and achievable, not opulent.</p>
+    </div>
+    <figure class="shot">
+      <img src="./bathroom.jpg" alt="Spa-style bathroom with sage-green tiles, walk-in glass rain shower, timber vanity with stone basin, ferns and seagrass baskets.">
+      <figcaption>Mood reference — the feeling and materials, not the actual room.</figcaption>
+    </figure>
+    <div class="palette">
+      <div class="sw"><div class="chip" style="background:#9CA98C"></div><div class="name">Sage tile</div><div class="hex">#9CA98C</div></div>
+      <div class="sw"><div class="chip" style="background:#7E8C6E"></div><div class="name">Deep sage</div><div class="hex">#7E8C6E</div></div>
+      <div class="sw"><div class="chip" style="background:#C9B79A"></div><div class="name">Travertine</div><div class="hex">#C9B79A</div></div>
+      <div class="sw"><div class="chip" style="background:#A9793F"></div><div class="name">Warm timber</div><div class="hex">#A9793F</div></div>
+      <div class="sw"><div class="chip" style="background:#3E5A34"></div><div class="name">Fern green</div><div class="hex">#3E5A34</div></div>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Materials &amp; texture</h3>
+        <ul>
+          <li><b>Sage-green tile</b>, travertine floor</li>
+          <li>Timber vanity + <b>stone vessel basin</b></li>
+          <li>Clear glass shower screen</li>
+          <li>Brushed-steel fittings</li>
+          <li>Seagrass baskets, ferns &amp; palms</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Key pieces</h3>
+        <ul>
+          <li>Walk-in <b>rain shower</b></li>
+          <li>Timber vanity with stone basin</li>
+          <li>Timber-framed mirror</li>
+          <li>Louvered window for airflow</li>
+          <li>Abundant greenery, folded natural towels</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="note">
+    <strong>About the images.</strong> The three under <strong>The place</strong> are <strong>real photos</strong> —
+    the house, the view, and a chattel house nearby. The four room images are AI-generated <strong>mood
+    references</strong>: they capture the direction, palette and materials, not a render or photograph of the actual
+    rooms. A starting point to react to — keep what feels right, change what doesn't. &nbsp;<a href="../">← Back to the prospectus</a>
+  </footer>
+</main>
+</body>
+</html>
