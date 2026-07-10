@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cabins — TheLand, Simon</title>
+<meta name="description" content="Distinctive hard-walled riverside cabins for The Land at Simon, Grenada — the design brief, a riverbank village of eight, real sourcing options (UK, Caribbean, Alibaba), and the all-in cost of one live lettable cabin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFE7D6; --card:#F6F0E2; --ink:#1B201A; --muted:#6b6a5c;
+    --line:rgba(27,32,26,.14); --accent:#A9793F; --gold:#D8A12E; --green:#7E8C6E; --teal:#2C534A; --terra:#B05C33;
+    --maxw:1060px;
+  }
+  @media (prefers-color-scheme: dark){ :root{ --paper:#171812; --card:#20211a; --ink:#EDE8DC; --muted:#a7a291; --line:rgba(237,232,220,.14); } }
+  :root[data-theme="dark"]{ --paper:#171812; --card:#20211a; --ink:#EDE8DC; --muted:#a7a291; --line:rgba(237,232,220,.14); }
+  :root[data-theme="light"]{ --paper:#EFE7D6; --card:#F6F0E2; --ink:#1B201A; --muted:#6b6a5c; --line:rgba(27,32,26,.14); }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:"Work Sans",system-ui,sans-serif; line-height:1.62; -webkit-font-smoothing:antialiased; }
+  .font-display{ font-family:"Fraunces",Georgia,serif; font-variation-settings:"opsz" 120; letter-spacing:-.015em; }
+  a{ color:inherit; }
+  .bar{ border-bottom:1px solid var(--line); }
+  .bar .in{ max-width:var(--maxw); margin:0 auto; padding:16px 22px; display:flex; align-items:baseline; justify-content:space-between; gap:16px; }
+  .bar a.mark{ text-decoration:none; font-family:"DM Mono",monospace; letter-spacing:.22em; font-size:.82rem; }
+  .bar a.mark b{ color:var(--gold); font-weight:500; }
+  .bar .back{ font-size:.8rem; color:var(--muted); text-decoration:none; } .bar .back:hover{ color:var(--gold); }
+  main{ max-width:var(--maxw); margin:0 auto; padding:0 22px 90px; }
+  .eyebrow{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); }
+  .mast{ padding:56px 0 36px; border-bottom:1px solid var(--line); }
+  .mast .kicker{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); }
+  .mast h1{ font-weight:600; font-size:clamp(2.1rem,5.4vw,3.3rem); line-height:1.03; margin:.5rem 0 .8rem; text-wrap:balance; }
+  .mast p{ color:var(--muted); max-width:64ch; margin:0; font-size:1.08rem; } .mast p b{ color:var(--ink); font-weight:600; }
+  section.blk{ padding:52px 0; border-bottom:1px solid var(--line); }
+  .head h2{ font-weight:600; font-size:clamp(1.55rem,3.6vw,2.2rem); line-height:1.08; margin:.35rem 0 0; }
+  .head h2::after{ content:""; display:block; width:48px; height:3px; background:var(--accent); margin-top:14px; border-radius:2px; }
+  .head .theme{ color:var(--muted); max-width:66ch; margin:1rem 0 0; } .head .theme b{ color:var(--ink); font-weight:600; }
+  figure{ margin:0; } figure img{ width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 6px 30px rgba(0,0,0,.16); }
+  figcaption{ font-size:.78rem; color:var(--muted); margin-top:9px; } figcaption b{ color:var(--ink); font-weight:600; }
+  .shot{ margin:24px 0 6px; }
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:26px; }
+  .cols h3{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; }
+  .cols ul{ list-style:none; margin:0; padding:0; } .cols li{ padding:7px 0; border-top:1px solid var(--line); font-size:.96rem; } .cols li:first-child{ border-top:none; } .cols li b{ font-weight:600; }
+  .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px; }
+  .dcard{ background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .dcard img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+  .dcard .b{ padding:11px 13px; } .dcard .b .t{ font-weight:600; font-size:.9rem; } .dcard .b .m{ font-size:.75rem; color:var(--muted); margin-top:2px; }
+  .dcard .b .p{ font-family:"DM Mono",monospace; font-size:.78rem; color:var(--accent); margin-top:6px; }
+  .dcard a.src{ font-size:.72rem; color:var(--teal); text-decoration:none; } .dcard a.src:hover{ text-decoration:underline; }
+  table.cost{ width:100%; border-collapse:collapse; margin-top:20px; font-size:.94rem; }
+  table.cost th, table.cost td{ text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); }
+  table.cost th{ font-family:"DM Mono",monospace; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
+  table.cost td.n{ font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap; }
+  table.cost tr.tot td{ border-top:2px solid var(--ink); font-weight:700; font-size:1.02rem; }
+  .src3{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px; }
+  .srcbox{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px; }
+  .srcbox h3{ margin:.1rem 0 .4rem; font-size:1.05rem; } .srcbox .lead{ font-size:.85rem; color:var(--muted); margin:0 0 10px; }
+  .srcbox ul{ margin:0; padding-left:1.05rem; font-size:.88rem; } .srcbox li{ margin:5px 0; }
+  footer.note{ padding:30px 0 0; color:var(--muted); font-size:.86rem; max-width:68ch; } footer.note a{ color:var(--accent); }
+  @media (max-width:760px){ .cols,.grid3,.src3{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="mark" href="../"><b>YUKAYEKE</b> · TheLand</a>
+  <a class="back" href="../">← Back to the prospectus</a>
+</div></div>
+
+<main>
+  <header class="mast">
+    <p class="kicker">Guest cabins · Phase 2 onward · Simon, St Andrew, Grenada</p>
+    <h1 class="font-display">The cabins.</h1>
+    <p>Distinctive <b>hard-walled</b> riverside cabins — a miniature of the house's own language, not a catalogue pod.
+      Up to <b>eight</b>, clustered as a village on the riverbank, added only as each tranche proves it pays. Here's the
+      design brief, the village, where they can actually be sourced (including UK makers you can visit), and the honest
+      all-in cost of one live, lettable cabin.</p>
+  </header>
+
+  <!-- HERO / VILLAGE -->
+  <section class="blk">
+    <figure class="shot">
+      <img src="./village.jpg" alt="Concept: eight timber cabins clustered as a village along the riverbank in Grenada, raised on piers, each with a river-facing deck, linked by a boardwalk around a central fire-pit deck.">
+      <figcaption><b>The vision</b> — eight cabins as an intimate riverbank village, not a resort grid. Concept render, on-brand.</figcaption>
+    </figure>
+  </section>
+
+  <!-- DESIGN BRIEF -->
+  <section class="blk">
+    <div class="head">
+      <span class="eyebrow">The brief</span>
+      <h2 class="font-display">Distinctive, on-brand — character in the skin, not the shell</h2>
+      <p class="theme">The research was unanimous: the money is in a <b>distinctive, story-led unit, not square footage</b> —
+        and character lives in the <b>applied skin</b>, not a costlier shell. So each cabin is a small echo of the main house:
+        a raised, verandah-fronted planter's cottage, reinterpreted — not a grey box.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Form &amp; skin</h3>
+        <ul>
+          <li><b>Raised on octagonal timber piers</b> (the house's own column), deck facing the river</li>
+          <li>Low <b>standing-seam pitched roof</b> — hurricane-fixed, salt-durable</li>
+          <li>Whitewashed <b>board-and-batten</b> + <b>one painted accent</b> per cabin</li>
+          <li><b>Black wrought-iron</b> hardware &amp; lanterns; <b>louvred Bahama shutters</b> (shade + storm)</li>
+          <li>Fretwork / lattice privacy screen; a slatted <b>outdoor shower</b></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Experience &amp; operations</h3>
+        <ul>
+          <li><b>Indoor–outdoor:</b> full-height louvred doors open the river wall to the deck; <b>vaulted</b> inside so it reads big</li>
+          <li><b>Heated water</b> — a small plunge/hot tub (best revenue-per-£ in the research)</li>
+          <li>Sited <b>among</b> the planting; mango shade + a stargazing gap</li>
+          <li>Built to let year-round: tie-downs, impact glazing, cleanable finishes, <b>standard beds/linens</b></li>
+          <li>Warm 2700K light, cane + natural fibre, local art, one signature ritual</li>
+        </ul>
+      </div>
+    </div>
+    <figure class="shot" style="margin-top:30px">
+      <img src="./the-land-cabin.jpg" alt="Concept: one Land cabin — raised timber cabin on piers with a deep river-facing verandah, whitewashed board walls with a burnt-yellow accent, Bahama shutters, black-iron lanterns, standing-seam roof and a slatted outdoor shower.">
+      <figcaption><b>One cabin</b> — the Land's own design, riverside. Concept render, on-brand.</figcaption>
+    </figure>
+  </section>
+
+  <!-- THE VILLAGE / PLATFORMS -->
+  <section class="blk">
+    <div class="head">
+      <span class="eyebrow">The village</span>
+      <h2 class="font-display">Eight on the riverbank — clustered, so it pencils</h2>
+      <p class="theme">The land carries a <b>river along one boundary</b>. The eight read as a village <b>threaded along the
+        bank</b>, not a grid — and clustering is the whole reason eight can pay.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>The platforms</h3>
+        <ul>
+          <li><b>Raised platforms/piers</b> step the cabins down the sloping bank; each deck cantilevers to the water</li>
+          <li>A <b>timber boardwalk spine</b> links them — the arrival sequence and the privacy device in one</li>
+          <li>Staggered so <b>no cabin looks into another</b> — planting between; guests see green</li>
+          <li>A central <b>commons</b>: fire-pit + gathering deck, and the shared hot-tub deck</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Shared services = the saving</h3>
+        <ul>
+          <li><b>One septic field, one solar array + battery, one water/pump line, one boardwalk</b> — sized for 8</li>
+          <li><b>Gated build:</b> pilot → +3 (the gate) → +4; services trenched once, cabins land as each tranche earns</li>
+          <li>Licensed as a <b>villa + guest house</b> (≤9 rooms) — a micro-village retreat, deliberately not a resort</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCED DESIGNS -->
+  <section class="blk" id="designs">
+    <div class="head">
+      <span class="eyebrow">Ten designs that fit</span>
+      <h2 class="font-display">Real cabins you can buy — and visit</h2>
+      <p class="theme">Shortlisted from a scour of UK makers (visit before you buy), Caribbean / US suppliers (closer to
+        Grenada), and Alibaba (cheapest, but QC before shipment). Each is chosen for how well it takes the brief.</p>
+    </div>
+    <div class="grid3">
+      <div class="dcard"><img src="./designs/cn-steelmark-aframe.jpg" alt="A-frame timber tiny cabin"><div class="b"><div class="t">A-frame timber cabin</div><div class="m">Alibaba · Steelmark, Guangzhou (5-yr gold)</div><div class="p">~£4–5.5k FOB</div><a class="src" href="https://steelmarkhouse.en.alibaba.com/" target="_blank" rel="noopener">supplier →</a></div></div>
+      <div class="dcard"><img src="./designs/cn-steelmark-triangle.jpg" alt="Triangle turnkey tiny house"><div class="b"><div class="t">Triangle turnkey cabin</div><div class="m">Alibaba · Steelmark · "hurricane-proof"</div><div class="p">~£4–5.5k FOB</div><a class="src" href="https://steelmarkhouse.en.alibaba.com/" target="_blank" rel="noopener">supplier →</a></div></div>
+      <div class="dcard"><img src="./designs/cn-steelmark-round.jpg" alt="Round light-steel glamping cabin"><div class="b"><div class="t">Round glamping cabin</div><div class="m">Alibaba · Steelmark · distinctive form</div><div class="p">~£4–6k FOB</div><a class="src" href="https://steelmarkhouse.en.alibaba.com/" target="_blank" rel="noopener">supplier →</a></div></div>
+      <div class="dcard"><img src="./designs/cn-deepblue-aframe.jpg" alt="A-frame prefab cabin, certified"><div class="b"><div class="t">A-frame cabin — best certs</div><div class="m">Alibaba · Deepblue (17 yr; CE/ISO/ICC/EN1090/SGS)</div><div class="p">~£3–5k FOB</div><a class="src" href="https://deepblue.en.made-in-china.com/" target="_blank" rel="noopener">supplier →</a></div></div>
+      <div class="dcard"><img src="./designs/cn-cbox-pitchroof.jpg" alt="Pitch-roof guesthouse module"><div class="b"><div class="t">Pitch-roof guest module</div><div class="m">Alibaba · Cbox (8-yr gold) · clustered base unit</div><div class="p">~£6–7.5k/unit</div><a class="src" href="https://cbox.en.alibaba.com/" target="_blank" rel="noopener">supplier →</a></div></div>
+      <div class="dcard"><img src="./designs/cn-yjd-apple.jpg" alt="Curved apple-cabin capsule pod"><div class="b"><div class="t">Curved "apple" pod</div><div class="m">Alibaba · YJD (TÜV-verified) · characterful</div><div class="p">~£3.4–4.8k</div><a class="src" href="https://yjdprefabhouse.en.alibaba.com/" target="_blank" rel="noopener">supplier →</a></div></div>
+      <div class="dcard"><img src="./designs/cn-volferda-pod.jpg" alt="Aluminium capsule pod"><div class="b"><div class="t">Aluminium capsule — the hero</div><div class="m">Volferda · aluminium (best for salt air)</div><div class="p">£7.3k entry / £14–22k 2-bed</div><a class="src" href="https://www.volferda.com/" target="_blank" rel="noopener">supplier →</a></div></div>
+    </div>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:16px">Seven real products above (China route, with images). The two wide shots higher up are the Land's own on-brand design to aim the suppliers at. UK and Caribbean makers — which you can visit or which ship hurricane-certified — are in the three routes below.</p>
+  </section>
+
+  <!-- WHERE TO SOURCE -->
+  <section class="blk" id="sourcing">
+    <div class="head">
+      <span class="eyebrow">Where to source</span>
+      <h2 class="font-display">Three routes — visit, ship-close, or ship-cheap</h2>
+    </div>
+    <div class="src3">
+      <div class="srcbox">
+        <h3>1 · UK — visit before you buy</h3>
+        <p class="lead">Dearest, but you can walk into one and the design quality is highest — the benchmark to hold the others against.</p>
+        <ul>
+          <li><b><a href="https://armadilla.co.uk/" target="_blank" rel="noopener">Armadilla</a></b> — Livingston, Scotland; curved timber hospitality pods, en-suite. Visitable.</li>
+          <li><b><a href="https://www.blackdownshepherdhuts.co.uk/" target="_blank" rel="noopener">Blackdown Shepherd Huts</a></b> — Somerset; premium timber, showground visit.</li>
+          <li><b><a href="https://koto.studio/" target="_blank" rel="noopener">Koto</a></b> — architectural A-frames &amp; cabins, Scandi-Caribbean crossover.</li>
+          <li><b><a href="https://www.outofthevalley.co.uk/" target="_blank" rel="noopener">Out of the Valley</a></b> — Devon; bespoke off-grid timber cabins.</li>
+        </ul>
+        <p class="lead" style="margin-top:8px">~£30–60k+ per unit — the reference, not the fleet.</p>
+      </div>
+      <div class="srcbox">
+        <h3>2 · Caribbean / US — hurricane-certified, closer</h3>
+        <p class="lead">Higher unit cost than China, far lower shipping + risk — and a stamped wind calc for building control. The safe route for the pilot.</p>
+        <ul>
+          <li><b><a href="https://www.topsiderhomes.com/bahamas-and-caribbean-home-building.php" target="_blank" rel="noopener">Topsider Homes</a></b> — USA (since 1968); post-&amp;-beam hurricane homes proven across the Bahamas, Antigua, the VI. Very Caribbean verandah look. ~US$175–300/sq ft.</li>
+          <li><b><a href="https://deltechomes.com/hurricane/" target="_blank" rel="noopener">Deltec Homes</a></b> — N. Carolina; round homes rated to 190 mph, ship to the Caribbean. Distinctive form. ~US$250–500/sq ft.</li>
+          <li><b><a href="https://bauhu.com/homes/caribbean-cottage" target="_blank" rel="noopener">Bauhu — "Caribbean Cottage"</a></b> — steel-frame, hurricane-resistant, designed for Caribbean vacation-rental use.</li>
+        </ul>
+      </div>
+      <div class="srcbox">
+        <h3>3 · Alibaba / China — cheapest, QC first</h3>
+        <p class="lead">£4–22k FOB (the seven above). Real money saved — but the experienced-operator warning stands: China prefab is only cheap if you inspect before it ships.</p>
+        <ul>
+          <li><b>Independent pre-shipment inspection</b> (SGS / TÜV, ~£250–500) — non-negotiable; witness a trial assembly.</li>
+          <li><b>Stamped wind + salt-air spec</b> — hot-dip-galv or aluminium frame, marine fixings, a Cat-4/5 calc for GTA / building control.</li>
+          <li><b>Trade Assurance, milestone-staged</b> (30/40/30), never 100% up front.</li>
+          <li><b>Order ONE pilot</b>, assemble it, live with it a season — then cluster the other seven.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSTINGS -->
+  <section class="blk" id="cost">
+    <div class="head">
+      <span class="eyebrow">The number that matters</span>
+      <h2 class="font-display">All-in cost of one live, lettable cabin</h2>
+      <p class="theme">Not the shell price — the honest figure to get a cabin <b>earning</b>: unit + shipping + platform +
+        its share of the clustered services + fit-out + deck. This is what tests the ~£20k assumption in the calculator.</p>
+    </div>
+    <table class="cost">
+      <thead><tr><th>Line</th><th style="text-align:right">£ (lean, China route)</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>Cabin unit — shell + basic fit, FOB</td><td class="n">4,500</td><td>Alibaba lean end; a UK or Caribbean unit is £20–40k+</td></tr>
+        <tr><td>Shipping + import to Grenada</td><td class="n">2,500</td><td>share of a 40ft container; GIDC duty relief on imported items</td></tr>
+        <tr><td>Platform / piers / foundation (sloped bank)</td><td class="n">2,500</td><td>local build</td></tr>
+        <tr><td>Share of clustered services (÷ 8)</td><td class="n">4,000</td><td>one septic field, solar array, water line, boardwalk</td></tr>
+        <tr><td>Fit-out — bathroom, kitchenette, FF&amp;E, linens</td><td class="n">4,500</td><td>commercial-grade, durable</td></tr>
+        <tr><td>Deck + outdoor shower + planting/privacy</td><td class="n">2,000</td><td></td></tr>
+        <tr><td>Contingency (+25%, per the research)</td><td class="n">5,000</td><td>the build-cost buffer everyone wished they'd kept</td></tr>
+        <tr class="tot"><td>All-in, ready to let</td><td class="n">~£25,000</td><td>≈ EC$89k</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:14px">The calculator's <b>£20k</b> is really the <b>shell + platform</b>. The honest <b>all-in-to-let is ~£25k</b> on the lean China route (and £40–55k+ if you buy UK or Caribbean). At ~£25k against ~£7k net a year, a cabin still clears in <b>~3.5 years</b> — the gate holds. Worth feeding the £25k back into the cabin payback in the numbers.</p>
+  </section>
+
+  <footer class="note">
+    <strong>About the images.</strong> The two wide shots are on-brand <strong>concept renders</strong> — the feeling and
+    materials, not a built cabin. The design cards are <strong>real products</strong> from the suppliers named, shown to
+    compare against the brief. Prices are indicative and to confirm with each maker. &nbsp;<a href="../">← Back to the prospectus</a>
+  </footer>
+</main>
+</body>
+</html>
