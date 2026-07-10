@@ -132,7 +132,7 @@ tailwind.config = {
       hiring locally, and stewarded for the family and the community that surround it.
     </p>
     <div class="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-2 eyebrow text-gold/90">
-      <span>Villa + up to 9 rooms, never a hotel</span><span class="text-canvas/30">/</span>
+      <span>Villa + up to 8 cabins, gated — not a resort</span><span class="text-canvas/30">/</span>
       <span>Solar-first, no AC</span><span class="text-canvas/30">/</span>
       <span>~80% local hire</span><span class="text-canvas/30">/</span>
       <span>Land already owned</span>
@@ -222,7 +222,7 @@ tailwind.config = {
       prove demand before the Phase 3 platform cluster is built; the first few homes in Phase 6 must prove
       the model before the rest are funded in Phase 7. Each gate is a real go/no-go — nothing scales on a hope.</p>
     </div>
-    <p class="mt-6 text-sm text-ink/65 italic">Licensed as a villa plus a guest house — the whole house let as one villa, then up to nine guest rooms across the later phases (a guest house tops out at nine; ten is a hotel). The villa counts separately, so the added rooms have the full nine to grow into — deliberately below the hotel threshold.</p>
+    <p class="mt-6 text-sm text-ink/65 italic">Licensed as a villa plus a guest house — the whole house let as one villa, then up to eight guest cabins added <strong>only as each tranche proves it pays</strong>: a pilot, three more (the gate), then a final four. A guest house tops out at nine rooms before it becomes a hotel — so we're licensed with room to spare, and choosing to stay house-scale, not a resort.</p>
   </section>
 
   <!-- NUMBERS -->
@@ -364,8 +364,9 @@ tailwind.config = {
         <span class="eyebrow text-ink/45">presets</span>
         <div class="preset flex flex-wrap gap-2">
           <button data-preset="house" class="px-3 py-1.5 text-xs border border-ink/20">Phase 0 — the villa</button>
-          <button data-preset="phase2" class="px-3 py-1.5 text-xs border border-ink/20">Phase 2 — + a lettable room</button>
-          <button data-preset="full" class="px-3 py-1.5 text-xs border border-ink/20">Year 5 — full build</button>
+          <button data-preset="phase2" class="px-3 py-1.5 text-xs border border-ink/20">Pilot — + first cabin</button>
+          <button data-preset="four" class="px-3 py-1.5 text-xs border border-ink/20">First four cabins — the gate</button>
+          <button data-preset="full" class="px-3 py-1.5 text-xs border border-ink/20">Completed — villa + 8 cabins</button>
           <button data-preset="cautious" class="px-3 py-1.5 text-xs border border-ink/20">Extra-cautious</button>
         </div>
       </div>
@@ -374,10 +375,10 @@ tailwind.config = {
         <!-- BUILDING -->
         <div class="bg-canvas border border-ink/12 p-6">
           <p class="font-display text-xl text-ink mb-1">The villa</p>
-          <p class="text-xs text-ink/60 mb-2">Heavy, slow, asset-backed. Phase 0 is one whole-house let (sleeps 8); Phase 2 adds a room you can let on its own. Surplus builds as you scale.</p>
+          <p class="text-xs text-ink/60 mb-2">Heavy, slow, asset-backed. Phase 0 is one whole-house let (sleeps 8); guest cabins are added later, each tranche gated on the last paying its way. Surplus builds as you scale.</p>
           <label>Opening capital to fund <span class="val float-right" id="capV"></span></label>
           <input type="range" id="cap" min="10000" max="300000" step="1000">
-          <label>Lettable spaces — the whole villa, then rooms / tents <span class="val float-right" id="unitsV"></span></label>
+          <label>Lettable spaces — the whole villa, then guest cabins <span class="val float-right" id="unitsV"></span></label>
           <input type="range" id="units" min="1" max="10" step="1">
           <label>Nightly rate (avg) <span class="val float-right" id="rateV"></span></label>
           <input type="range" id="rate" min="40" max="200" step="5">
@@ -439,7 +440,7 @@ tailwind.config = {
         £60k opening capital is <strong>all-in</strong> — the refurb plus the solar array, batteries and solar hot water.</p>
       <p class="text-xs text-ink/55 mt-2 max-w-3xl">The villa carries maintenance (9% of revenue), supplies &amp; F&amp;B
         (18%) and marketing (13% of room income); running costs are the slider you set. The island median occupancy is
-        ~48% — the defaults sit below it on purpose. Until Phase 2, about a month a year is family use, so the villa lets ~11 months. Shown in £ and EC$ only (EC$ pegged at 2.70). Firm the local-build
+        ~48% — the defaults sit below it on purpose. Until Phase 2, about a month a year is family use, so the villa lets ~11 months. Cabins are modelled at ~£100/night and ~£20k to build each — kept low by <strong>clustering them to share infrastructure</strong> (one septic field, shared water, power and access) — and added only as each tranche proves it pays. Shown in £ and EC$ only (EC$ pegged at 2.70). Firm the local-build
         lines with a Grenada quantity surveyor before committing capital.</p>
     </div>
   </div>
@@ -719,10 +720,11 @@ tailwind.config = {
   });
 
   var PRESETS = {
-    house:    { cap:60000,  units:1, rate:250, occ:40, fix:22000, ev:8,  evnet:500, oth:0,     pill:'Phase 0 — the villa (£250/nt avg), within our means at 40%' },
-    phase2:   { cap:80000,  units:2, rate:210, occ:42, fix:29000, ev:12, evnet:550, oth:0,     pill:'Phase 2 — villa + a lettable room' },
-    full:     { cap:276000, units:10, rate:85, occ:42, fix:70000, ev:24, evnet:800, oth:60000, pill:'Year 5 — villa + up to 9 rooms' },
-    cautious: { cap:60000,  units:1, rate:250, occ:30, fix:24000, ev:6,  evnet:450, oth:0,     pill:'Extra-cautious' }
+    house:    { cap:60000,  units:1, rate:250, occ:40, fix:22000, ev:8,  evnet:500, oth:0,     pill:'Phase 0 — the villa (£250/nt avg)' },
+    phase2:   { cap:90000,  units:2, rate:175, occ:42, fix:28000, ev:12, evnet:550, oth:0,     pill:'Pilot — villa + the first cabin' },
+    four:     { cap:150000, units:5, rate:130, occ:43, fix:40000, ev:16, evnet:600, oth:20000, pill:'First four cabins (villa + 4) — the gate' },
+    full:     { cap:230000, units:9, rate:117, occ:45, fix:58000, ev:24, evnet:800, oth:60000, pill:'Completed — villa + 8 cabins' },
+    cautious: { cap:60000,  units:1, rate:250, occ:30, fix:22000, ev:6,  evnet:450, oth:0,     pill:'Extra-cautious' }
   };
   document.querySelectorAll('#calc .preset button').forEach(function(b){
     b.addEventListener('click', function(){
