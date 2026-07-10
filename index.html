@@ -363,8 +363,9 @@ tailwind.config = {
         </div>
         <span class="eyebrow text-ink/45">presets</span>
         <div class="preset flex flex-wrap gap-2">
-          <button data-preset="house" class="px-3 py-1.5 text-xs border border-ink/20">House only — to open</button>
-          <button data-preset="full" class="px-3 py-1.5 text-xs border border-ink/20">Year 5 — hospitality at capacity</button>
+          <button data-preset="house" class="px-3 py-1.5 text-xs border border-ink/20">Phase 0 — the villa</button>
+          <button data-preset="phase2" class="px-3 py-1.5 text-xs border border-ink/20">Phase 2 — + a lettable room</button>
+          <button data-preset="full" class="px-3 py-1.5 text-xs border border-ink/20">Year 5 — full build</button>
           <button data-preset="cautious" class="px-3 py-1.5 text-xs border border-ink/20">Extra-cautious</button>
         </div>
       </div>
@@ -372,11 +373,11 @@ tailwind.config = {
       <div class="grid md:grid-cols-2 gap-5">
         <!-- BUILDING -->
         <div class="bg-canvas border border-ink/12 p-6">
-          <p class="font-display text-xl text-ink mb-1">The building</p>
-          <p class="text-xs text-ink/60 mb-2">Heavy, slow, asset-backed. The rooms are a platform — surplus builds as you scale.</p>
+          <p class="font-display text-xl text-ink mb-1">The villa</p>
+          <p class="text-xs text-ink/60 mb-2">Heavy, slow, asset-backed. Phase 0 is one whole-house let (sleeps 8); Phase 2 adds a room you can let on its own. Surplus builds as you scale.</p>
           <label>Opening capital to fund <span class="val float-right" id="capV"></span></label>
           <input type="range" id="cap" min="10000" max="300000" step="1000">
-          <label>Lettable rooms / tents <span class="val float-right" id="unitsV"></span></label>
+          <label>Lettable spaces — the whole villa, then rooms / tents <span class="val float-right" id="unitsV"></span></label>
           <input type="range" id="units" min="1" max="9" step="1">
           <label>Nightly rate (avg) <span class="val float-right" id="rateV"></span></label>
           <input type="range" id="rate" min="40" max="200" step="5">
@@ -430,10 +431,16 @@ tailwind.config = {
           </div>
         </div>
       </div>
-      <p class="text-xs text-ink/55 mt-4 max-w-3xl">Rooms carry maintenance (9% of revenue), supplies &amp; F&amp;B
-        (18%) and marketing (13% of room income); running costs are the slider you set. The island median
-        occupancy is ~48% — the defaults sit below it on purpose. £ and EC$ only (EC$ pegged at 2.70 to the US
-        dollar). Firm the local-build lines with a Grenada quantity surveyor before committing capital.</p>
+      <p class="text-xs text-ink/55 mt-4 max-w-3xl"><strong>Where the £250/night comes from.</strong> St Andrew is
+        Grenada's most affordable parish — rentals average about £75/night (≈ EC$265), mostly small apartments. A
+        restored four-bedroom villa sleeping 8, with a pool and hot tub, is the premium whole-house option on this
+        coast: a real premium over the local stock, but well below west-coast luxury (£1,000+/night, ≈ EC$3,550). High
+        season carries about £320/night; <strong>£250 is the blended average across the year</strong> (≈ EC$890). The
+        £60k opening capital is <strong>all-in</strong> — the refurb plus the solar array, batteries and solar hot water.</p>
+      <p class="text-xs text-ink/55 mt-2 max-w-3xl">The villa carries maintenance (9% of revenue), supplies &amp; F&amp;B
+        (18%) and marketing (13% of room income); running costs are the slider you set. The island median occupancy is
+        ~48% — the defaults sit below it on purpose. Shown in £ and EC$ only (EC$ pegged at 2.70). Firm the local-build
+        lines with a Grenada quantity surveyor before committing capital.</p>
     </div>
   </div>
 </section>
@@ -696,7 +703,7 @@ tailwind.config = {
 (function(){
   var FX = { gbp:{sym:'\u00A3', perGBP:1}, xcd:{sym:'EC$', perGBP:3.553} }; // £1 = EC$3.553
   var cur = 'gbp';
-  var S = { cap:69100, units:3, rate:80, occ:40, fix:35000, ev:12, evnet:570, oth:0 }; // yr-1 opening £69.1k
+  var S = { cap:60000, units:1, rate:250, occ:40, fix:22000, ev:8, evnet:500, oth:0 }; // Phase 0 villa — one whole-house let (sleeps 8), £60k all-in; £250/nt blended annual avg (high season ~£320)
   function $(id){ return document.getElementById(id); }
   function money(gbp){ var f=FX[cur]; return f.sym + Math.round(gbp*f.perGBP).toLocaleString('en-GB'); }
   function bind(id,key){ var el=$(id); if(!el) return; el.value=S[key];
@@ -712,9 +719,10 @@ tailwind.config = {
   });
 
   var PRESETS = {
-    house:    { cap:58700,  units:3, rate:80, occ:40, fix:35000, ev:12, evnet:570, oth:0,     pill:'House only — to open' },
-    full:     { cap:276000, units:9, rate:85, occ:42, fix:70000, ev:24, evnet:800, oth:60000, pill:'Year 5 — full build' },
-    cautious: { cap:69100,  units:3, rate:70, occ:30, fix:35000, ev:8,  evnet:500, oth:0,     pill:'Extra-cautious' }
+    house:    { cap:60000,  units:1, rate:250, occ:40, fix:22000, ev:8,  evnet:500, oth:0,     pill:'Phase 0 — the villa (£250/nt avg), within our means at 40%' },
+    phase2:   { cap:80000,  units:2, rate:210, occ:42, fix:29000, ev:12, evnet:550, oth:0,     pill:'Phase 2 — villa + a lettable room' },
+    full:     { cap:276000, units:9, rate:85,  occ:42, fix:70000, ev:24, evnet:800, oth:60000, pill:'Year 5 — full build' },
+    cautious: { cap:60000,  units:1, rate:250, occ:30, fix:24000, ev:6,  evnet:450, oth:0,     pill:'Extra-cautious' }
   };
   document.querySelectorAll('#calc .preset button').forEach(function(b){
     b.addEventListener('click', function(){
