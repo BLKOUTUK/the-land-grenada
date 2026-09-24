@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The House at Simon</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#F7F6F1; --card:#FFFFFF; --ink:#16211C; --ink-2:#4A5A52; --ink-3:#7A8880;
+  --rule:#DEDDD4; --rule-2:#ECEBE3;
+  --sea:#0E6E6E; --sea-soft:#E3EFEE;
+  --warm:#B2721C; --warm-bg:#FBF3E6; --crit:#A83A2E; --good:#2F7D4F;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28;
+  --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487;
+}}
+:root[data-theme="dark"]{
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28;
+  --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:36px 72px}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(30px,6vw,46px);line-height:1.08;
+  margin:0 0 14px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Fraunces,Georgia,serif;font-size:clamp(21px,3.4vw,26px);font-weight:600;
+  margin:0 0 12px;letter-spacing:-.01em;line-height:1.2}
+h3{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 15px;max-width:64ch}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sea);font-weight:500;margin:0 0 14px}
+.lead{font-size:18.5px;line-height:1.55;color:var(--ink-2)}
+.lead em{font-family:Fraunces,Georgia,serif;font-style:italic;color:var(--ink)}
+header{border-bottom:2px solid var(--rule);padding-bottom:26px;margin-bottom:34px}
+section{margin-top:46px}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+.ask{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--sea);
+  border-radius:5px;padding:26px 26px 22px;margin:26px 0}
+.ask .big{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:clamp(34px,7vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--sea)}
+.ask .sub{font-size:15px;color:var(--ink-2);margin-top:8px}
+.ask .each{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;margin-top:16px;
+  padding-top:14px;border-top:1px solid var(--rule-2)}
+
+table{border-collapse:collapse;width:100%;font-size:15px;margin:6px 0 16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule-2)}
+thead th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{border-top:2px solid var(--rule);border-bottom:0;font-weight:600;padding-top:11px}
+.tw{overflow-x:auto}
+
+.pull{font-family:Fraunces,Georgia,serif;font-size:20px;line-height:1.4;font-weight:600;
+  border-left:3px solid var(--sea);padding-left:18px;margin:26px 0;max-width:58ch;color:var(--ink)}
+.note{background:var(--warm-bg);border:1px solid var(--rule);border-left:3px solid var(--warm);
+  border-radius:4px;padding:16px 18px;margin:22px 0;font-size:14.5px;color:var(--ink-2)}
+.note b{color:var(--ink)} .note p{margin:0 0 9px} .note p:last-child{margin:0}
+.note .h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--warm);font-weight:600;margin-bottom:8px}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding-left:46px;margin-bottom:22px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;width:30px;height:30px;
+  border-radius:50%;background:var(--sea);color:var(--paper);font-family:"IBM Plex Mono",monospace;
+  font-size:14px;font-weight:600;display:grid;place-items:center}
+.steps h3{margin-bottom:4px;font-size:16.5px}
+.steps p{margin:0;font-size:15px;color:var(--ink-2)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:15px 16px}
+.box .l{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.box .v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:22px;font-weight:600;margin:5px 0 4px}
+.box .d{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+ul.plain{margin:0 0 16px;padding-left:20px;color:var(--ink-2);font-size:15px}
+ul.plain li{margin-bottom:7px}
+ul.plain b{color:var(--ink)}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--rule);
+  font-size:13px;color:var(--ink-3);line-height:1.7}
+@media (max-width:520px){ .ask{padding:20px} .steps li{padding-left:40px} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">A proposal to the family &middot; September 2026</p>
+  <h1>The house at Simon</h1>
+  <p class="lead">Dad built it from stone that was already on the land &mdash; salvaged from the old water mill and the Georgian houses at the heart of the village. The walls are half a metre thick. The hurricane hit midway through the build and he carried on anyway. <em>It is standing empty now, and the damp, the cracks and the weather are winning.</em></p>
+</header>
+
+<section style="margin-top:0">
+  <h2>What I'm asking for</h2>
+  <div class="ask">
+    <div class="eyebrow" style="margin-bottom:6px">One ask, once &middot; six of us</div>
+    <div class="big">&pound;90,000</div>
+    <div class="sub">Mum, Dad, and the four of us. Equal shares.</div>
+    <div class="each">&pound;15,000 each</div>
+  </div>
+  <p><b>This buys the house. Nothing else.</b> Not a business, not a venture, not a share of anything I might make out there. A share of the house Dad built, brought back properly, and kept in the family.</p>
+  <p>Once it's paid there is <b>nothing further to find, ever</b> &mdash; no running costs, no maintenance calls, no second round. I cover all of that. More on why below.</p>
+</section>
+
+<section>
+  <h2>What &pound;90,000 does</h2>
+
+  <div class="tw"><table>
+    <thead><tr><th>&nbsp;</th><th class="n">Cost</th></tr></thead>
+    <tbody>
+      <tr><td><b>The house rescued.</b> Roof coated, damp and cracks dealt with properly, full rewire, new plumbing and septic, two working bathrooms, limewash throughout, skylights, a barbecue area. Four bedrooms. The beds, wardrobes, sofas and tables are already there and beautiful, so this is white goods, mattresses and linen &mdash; and a kitchen built locally, in timber from the trees we take down to let the light in.</td><td class="n">&pound;56,883</td></tr>
+      <tr><td><b>The back of the house opens to the garden.</b> A five-metre opening onto the land &mdash; beam, columns, hurricane-rated glass. Living and dining move to the back, where you can see out.</td><td class="n">&pound;7,700</td></tr>
+      <tr><td><b>A deck that levels the house into the garden</b>, so you step out rather than down.</td><td class="n">&pound;3,362</td></tr>
+      <tr><td><b>A pergola wrapping the two sides that have no verandah</b>, so there is shade all the way round.</td><td class="n">&pound;2,100&ndash;3,900</td></tr>
+      <tr><td><b>Solar.</b> Panels as the pergola roof rather than bolted to the house &mdash; which means they come down in half a day before a named storm, and a roof array never can. <b>A house with no electricity bill.</b></td><td class="n">&pound;9,600&ndash;16,400</td></tr>
+      <tr class="tot"><td><b>The house, complete</b></td><td class="n"><b>&pound;79,645&ndash;88,245</b></td></tr>
+    </tbody>
+  </table></div>
+
+  <p><b>The &pound;90,000 covers it at either end of that range</b>, and what's left over &mdash; between &pound;1,755 and &pound;10,355 &mdash; is the contingency. The structural engineer hasn't been yet, and what the cracks actually need is the biggest unknown left. <b>If it goes against us, the ask absorbs it. I am not coming back to you for more.</b></p>
+
+  <p class="pull">Two things in that list are the whole point: getting light into a house with a half-metre stone wall on one side, and opening it onto the land it sits in. Everything else could wait. Those two can't &mdash; they're why it's worth doing at all.</p>
+</section>
+
+<section>
+  <h2>What it does <em>not</em> buy &mdash; and why that matters</h2>
+  <p>I am going to run something there. A kitchen in the old warehouse, supper clubs, a takeaway window on the road, artists' workshops in the house, and in time some tents in the garden.</p>
+  <p><b>None of that is in this ask, and none of it is yours.</b> I pay for all of it. If it works I keep what it makes; if it fails I carry the loss on my own.</p>
+  <p>I've set it up that way deliberately, for one reason: <b>it means you don't have to believe any of it to say yes.</b> If I'd asked you to fund a business you'd be entitled to interrogate my numbers, and my numbers are honestly a bit thin &mdash; I've never run a supper club and nobody has asked a single Grenadian what they'd pay for one. You'd be right to be sceptical. So I've taken that out of your decision entirely.</p>
+  <div class="note">
+    <div class="h">The one thing I owe the house</div>
+    <p><b>From year three the business pays rent to the house</b>, as a share of what it takes rather than a fixed sum &mdash; so it pays little in a thin year and properly in a good one. That money is the house's, not mine.</p>
+    <p>I'd rather set that now, in writing, than have anyone wonder in ten years whether my trading was quietly subsidised by their fifteen thousand.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What I'm putting in</h2>
+  <div class="grid2">
+    <div class="box"><div class="l">Each of you</div><div class="v">&pound;15,000</div>
+      <div class="d">Once. Nothing further, ever.</div></div>
+    <div class="box"><div class="l">Me, over five years</div><div class="v">&pound;67,000&ndash;101,000</div>
+      <div class="d">My own &pound;15,000, the whole business, all the upkeep while I'm living there, and rent to the house from year three.</div></div>
+  </div>
+  <p>That's four to seven times what any one of you is being asked for, and all of the risk. I'm not saying it to be noble about it &mdash; I'm saying it because it's the honest answer to the question of whether this is fair, and you shouldn't have to work it out for yourselves.</p>
+</section>
+
+<section>
+  <h2>I'll be living there</h2>
+  <p>Years one to five, more or less. You should know that going in, and I want to say it plainly rather than have it surface later as something I skated over.</p>
+  <p>Put the other way round: <b>an empty house in that climate is what's killing this one.</b> Damp, termites, bush coming in through the windows. Someone living in it and maintaining it isn't a favour I'm asking for &mdash; it's the thing the &pound;90,000 is buying. It also means there's someone on the ground to meet the builder, chase the engineer and take the tarpaulins down when a storm is named.</p>
+  <p>It's the family's house throughout, and it's there for all of us to use.</p>
+</section>
+
+<section>
+  <h2>What I don't know yet</h2>
+  <p>I'd rather put this in writing now than have it arrive as a surprise later.</p>
+  <ul class="plain">
+    <li><b>The structural engineer hasn't been.</b> What the cracks need is the biggest number still moving. The contingency above is there for exactly that.</li>
+    <li><b>The solar range is wide</b> &mdash; &pound;9,600 to &pound;16,400 &mdash; because it depends which trees we take down and how much sun the array actually gets. Two weeks of photographs settles it before anything is ordered.</li>
+    <li><b>Labour is genuinely hard to get.</b> A large contractor was on GBN News this month importing workers from four countries.</li>
+    <li><b>Two measurements are still missing</b>, both in the kitchen, and they hold up the cabinet order rather than the build.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What I'm actually asking</h2>
+  <p>Not to back a venture. <b>Whether the house Dad built stays in the family and gets used, or whether we let the weather finish it.</b> If we do nothing, the honest end of that road is a sale.</p>
+  <p>Realistic start is April, and it isn't a long build &mdash; ten to fourteen weeks at Grenada pace, so the house is finished and standing well before Spicemas. I'd want the work to draw a season of visitors who can point at something and say they did that.</p>
+  <p><b>Fifteen thousand each. Once. It buys a share of the house, and nothing you'll ever be asked to top up.</b></p>
+</section>
+
+<p style="text-align:center;margin:40px 0 0"><a href="why-simon.html" style="color:var(--sea);font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.05em;text-decoration:none;border-bottom:1px solid var(--sea);padding-bottom:2px">Curious why Simon, specifically? &rarr; Why Simon</a></p>
+
+<footer>
+  Costs from a full materials and sourcing exercise, September 2026: every package priced across Grenada, China, the USA and the Caribbean, with the builder's quote from LID Constructions (EC$147,754, confirmed EC$) as the installed benchmark. Furniture, fridge and washing machine on a live Courts quote. Solar and pergola from a separate costing, ranged because the array is not yet sun-mapped. &pound;1 &asymp; EC$3.61.
+</footer>
+
+</div>
+</body>
+</html>

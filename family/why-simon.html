@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Why Simon</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#F7F6F1; --card:#FFFFFF; --ink:#16211C; --ink-2:#4A5A52; --ink-3:#7A8880;
+  --rule:#DEDDD4; --rule-2:#ECEBE3; --sea:#0E6E6E; --sea-soft:#E3EFEE;
+  --warm:#B2721C; --warm-bg:#FBF3E6; --crit:#A83A2E; --good:#2F7D4F; --good-bg:#E8F2EB;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28; --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487; --good-bg:#172A1E;
+}}
+:root[data-theme="dark"]{
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28; --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487; --good-bg:#172A1E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:36px 72px}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(30px,6vw,46px);line-height:1.08;
+  margin:0 0 14px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Fraunces,Georgia,serif;font-size:clamp(21px,3.4vw,27px);font-weight:600;
+  margin:0 0 12px;letter-spacing:-.01em;line-height:1.2}
+h3{font-size:15.5px;font-weight:600;margin:0 0 5px}
+p{margin:0 0 15px;max-width:66ch}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sea);font-weight:500;margin:0 0 14px}
+.lead{font-size:18.5px;line-height:1.55;color:var(--ink-2)}
+.lead em{font-family:Fraunces,Georgia,serif;font-style:italic;color:var(--ink)}
+header{border-bottom:2px solid var(--rule);padding-bottom:26px;margin-bottom:34px}
+section{margin-top:48px}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+.pull{font-family:Fraunces,Georgia,serif;font-size:20.5px;line-height:1.4;font-weight:600;
+  border-left:3px solid var(--sea);padding-left:18px;margin:26px 0;max-width:58ch;color:var(--ink)}
+
+.near{display:grid;gap:13px;margin:22px 0}
+.n{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--bar);
+  border-radius:5px;padding:17px 19px}
+.n .tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;font-weight:600;color:var(--bar)}
+.n h3{margin:5px 0 7px;font-size:17px;font-family:Fraunces,Georgia,serif;font-weight:600}
+.n p{margin:0;font-size:14.5px;color:var(--ink-2);max-width:none}
+.n p+p{margin-top:8px}
+.b-proven{--bar:var(--good)} .b-build{--bar:var(--warm)} .b-far{--bar:var(--ink-3)}
+
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0 18px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule-2)}
+thead th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500}
+td.n2,th.n2{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{border-top:2px solid var(--rule);border-bottom:0;font-weight:600;padding-top:11px}
+.tw{overflow-x:auto}
+
+.curves{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px;margin:20px 0}
+.c{background:var(--card);border:1px solid var(--rule);border-radius:5px;padding:16px 17px}
+.c .l{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--sea)}
+.c h3{margin:6px 0 6px;font-size:16px}
+.c p{margin:0;font-size:13.5px;color:var(--ink-2);max-width:none}
+
+.flag{background:var(--warm-bg);border:1px solid var(--rule);border-left:3px solid var(--warm);
+  border-radius:4px;padding:17px 19px;margin:24px 0;font-size:14.5px;color:var(--ink-2)}
+.flag b{color:var(--ink)} .flag p{margin:0 0 9px;max-width:none} .flag p:last-child{margin:0}
+.flag .h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--warm);font-weight:600;margin-bottom:9px}
+.ok{background:var(--good-bg);border-left-color:var(--good)}
+.ok .h{color:var(--good)}
+
+ul.plain{margin:0 0 16px;padding-left:20px;color:var(--ink-2);font-size:15px}
+ul.plain li{margin-bottom:8px}
+ul.plain b{color:var(--ink)}
+ol.q{margin:0;padding-left:20px;color:var(--ink-2);font-size:15px}
+ol.q li{margin-bottom:10px}
+ol.q b{color:var(--ink)}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--rule);
+  font-size:12.5px;color:var(--ink-3);line-height:1.7}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div style="border:2px solid #b45309;background:#fffbeb;color:#1c1917;padding:16px 20px;border-radius:10px;margin:20px auto;max-width:760px;font-size:15px;line-height:1.55"><b>&#9888; The accommodation case on this page is SUPERSEDED (21 Sep 2026).</b><br><br>It argues from <b>seven letting units</b> — three behind the house plus a four-cabin courtyard — an estate sleeping <b>around forty</b>, and the house itself let as part of an integrated holiday rental.<br><br><b>None of that is current.</b> The house is now <b>the family home and is not let</b>; accommodation is <b>two safari tents at the build</b>, a third and fourth added later one at a time as bookings require, <b>four maximum</b>. Twelve beds at two tents.<br><br><b>The case for the PLACE — the river, the parish, the land, the family — is unaffected and is why this page is kept.</b> Current position: see <a href="index.html">the house ask</a>.</div>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">The Land &middot; Simon, St Andrew</p>
+  <h1>Why Simon</h1>
+  <p class="lead">The case for this project was never the house. It is that in a village of a few hundred people, <em>two major public facilities are being built within five minutes' walk in opposite directions</em> — and a third, already there, puts Simon on the national Carnival calendar every August.</p>
+</header>
+
+<section style="margin-top:0">
+  <h2>The problem this solves</h2>
+  <p>A holiday rental in rural Grenada has one hard number against it. The nearest micro-market data &mdash; Egmont, St George &mdash; shows <b>33.5% average occupancy</b>, with 20% through April to June and a trough in September. Break-even for a self-managed property is 30&ndash;35%. There is no margin in that.</p>
+  <p class="pull">Three cabins let to tourists don't cover their own running costs at real Grenada occupancy. Something else has to fill the calendar.</p>
+  <p>That something is within walking distance, and it is not tourism.</p>
+</section>
+
+<section>
+  <h2>What is within five minutes</h2>
+  <div class="near">
+    <div class="n b-proven">
+      <span class="tag">Proven &middot; happens every year</span>
+      <h3>Seamoon Pavilion &mdash; Soca Monarch semi-finals</h3>
+      <p>Simon is <b>on the Spicemas itinerary</b>. The semi-finals bring a national audience, the artists, their teams, sound crews, judges and media to a field five minutes away, on a fixed date, every single August.</p>
+      <p>This is the only piece of demand in the whole plan that needs no forecast. It already happens.</p>
+    </div>
+    <div class="n b-build">
+      <span class="tag">Under construction</span>
+      <h3>Seamoon Cultural Centre</h3>
+      <p>Theatre, 100-seat drama room, music lab, dance room, visual arts room and a <b>skills training centre</b>. Contractor Kenny's Trucking &amp; Equipment Services, targeted for completion end of May 2026 after a redesign forced by an EC$3m disbursement scandal.</p>
+      <p>Visiting companies, workshop leaders and course cohorts need beds, a place to eat and somewhere to gather. None of those exist in Simon.</p>
+    </div>
+    <div class="n b-build">
+      <span class="tag">Under construction &middot; in the village</span>
+      <h3>FIFA Technical Development Centre</h3>
+      <p>Not near Simon &mdash; <b>in Simon</b>. Grassroots and youth development, coaching education, referee education, women's football initiatives, and <b>national team preparation and training</b>. Contractor Consolidated Contractors Company Caribbean Inc., commenced March 2026.</p>
+      <p>Coaching and referee courses are residential by nature. Camps run for days or weeks. Technical staff, delegates and match officials need quiet rooms and good food, not dormitories.</p>
+    </div>
+    <div class="n b-far">
+      <span class="tag">Elsewhere on the island</span>
+      <h3>Two new resorts, and what they actually mean</h3>
+      <p>A large new hotel out of the St George's area lifts island-wide arrivals and airlift. A <b>17-floor resort on the northern tip</b>, Chinese-invested and China-marketed with a casino and golf course, is a package destination whose guests will leave the property only fleetingly. <b>Plan no revenue from either.</b></p>
+      <p>The one real effect is a good one: the northern resort brings its own workforce, so it will not be bidding against this build for Grenada's scarce trades.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Three curves, not one</h2>
+  <p>Tourist demand and institutional demand do not share a calendar. That is the whole argument.</p>
+  <div class="curves">
+    <div class="c"><div class="l">Curve one</div><h3>Tourists</h3>
+      <p>Peaks Dec&ndash;Apr and around Spicemas. Collapses April to June, troughs in September. Weekend-weighted. This is the curve everyone builds for.</p></div>
+    <div class="c"><div class="l">Curve two</div><h3>Institutions</h3>
+      <p>Coaching courses, referee education, team camps, visiting companies, workshop cohorts. <b>Mid-week, scheduled to football and arts calendars, indifferent to the weather.</b></p></div>
+    <div class="c"><div class="l">Curve three</div><h3>The table</h3>
+      <p>Supper clubs and guest chefs. Runs when there is a booking, not when there is a season. Fills the months no marketing spend can fix.</p></div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>Illustrative, three units</th><th class="n2">Unit-nights</th><th class="n2">Of the year</th></tr></thead>
+    <tbody>
+      <tr><td>Tourist base at 30%</td><td class="n2">328</td><td class="n2">30%</td></tr>
+      <tr><td>Cultural centre &mdash; active programme</td><td class="n2">135</td><td class="n2">12%</td></tr>
+      <tr><td>FIFA centre &mdash; modest</td><td class="n2">120</td><td class="n2">11%</td></tr>
+      <tr><td>Supper-club conversions</td><td class="n2">60</td><td class="n2">5%</td></tr>
+      <tr class="tot"><td><b>Combined</b></td><td class="n2"><b>644</b></td><td class="n2"><b>59%</b></td></tr>
+    </tbody>
+  </table></div>
+  <p>The three institutional lines are modelled. What is not modelled is the shape: a tourist-only property sits at 30% and loses money on rooms alone, and the additional nights land precisely where the tourist curve is weakest.</p>
+</section>
+
+<section>
+  <h2>Spicemas is growing, deliberately</h2>
+  <div class="tw"><table>
+    <thead><tr><th>GTA figures, Sep 2026</th><th class="n2">2025</th><th class="n2">2026</th><th class="n2">Change</th></tr></thead>
+    <tbody>
+      <tr><td>Total arrivals</td><td class="n2">9,448</td><td class="n2">11,299</td><td class="n2">+20%</td></tr>
+      <tr><td><b>Non-national tourists</b></td><td class="n2">8,040</td><td class="n2">9,958</td><td class="n2"><b>+24%</b></td></tr>
+      <tr><td>The remainder</td><td class="n2">1,408</td><td class="n2">1,341</td><td class="n2">&minus;5%</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>All of the growth is in visitors who are not Grenadian.</b> Returning nationals are flat &mdash; and they already have somewhere to eat on a Sunday. The segment growing at 24% a year is precisely the one with no family table to go to.</p>
+  <p>The Minister for Tourism is explicit that this is policy: <i>&ldquo;The GTA has been deliberate in positioning Spicemas as a signature experience within our destination calendar.&rdquo;</i> A 24% jump that a tourism authority is actively engineering is a different planning input from a good year.</p>
+  <p class="pull">Across the festival window the island absorbs roughly 39,500 unit-nights of demand. Three cabins over three weeks is 63. You need 0.16% of a market the government is growing for you.</p>
+</section>
+
+<section>
+  <h2>Why the cabins come in two kinds</h2>
+  <p>The three units behind the house are for couples and families &mdash; dispersed, quiet, sharing the pool and the firepit. The four on the field are a <b>courtyard</b>, and they are a different product entirely.</p>
+  <ul class="plain">
+    <li><b>Sold as one booking, not four.</b> A team, a course cohort, a family reunion takes the whole cluster.</li>
+    <li><b>A group needs a middle.</b> Team meetings, course sessions, a family eating together. Scattered units cannot do that; a shared pergola and deck can.</li>
+    <li><b>Booked months ahead, mid-week</b>, because courses and camps run Monday to Friday.</li>
+    <li><b>Bunk-configured, the estate sleeps around forty</b> &mdash; a squad plus technical staff, or a full cohort. Seven letting rooms against a nine-room Guest House ceiling, with two in hand.</li>
+  </ul>
+  <p>All three of those markets are being built in the village right now. Two of them have contractors on site today.</p>
+</section>
+
+<section>
+  <h2>What is proven, and what is not</h2>
+  <div class="flag ok">
+    <div class="h">Proven — on the record</div>
+    <p>Soca Monarch semi-finals at Seamoon Pavilion, annually. Spicemas 2026 arrivals of 11,299, up 20%, with non-national tourists up 24% (GTA). Egmont occupancy of 33.5% and the pool premium &mdash; St Andrew pool properties at $167&ndash;362 a night against $45&ndash;124 without. Grenada's construction skills shortage, on GBN this month, with a major contractor importing labour from four countries.</p>
+  </div>
+  <div class="flag">
+    <div class="h">Not yet established</div>
+    <p><b>Whether either new facility is finished.</b> The Cultural Centre was targeted for May 2026, four months ago. The FIFA centre began in March and no completion date has been published.</p>
+    <p><b>Whether either is programmed.</b> A building is not a programme. A cultural centre with no programming budget is an empty theatre, and everything above rests on events actually happening.</p>
+    <p><b>Whether the FIFA centre has its own beds and its own kitchen.</b> If it does, the market here is overflow and staff. If it does not, this estate is the beds &mdash; and contract catering to camps and courses could be worth more than the rooms.</p>
+    <p><b>Every occupancy and revenue figure on this page is modelled by me</b>, built on the proven numbers above. The institutional lines in particular have no programme data behind them.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What to find out, in order</h2>
+  <ol class="q">
+    <li><b>Talk to Seamoon.</b> It is an established Carnival venue getting a major upgrade, not a speculative new build. What is the programme, who runs it, and what can it not host itself? This costs nothing and it is the only demand in the plan that does not need a forecast.</li>
+    <li><b>Ask the FIFA centre two questions:</b> does it include accommodation, and does it include catering. Those two answers size everything else.</li>
+    <li><b>Ask about Soca Monarch night:</b> the attendance, whether food vending is already franchised, and where performers and crew currently sleep. If the answer to the last one is &ldquo;they drive back to town at 2am&rdquo;, that is a gap with our name on it.</li>
+    <li><b>Ask Cabier Ocean Lodge in Crochu</b> what a real season looks like. Twelve rooms, same parish, same model. Nobody has asked them anything.</li>
+  </ol>
+  <p>All four are conversations, not spending. All four can happen before a single decision is taken.</p>
+</section>
+
+<footer>
+  Sources: NOW Grenada, construction commences on FIFA-funded Technical Development Centre, 4 Mar 2026 &middot; NOW Grenada, Spicemas 2026: 20% increase in visitor arrivals, 17 Sep 2026 &middot; GBN News report on construction labour, Sep 2026 &middot; Airbtics occupancy data for Grenada and Egmont &middot; PM Mitchell's infrastructure update on Seamoon Cultural Centre.<br>
+  Occupancy, revenue and unit-night figures are modelled from those sources and are not forecasts. Prepared 20 September 2026.
+</footer>
+
+</div>
+</body>
+</html>
