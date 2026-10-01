@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>The House After</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#F7F6F1; --card:#FFFFFF; --ink:#16211C; --ink-2:#4A5A52; --ink-3:#7A8880;
+  --rule:#DEDDD4; --rule-2:#ECEBE3;
+  --sea:#0E6E6E; --sea-soft:#E3EFEE;
+  --warm:#B2721C; --warm-bg:#FBF3E6; --crit:#A83A2E; --good:#2F7D4F;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28;
+  --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487;
+}}
+:root[data-theme="dark"]{
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28;
+  --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:36px 72px}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(30px,6vw,46px);line-height:1.08;
+  margin:0 0 14px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Fraunces,Georgia,serif;font-size:clamp(21px,3.4vw,26px);font-weight:600;
+  margin:0 0 12px;letter-spacing:-.01em;line-height:1.2}
+h3{font-size:15px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 15px;max-width:64ch}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sea);font-weight:500;margin:0 0 14px}
+.lead{font-size:18.5px;line-height:1.55;color:var(--ink-2)}
+.lead em{font-family:Fraunces,Georgia,serif;font-style:italic;color:var(--ink)}
+header{border-bottom:2px solid var(--rule);padding-bottom:26px;margin-bottom:34px}
+section{margin-top:46px}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+
+.ask{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--sea);
+  border-radius:5px;padding:26px 26px 22px;margin:26px 0}
+.ask .big{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:clamp(34px,7vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1;color:var(--sea)}
+.ask .sub{font-size:15px;color:var(--ink-2);margin-top:8px}
+.ask .each{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;margin-top:16px;
+  padding-top:14px;border-top:1px solid var(--rule-2)}
+
+table{border-collapse:collapse;width:100%;font-size:15px;margin:6px 0 16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule-2)}
+thead th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td{border-top:2px solid var(--rule);border-bottom:0;font-weight:600;padding-top:11px}
+.tw{overflow-x:auto}
+
+.pull{font-family:Fraunces,Georgia,serif;font-size:20px;line-height:1.4;font-weight:600;
+  border-left:3px solid var(--sea);padding-left:18px;margin:26px 0;max-width:58ch;color:var(--ink)}
+.note{background:var(--warm-bg);border:1px solid var(--rule);border-left:3px solid var(--warm);
+  border-radius:4px;padding:16px 18px;margin:22px 0;font-size:14.5px;color:var(--ink-2)}
+.note b{color:var(--ink)} .note p{margin:0 0 9px} .note p:last-child{margin:0}
+.note .h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--warm);font-weight:600;margin-bottom:8px}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding-left:46px;margin-bottom:22px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;width:30px;height:30px;
+  border-radius:50%;background:var(--sea);color:var(--paper);font-family:"IBM Plex Mono",monospace;
+  font-size:14px;font-weight:600;display:grid;place-items:center}
+.steps h3{margin-bottom:4px;font-size:16.5px}
+.steps p{margin:0;font-size:15px;color:var(--ink-2)}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:15px 16px}
+.box .l{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.box .v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:22px;font-weight:600;margin:5px 0 4px}
+.box .d{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+ul.plain{margin:0 0 16px;padding-left:20px;color:var(--ink-2);font-size:15px}
+ul.plain li{margin-bottom:7px}
+ul.plain b{color:var(--ink)}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--rule);
+  font-size:13px;color:var(--ink-3);line-height:1.7}
+@media (max-width:520px){ .ask{padding:20px} .steps li{padding-left:40px} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+figure{margin:20px 0 26px}
+figure img,figure video{width:100%;max-width:100%;height:auto;display:block;border-radius:5px;border:1px solid var(--rule);background:var(--card)}
+figcaption{font-size:13.5px;color:var(--ink-3);margin-top:8px}
+ul.plain{padding-left:20px;margin:0 0 16px} ul.plain li{margin-bottom:6px;max-width:64ch}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">The house at Simon &middot; after the renovation</p>
+  <h1>The house, after the work</h1>
+  <p class="lead">Drawings and pictures of what we want the house to become, with a closer look at the <em>kitchen</em> and the <em>bathroom</em>. The layout comes from a survey of the house as it stands; the builder measures everything on site before anything is made.</p>
+</header>
+
+<section style="margin-top:0">
+  <h2>The whole house</h2>
+  <p>Three bedrooms (A, B and C), a studio at the front where the living room is now, a shared bathroom across the back, and one open room for cooking and eating that opens to the garden through a wide glass slider.</p>
+  <figure><img src="media/plan.png" alt="Floor plan of the house after the renovation" loading="lazy"><figcaption>The floor plan. North is up; the front of the house, on the verandah side, is at the bottom.</figcaption></figure>
+  <figure><img src="media/house-3d.jpg" alt="3D model of the house with the roof lifted off" loading="lazy"><figcaption>The same plan as a 3D model, roof lifted off.</figcaption></figure>
+</section>
+
+<section>
+  <h2>The kitchen</h2>
+  <figure><video src="media/before-after-kitchen.mp4" poster="media/before-after-kitchen-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>From the house as it stands to the finished kitchen, in five steps.</figcaption></figure>
+  <ul class="plain">
+    <li>The back wall opens to the garden through a glass slider, about 4.4 m wide, where the old laundry wall and back door were.</li>
+    <li>The sink stays under its window, with a drainer beside it.</li>
+    <li>The six-burner cooker already in the house sits on the stairwell wall, with the gas bottle in a ventilated cupboard beside it.</li>
+    <li>A full-height wall of cupboards with the fridge and a larder, turning the corner into the dining area.</li>
+    <li>Dark by design: charcoal cupboards, black iron fittings, a stainless worktop.</li>
+  </ul>
+  <figure><img src="media/kitchen-impression.jpg" alt="Artist impression of the finished kitchen" loading="lazy"><figcaption>Artist impression: how the kitchen will feel. The drawings above are the layout to build from.</figcaption></figure>
+</section>
+
+<section>
+  <h2>The bathroom</h2>
+  <figure><video src="media/before-after-bathroom.mp4" poster="media/before-after-bathroom-poster.jpg" controls playsinline muted loop preload="none"></video><figcaption>From the two small bathrooms today to one shared bathroom.</figcaption></figure>
+  <ul class="plain">
+    <li>The two old bathrooms become one shared bathroom: along the back wall, a shower, a WC, the existing thick wall, a WC and a second shower.</li>
+    <li>The existing wall stays, with an opening knocked through at its front end and opaque perspex above it to the roof.</li>
+    <li>WC doors are close-louvred timber. Shower walls and doors are corrugated sheet on slim black iron posts, standing just off the floor so it can be washed.</li>
+    <li>Floor-to-ceiling cut-out screens stand in front of the shower walls: privacy behind, light and pattern in front.</li>
+    <li>Entry from the open-plan room through the existing door, and from Bedroom C.</li>
+  </ul>
+  <figure><img src="media/bathroom-plan.png" alt="Bathroom plan" loading="lazy"><figcaption>The bathroom, to scale.</figcaption></figure>
+  <figure><img src="media/bathroom-elevation.png" alt="Bathroom elevation" loading="lazy"><figcaption>Looking at the back wall from the walkway.</figcaption></figure>
+  <figure><img src="media/bathroom-impression.jpg" alt="Artist impression of the finished bathroom" loading="lazy"><figcaption>Artist impression: how the bathroom will feel.</figcaption></figure>
+</section>
+
+<section>
+  <h2>The roof</h2>
+  <p>There are in effect two roofs: the main roof over the front of the house, and a separate, lower roof over the kitchen and bathroom at the back. Part of the back roof over the kitchen is opal polycarbonate, which lets daylight through.</p>
+  <ul class="plain">
+    <li>Five skylights: one each in Bedrooms A, B and C, the studio and the open-plan room.</li>
+    <li>Twelve solar panels: seven along the front of the main roof and five on the back roof, kept clear of the skylights.</li>
+  </ul>
+  <figure><img src="media/roof-map.png" alt="Roof map" loading="lazy"><figcaption>The roof map: skylights, solar panels and the opal section.</figcaption></figure>
+  <figure><img src="media/roof-3d.jpg" alt="3D view of the roof" loading="lazy"><figcaption>The roof in the 3D model.</figcaption></figure>
+</section>
+
+<section>
+  <h2>Measured on site</h2>
+  <p>The drawings are built from a survey. These measurements are taken on site and confirmed before anything is ordered or made:</p>
+  <ol>
+    <li>The kitchen sink window: how far it is from the corner.</li>
+    <li>The bathroom's back windows, against the new partitions.</li>
+    <li>The height of the existing bathroom wall, to size the perspex above it.</li>
+    <li>How wide the opening through that wall can be.</li>
+    <li>The existing cooker, and the gas bottle.</li>
+    <li>The slider opening, before the slider is ordered.</li>
+    <li>The roofs: where the two meet, their pitch, and the overhangs.</li>
+  </ol>
+</section>
+</div>
+</body>
+</html>
