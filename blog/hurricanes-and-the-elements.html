@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Hurricane, and protection from the elements — Thinking — TheLand</title>
+<meta name="description" content="Building for storms, damp, termites, salt and sun at Simon, and what is still unconfirmed.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:    '#1B201A',
+        ink2:   '#232B23',
+        canvas: '#EFE7D6',
+        canvas2:'#E5D9C1',
+        gold:   '#D8A12E',
+        teal:   '#2C534A',
+        brick:  '#A24A2B',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        body:    ['"Work Sans"', 'system-ui', 'sans-serif'],
+        mono:    ['"DM Mono"', 'ui-monospace', 'monospace'],
+      },
+    }
+  }
+}
+</script>
+<style>
+  :root{ --gold:#D8A12E; --teal:#2C534A; --canvas:#EFE7D6; --ink:#1B201A; }
+  body{ background:var(--canvas); color:#2A2E26; font-family:"Work Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+  .font-display{ font-variation-settings:"opsz" 120,"SOFT" 30,"WONK" 0; letter-spacing:-0.015em; }
+  .eyebrow{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; }
+  a:focus-visible,button:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  .post{ max-width:65ch; }
+  .post p, .post li{ font-size:1.08rem; line-height:1.75; }
+  .post p{ margin:0 0 1.2em; }
+  .post h2{ font-family:Fraunces,Georgia,serif; font-variation-settings:"opsz" 72; font-weight:500; font-size:1.55rem; line-height:1.25; color:var(--ink); margin:2.2em 0 .7em; letter-spacing:-.01em; }
+  .post ul{ margin:0 0 1.2em; padding-left:1.2em; list-style:disc; }
+  .post li{ margin-bottom:.45em; }
+  .post a{ color:var(--teal); text-decoration:underline; text-decoration-color:rgba(216,161,46,.7); text-underline-offset:3px; }
+  .post a:hover{ color:var(--ink); }
+  .post blockquote{ border-left:3px solid var(--gold); padding:.2em 0 .2em 1.1em; margin:1.6em 0; font-family:Fraunces,Georgia,serif; font-style:italic; font-size:1.25rem; line-height:1.5; color:var(--ink); }
+  .post .lead{ font-size:1.22rem; line-height:1.6; color:#3A4036; }
+  .post figure{ margin:2em 0; }
+  .post video{ width:100%; height:auto; display:block; background:#10130F; border:1px solid rgba(27,32,26,.15); }
+  .post figcaption{ font-size:.92rem; color:#5A6055; margin-top:.6em; line-height:1.5; }
+  .rule{ height:1px; background:linear-gradient(90deg,transparent,rgba(27,32,26,.25),transparent); }
+</style>
+</head>
+<body class="font-body">
+
+<header class="bg-ink">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="../" class="flex items-baseline gap-2 group">
+      <span class="font-mono text-[.95rem] tracking-[.22em] text-canvas group-hover:text-gold transition-colors">THE LAND</span>
+      <span class="hidden sm:inline font-display italic text-canvas/70 text-sm">· TheLand</span>
+    </a>
+    <a href="./" class="text-canvas/80 hover:text-gold transition-colors text-[.85rem]">Thinking</a>
+  </div>
+</header>
+
+<main class="px-5 sm:px-8">
+<article class="post mx-auto py-12 sm:py-16">
+  <p class="eyebrow text-teal mb-4">Thinking · Weather</p>
+  <h1 class="font-display font-medium text-ink leading-[1.08] text-[2.3rem] sm:text-5xl mb-6">Hurricane, and protection from the elements</h1>
+  <p class="lead">Building in St Andrew means building for storms, damp, termites, salt and sun, all at once. Here is how we're thinking about each, and where the answers are still not in.</p>
+  <p class="eyebrow text-ink/50 mt-6 mb-10">Rob Berkeley · October 2026</p>
+
+  <h2>A house that already knows about hurricanes</h2>
+  <p>Hurricane Ivan struck Grenada on 7 September 2004. It damaged nearly nine homes in ten on the island and destroyed most of the nutmeg that gave the Spice Isle its name. A hurricane hit midway through the building of our house, and Mum and Dad carried on anyway, with stone salvaged from the old mill and the Georgian houses in the village. The half-metre walls are their answer to the weather, and the cracks where different stones meet are part of the story too.</p>
+
+  <h2>Harm reduction, not hurricane-proofing</h2>
+  <p>I want to be straight about the limit first. A direct hit from a Category 4 or 5 hurricane is not survivable for any of the buildings we can afford, and no supplier at this budget would claim otherwise. So this is about reducing harm, not about being hurricane-proof. The insurance is what carries the worst case, and that changes how we think about everything else.</p>
+
+  <h2>What wind are we designing for?</h2>
+  <p>Less settled than you might think. Grenada's building code has no wind speed of its own. It adopts the OECS Building Code, which defers to an older Caribbean code and lets the Director accept another recognised standard, such as the American ASCE 7. So there is no single number to design to. Our approach is to ask every supplier which standard their product meets, on what basis, and what an upgrade costs as a separate line.</p>
+  <p>We learned this the hard way. Early in the search, a figure of 240 km/h crept into our own requests to factories. It came from our research, not from any regulator. We withdrew it, but not before three factories had walked away. We also learned not to accept storm "grades" on the Beaufort scale, which top out around 100 km/h and are not hurricane ratings at all.</p>
+  <p>For the guest suites, the factory we're furthest along with has given a standard rating of about 118 km/h and an upgraded rating of about 202 km/h. That's an indication, not a formal offer, and the standard behind those figures still has to be confirmed. The detail that matters most is unglamorous: how the roof is tied down to the ground, all the way through. A strong box on weak anchors is a kite.</p>
+
+  <h2>The house</h2>
+  <p>The roof is being repaired and coated rather than replaced; it's corrugated and sound. A structural engineer still has to look at the cracks and at how much load the roof terrace can take before anything is closed up, and that visit is the biggest unknown in the house budget. Every window gets Bahama shutters as its storm skin, so the glass doesn't have to do that job. The big new opening at the back is a five-metre, hurricane-rated sliding door.</p>
+  <p>The solar panels go on the roof. We considered putting them on a pergola, partly because panels at pergola height can be unbolted and stored before a named storm. We chose the roof for more reliable sun, which means sealed fixings through the roof sheet and keeping clear of the skylights.</p>
+
+  <h2>The suites, the decks and the pool</h2>
+  <p>We first planned safari tents in the grove. I moved to hard-shell suites partly because a hard shell stays up. A tent needs a trained crew, a three-to-five-day warning drill and somewhere dry to store the fabric, and it is exposed whenever a storm passes. A steel suite on screw piles needs none of that.</p>
+  <p>The decks sit on steel screw piles with aluminium frames: no slab, no timber touching the ground. A shade pergola on the warehouse side is designed to come down before a storm. The pool, a converted shipping container, can never be lifted full, so it sits on a prepared base and its walls need welded bracing.</p>
+
+  <h2>Damp, termites, salt and sun</h2>
+  <p>Hurricanes get the headlines, but every-day weather does more damage. The air sits at 80 to 90 per cent humidity. The stone walls need to breathe: limewash, not cement tanking, which was the wrong answer for a wall like this. Termites are a fact of life here. Steel and aluminium are immune, so the risk sits in the timber we add, which is why nothing timber touches the ground and every underfloor space is ventilated and open to inspection. Salt in the air means galvanised or marine-grade fixings everywhere. And the west sun in the afternoon is handled with shutters, deep reveals and shade.</p>
+
+  <h2>Timing and insurance</h2>
+  <p>The build is timed for the dry season, February to May, so the main work finishes before the hurricane season starts on 1 June. A storm plan has to be live by the trial. Insurance is still to be priced. Caribbean policies usually carry a named-storm excess of 2 to 5 per cent of the sum insured. Insurers are wary of unreinforced masonry, and the engineer's report will double as our evidence. And they often exclude, or charge more for, houses left empty for more than a month or two.</p>
+
+  <h2>Why someone on the ground matters most</h2>
+  <p>That last point brings me back to the house. What has been damaging it isn't one storm. It is emptiness: damp, termites, bush through the windows. The best protection we can give it isn't a product. It's someone living there, who meets the builder, chases the engineer, drops the shutters when a storm is named and notices the small leak before it becomes a big one. For the first five years, more or less, that's me.</p>
+
+  <div class="rule my-12"></div>
+  <nav class="flex flex-wrap gap-x-8 gap-y-3 text-[.95rem]">
+    <a href="./">← All Thinking posts</a>
+    <a href="../">Back to TheLand</a>
+  </nav>
+</article>
+</main>
+
+<footer class="bg-ink text-canvas/60">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+    <p class="font-mono tracking-[.2em] text-canvas/80">THE LAND · SIMON</p>
+    <p class="text-center sm:text-right text-canvas/45">Simon · St Andrew · Grenada — TheLand, a film and a place.<br class="sm:hidden">
+      <span class="eyebrow">Small is all · Move at the speed of trust</span></p>
+  </div>
+</footer>
+
+<!--
+SOURCES (all under /home/robbe/grenada/docs/the-land/)
+- Ivan 7 Sep 2004; 89% of housing stock damaged; nutmeg 85% affected / 60% destroyed: ep3-grenada-history-briefing.md §III
+- Hurricane mid-build, they carried on; stone from mill and Georgian houses; half-metre walls: family/prospectus.html intro
+- "after Hurricane Ivan took out the first build"; cracks = mixed materials meeting; cement tanking the wrong answer: phase0-builder/WRITE-UP-the-land-materials-2026-09-19.md line 111 (⚠ date tension with prospectus building-team photo c.1998–2001; flagged)
+- Cat 4–5 not survivable at this budget; "harm-reduction decision, not a hurricane-proofing decision" (Rob, 1 Aug); insurance carries the tail; uplift at pile heads, "a strong box on weak anchors is a kite": home/P-07_risk-register.md §9
+- No mandated design wind speed; S.R.O. 42/2016, OECS Building Code, CUBiC (1985), ASCE 7 with Director's approval; name standard + basis, price upgrade separately: home/00-estate-context.md §3; home/P-07_risk-register.md §9; home/P-05_rfq-spec-sheet.md (a)
+- 240 km/h our own assumption, withdrawn 28 Jul, three factories withdrew; Beaufort ~100 km/h not a hurricane rating: home/P-07_risk-register.md §9; memory-history/history-project_the_land_cabins.md lines 22, 58–62
+- Akay suite modules: wind 117.72 km/h standard, 201.6 km/h on upgrade; preliminary indication, not a formal offer: QUOTES.md (L-SUITES row, 9 Oct); WHERE-IT-STANDS.md "Open"
+- Roof repaired and coated, not replaced, corrugated, sound: PHASE-0-PACKAGE.md "Settled"
+- Engineer: cracks, roof-terrace loading, biggest number still moving: PHASE-0-PACKAGE.md "Open" 1; TASKS.md T14; family/prospectus.html "What we don't know yet"
+- Bahama shutters as storm protection, "a lock-down skin" over all eleven windows: phase0-builder/WRITE-UP-the-land-materials-2026-09-19.md line 251
+- Five-metre hurricane-rated slider: family/prospectus.html §1–2
+- Pergola option: panels unbolted and stored before a named storm; decision 28 Sep for roof (reliable sun), L-feet penetrate, sealed fixings, clear of skylights: solar-pergola-costing.md §3.4, §8
+- Tents → L-suites: no storm take-down plan, no crew, no 3–5-day drill, no fabric store: phase1-2/l-suites-vs-tents-costing-2026-09-30.md
+- Suites on screw piles: gta/site-pack-2026-10/the-land-site-pack-gta.html §2
+- Decks: composite on aluminium frame, steel screw piers; no timber in ground contact: decking-options-2026-09-28.md
+- Warehouse pergola storm-removable: PHASE-1-BUSINESS-PLAN-5YR.md §5
+- Pool never lifted full, base not slab, bracing: pool-container-decision.md
+- Humidity 80–90%: home/00-estate-context.md §1
+- Limewash as breathable finish: phase0-builder/WRITE-UP-the-land-materials-2026-09-19.md (limewash row); PHASE-0-PACKAGE.md line 64
+- Termites (steel immune, risk in added timber, no ground contact, inspection gap); corrosion (hot-dip galvanised or marine stainless): home/P-07_risk-register.md §7–8
+- West sun answers: home/P-07_risk-register.md §11
+- Build Feb–May dry season, before hurricane season: family/prospectus.html §1; hurricane season from 1 Jun, storm plan live at trial: TIMETABLE-2026-27.md
+- Named-storm deductibles 2–5%; unreinforced masonry unfavourable; engineer's report as insurance document: home/P-07_risk-register.md §5, E12
+- Vacant houses often excluded or charged extra after 30–60 days: family/family-call-2026-10-18-run-sheet.md (Shape A running cost table)
+- Empty house: damp, termites, bush; someone on the ground meets builder, chases engineer, shutters when a storm is named; living there years one to five: family/prospectus.html §5
+- NOT USED: the "105–112 mph / 169–180 km/h, 3-second gust, 50-year return" design wind figure requested by the coordinator. Searched /home/robbe/grenada and Claude memory; it is not on disk (only binary false hits), so it is omitted.
+-->
+</body>
+</html>

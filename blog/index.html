@@ -1,25 +1,123 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-GB">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>Thinking — TheLand</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Work+Sans:wght@400;600&display=swap">
+<meta name="description" content="The thinking behind the key decisions at the land in Simon, St Andrew, Grenada, by Rob Berkeley.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:    '#1B201A',
+        ink2:   '#232B23',
+        canvas: '#EFE7D6',
+        canvas2:'#E5D9C1',
+        gold:   '#D8A12E',
+        teal:   '#2C534A',
+        brick:  '#A24A2B',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        body:    ['"Work Sans"', 'system-ui', 'sans-serif'],
+        mono:    ['"DM Mono"', 'ui-monospace', 'monospace'],
+      },
+    }
+  }
+}
+</script>
 <style>
-  :root{--ground:#F4F2EC;--ink:#1B201A;--mute:#5B6358;--gold:#B07D1E}
-  body{margin:0;background:var(--ground);color:var(--ink);font:18px/1.55 "Work Sans",system-ui,sans-serif}
-  main{max-width:36rem;margin:0 auto;padding-block:3rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-  h1{font-family:"Fraunces",Georgia,serif;font-size:2.4rem;line-height:1.1;margin:.3rem 0 1rem}
-  .eyebrow{color:var(--gold);font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin:0}
-  a{color:var(--ink)}
+  :root{ --gold:#D8A12E; --teal:#2C534A; --canvas:#EFE7D6; --ink:#1B201A; }
+  body{ background:var(--canvas); color:#2A2E26; font-family:"Work Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+  .font-display{ font-variation-settings:"opsz" 120,"SOFT" 30,"WONK" 0; letter-spacing:-0.015em; }
+  .eyebrow{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; }
+  a:focus-visible,button:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  .post{ max-width:65ch; }
+  .post p, .post li{ font-size:1.08rem; line-height:1.75; }
+  .post p{ margin:0 0 1.2em; }
+  .post h2{ font-family:Fraunces,Georgia,serif; font-variation-settings:"opsz" 72; font-weight:500; font-size:1.55rem; line-height:1.25; color:var(--ink); margin:2.2em 0 .7em; letter-spacing:-.01em; }
+  .post ul{ margin:0 0 1.2em; padding-left:1.2em; list-style:disc; }
+  .post li{ margin-bottom:.45em; }
+  .post a{ color:var(--teal); text-decoration:underline; text-decoration-color:rgba(216,161,46,.7); text-underline-offset:3px; }
+  .post a:hover{ color:var(--ink); }
+  .post blockquote{ border-left:3px solid var(--gold); padding:.2em 0 .2em 1.1em; margin:1.6em 0; font-family:Fraunces,Georgia,serif; font-style:italic; font-size:1.25rem; line-height:1.5; color:var(--ink); }
+  .post .lead{ font-size:1.22rem; line-height:1.6; color:#3A4036; }
+  .post figure{ margin:2em 0; }
+  .post video{ width:100%; height:auto; display:block; background:#10130F; border:1px solid rgba(27,32,26,.15); }
+  .post figcaption{ font-size:.92rem; color:#5A6055; margin-top:.6em; line-height:1.5; }
+  .rule{ height:1px; background:linear-gradient(90deg,transparent,rgba(27,32,26,.25),transparent); }
 </style>
 </head>
-<body>
-<main>
-  <p class="eyebrow">TheLand · Thinking</p>
-  <h1>The thinking behind the decisions</h1>
-  <p>The first pieces are being written: whether to let the house, whether air-conditioning is a con, eco-credentialism, what a stay is meant to feel like, regulation, and building for hurricanes. They'll be here this week.</p>
-  <p style="margin-top:1.5rem"><a href="../">Back to the site</a></p>
+<body class="font-body">
+
+<header class="bg-ink">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="../" class="flex items-baseline gap-2 group">
+      <span class="font-mono text-[.95rem] tracking-[.22em] text-canvas group-hover:text-gold transition-colors">THE LAND</span>
+      <span class="hidden sm:inline font-display italic text-canvas/70 text-sm">· TheLand</span>
+    </a>
+    <a href="./" class="text-canvas/80 hover:text-gold transition-colors text-[.85rem]">Thinking</a>
+  </div>
+</header>
+
+<main class="px-5 sm:px-8">
+<article class="post mx-auto py-12 sm:py-16">
+  <p class="eyebrow text-teal mb-4">TheLand · Thinking</p>
+  <h1 class="font-display font-medium text-ink leading-[1.08] text-[2.3rem] sm:text-5xl mb-6">The thinking behind the decisions</h1>
+  <p class="lead">Bringing my parents' house at Simon back to life means making a lot of choices. These posts set out the bigger ones: the options we weighed, what we gave up, and why one option won.</p>
+  <p class="eyebrow text-ink/50 mt-6 mb-10">Rob Berkeley · October 2026</p>
+
+  <ul class="list-none !pl-0 space-y-8">
+    <li class="!list-none">
+      <a href="to-let-or-not-to-let.html" class="font-display text-[1.45rem] leading-tight !no-underline text-ink hover:!text-teal">To let or not to let</a>
+      <p class="!mb-0 mt-1 text-[1rem] text-ink/75">A private family home, or a house that pays its way, let whole and never room by room.</p>
+    </li>
+    <li class="!list-none">
+      <a href="is-ac-a-con.html" class="font-display text-[1.45rem] leading-tight !no-underline text-ink hover:!text-teal">Is AC a con?</a>
+      <p class="!mb-0 mt-1 text-[1rem] text-ink/75">Why the house cools itself, what air-conditioning would do to the solar, and where the door stays open.</p>
+    </li>
+    <li class="!list-none">
+      <a href="eco-credentialism.html" class="font-display text-[1.45rem] leading-tight !no-underline text-ink hover:!text-teal">Eco-credentialism</a>
+      <p class="!mb-0 mt-1 text-[1rem] text-ink/75">Being light on the land versus performing it: the container pool, the mango trees, the solar, the showers and the decking.</p>
+    </li>
+    <li class="!list-none">
+      <a href="the-experience.html" class="font-display text-[1.45rem] leading-tight !no-underline text-ink hover:!text-teal">The experience</a>
+      <p class="!mb-0 mt-1 text-[1rem] text-ink/75">What a stay is meant to feel like, from the mango grove to the Friday lunch, and what isn't built yet.</p>
+    </li>
+    <li class="!list-none">
+      <a href="regulation.html" class="font-display text-[1.45rem] leading-tight !no-underline text-ink hover:!text-teal">Regulation</a>
+      <p class="!mb-0 mt-1 text-[1rem] text-ink/75">What it takes to do this legally in Grenada, and which answers we're still waiting for.</p>
+    </li>
+    <li class="!list-none">
+      <a href="hurricanes-and-the-elements.html" class="font-display text-[1.45rem] leading-tight !no-underline text-ink hover:!text-teal">Hurricane, and protection from the elements</a>
+      <p class="!mb-0 mt-1 text-[1rem] text-ink/75">Building for storms, damp, termites, salt and sun, and being honest about what's unconfirmed.</p>
+    </li>
+  </ul>
+
+  <div class="rule my-12"></div>
+  <nav class="flex flex-wrap gap-x-8 gap-y-3 text-[.95rem]">
+    <a href="../">Back to TheLand</a>
+  </nav>
+</article>
 </main>
+
+<footer class="bg-ink text-canvas/60">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+    <p class="font-mono tracking-[.2em] text-canvas/80">THE LAND · SIMON</p>
+    <p class="text-center sm:text-right text-canvas/45">Simon · St Andrew · Grenada — TheLand, a film and a place.<br class="sm:hidden">
+      <span class="eyebrow">Small is all · Move at the speed of trust</span></p>
+  </div>
+</footer>
+
+<!--
+SOURCES (all under /home/robbe/grenada/docs/the-land/)
+- Index page. Each post carries its own sources list in an HTML comment at the foot of the file.
+-->
 </body>
 </html>
