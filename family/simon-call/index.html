@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Family Call Tonight</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Work+Sans:wght@400;600;700&display=swap">
+<style>
+  /* Layout: one phone-width column under a photo of the house; three short blocks. */
+  :root {
+    --ground: #2B3833; --ink: #EDEFEA; --mute: #A9B7AF; --gold: #D9A055; --teal: #57BDB5; --rule: #3B4A44;
+    --display: "Fraunces", Georgia, serif; --body: "Work Sans", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.5; }
+  .photo { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 55%; }
+  main { max-width: 34rem; margin: 0 auto; padding-block: 1.5rem 3rem;
+         padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+         display: flex; flex-direction: column; gap: 1.6rem; }
+  .eyebrow { color: var(--gold); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0; }
+  h1 { font-family: var(--display); font-weight: 600; font-size: clamp(2.4rem, 9vw, 3.4rem); line-height: 1.05; margin: 0.3rem 0 0.4rem; text-wrap: balance; }
+  .when { color: var(--mute); margin: 0; font-size: 1.05rem; }
+  section { border-left: 4px solid var(--teal); padding-left: 1rem; }
+  h2 { font-size: 1.15rem; font-weight: 700; margin: 0 0 0.3rem; }
+  section p { margin: 0; }
+  ol { margin: 0.4rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.3rem; }
+  .sign { font-family: var(--display); font-style: italic; color: var(--mute); margin: 0; }
+  .sign b { color: var(--gold); font-weight: 400; }
+</style>
+
+<img class="photo" src="prospectus-images/house-june-2026.jpg" alt="The house at Simon, June 2026">
+<main>
+  <header>
+    <p class="eyebrow">The house at Simon · family call</p>
+    <h1>Tonight, 7pm</h1>
+    <p class="when">Sunday 18 October · 7pm UK · 2pm Grenada</p>
+  </header>
+
+  <section>
+    <h2>How to join</h2>
+    <ol>
+      <li>Open our family WhatsApp group just before 7pm.</li>
+      <li>I'll start a video call in the group.</li>
+      <li>Tap <b>Join</b> on the call banner at the top of the group, or on the call notification.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Nothing more to read</h2>
+    <p>No extra pre-reading. We'll go through it together, on screen.</p>
+  </section>
+
+  <section>
+    <h2>No rush to decide</h2>
+    <p>Tonight is for questions and views. Nobody decides anything tonight.</p>
+  </section>
+
+  <p class="when">To look again afterwards: <a href="summary.html" style="color:inherit">the summary</a> · <a href="prospectus.html" style="color:inherit">the prospectus</a></p>
+  <p class="sign">Phone or laptop both work. Earphones help.<br><b>Rob</b></p>
+</main>
+
+</html>

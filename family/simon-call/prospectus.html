@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>The House at Simon: A Prospectus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --paper:#F7F6F1; --card:#FFFFFF; --ink:#16211C; --ink-2:#4A5A52; --ink-3:#7A8880;
+  --rule:#DEDDD4; --rule-2:#ECEBE3;
+  --sea:#0E6E6E; --sea-soft:#E3EFEE;
+  --warm:#B2721C; --warm-bg:#FBF3E6; --crit:#A83A2E; --good:#2F7D4F;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28;
+  --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#111815; --card:#18211D; --ink:#EDEFEA; --ink-2:#A9B7AF; --ink-3:#7A8880;
+  --rule:#2B3833; --rule-2:#222D28;
+  --sea:#57BDB5; --sea-soft:#17302E;
+  --warm:#D9A055; --warm-bg:#2A2217; --crit:#E0796B; --good:#67B487;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding-inline:16px;padding-block:36px 72px}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(30px,6vw,46px);line-height:1.08;
+  margin:0 0 14px;font-weight:600;letter-spacing:-.02em;text-wrap:balance}
+h2{font-family:Fraunces,Georgia,serif;font-size:clamp(21px,3.4vw,26px);font-weight:600;
+  margin:0 0 12px;letter-spacing:-.01em;line-height:1.2}
+h2 .n{font-family:"IBM Plex Mono",monospace;font-size:.62em;color:var(--sea);font-weight:500;margin-right:6px;vertical-align:.12em}
+h3{font-size:15.5px;font-weight:600;margin:0 0 6px}
+p{margin:0 0 15px;max-width:66ch}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sea);font-weight:500;margin:0 0 14px}
+.lead{font-size:18.5px;line-height:1.55;color:var(--ink-2)}
+.lead em{font-family:Fraunces,Georgia,serif;font-style:italic;color:var(--ink)}
+header{border-bottom:2px solid var(--rule);padding-bottom:26px;margin-bottom:34px}
+section{margin-top:52px}
+.mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-2)}
+
+.ask{background:var(--card);border:1px solid var(--rule);border-top:4px solid var(--sea);
+  border-radius:5px;padding:24px 24px 20px;margin:26px 0}
+.ask .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.ask .l{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.ask .v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-size:clamp(26px,5.5vw,36px);
+  font-weight:600;letter-spacing:-.03em;line-height:1.1;margin-top:4px}
+.ask .v.sea{color:var(--sea)}
+.ask .d{font-size:13.5px;color:var(--ink-2);margin-top:4px;line-height:1.4}
+.ask .foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule-2);font-size:15px;color:var(--ink-2)}
+
+table{border-collapse:collapse;width:100%;font-size:15px;margin:6px 0 16px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+thead th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+td small{display:block;color:var(--ink-2);font-size:13.5px;line-height:1.45;margin-top:2px}
+tr.tot td{border-top:2px solid var(--rule);border-bottom:0;font-weight:600;padding-top:11px}
+tr.sub td{color:var(--ink-2);font-size:14px}
+.tw{overflow-x:auto}
+
+.pull{font-family:Fraunces,Georgia,serif;font-size:20px;line-height:1.4;font-weight:600;
+  border-left:3px solid var(--sea);padding-left:18px;margin:26px 0;max-width:58ch}
+.note{background:var(--warm-bg);border:1px solid var(--rule);border-left:3px solid var(--warm);
+  border-radius:4px;padding:16px 18px;margin:22px 0;font-size:14.5px;color:var(--ink-2)}
+.note b{color:var(--ink)} .note p{margin:0 0 9px} .note p:last-child{margin:0}
+.note .h{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--warm);font-weight:600;margin-bottom:8px}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:15px 16px}
+.box .l{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.box .v{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:21px;font-weight:600;margin:5px 0 4px}
+.box .d{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+.qs{list-style:none;margin:0;padding:0;counter-reset:q}
+.qs li{position:relative;background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:16px 18px 14px 58px;margin-bottom:12px;counter-increment:q}
+.qs li::before{content:"Q" counter(q);position:absolute;left:16px;top:15px;
+  font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;color:var(--sea)}
+.qs h3{margin-bottom:5px;font-size:16px}
+.qs p{margin:0 0 6px;font-size:15px;color:var(--ink-2)}
+.qs p:last-child{margin:0}
+.qs .opt{font-size:14.5px;color:var(--ink-2);margin:6px 0 0;padding-left:18px}
+.qs .opt li{all:unset;display:list-item;list-style:disc;margin-bottom:4px}
+.qs .opt li::before{content:none}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding-left:46px;margin-bottom:20px;counter-increment:s}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;width:30px;height:30px;
+  border-radius:50%;background:var(--sea);color:var(--paper);font-family:"IBM Plex Mono",monospace;
+  font-size:14px;font-weight:600;display:grid;place-items:center}
+.steps h3{margin-bottom:3px;font-size:16px}
+.steps p{margin:0;font-size:15px;color:var(--ink-2)}
+
+ul.plain{margin:0 0 16px;padding-left:20px;color:var(--ink-2);font-size:15px}
+ul.plain li{margin-bottom:8px}
+ul.plain b{color:var(--ink)}
+.toc{font-size:14.5px;color:var(--ink-2);columns:2 220px;margin:0;padding-left:20px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
+footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--rule);
+  font-size:13px;color:var(--ink-3);line-height:1.7}
+@media (max-width:520px){ .ask{padding:18px} .qs li{padding-left:50px} .qs li::before{left:13px} }
+
+/* Larger type throughout: nothing reads as fine print (7 Oct 2026) */
+body{font-size:19px;line-height:1.6}
+.wrap{max-width:880px}
+p{max-width:68ch}
+.lead{font-size:22px}
+.eyebrow{font-size:13px}
+h3{font-size:19px}
+table{font-size:18px}
+td small{font-size:16.5px}
+thead th,.box .l,.ask .l,.note .h{font-size:13px}
+.ask .d,.box .d{font-size:16.5px}
+.ask .foot{font-size:18px}
+.box .v{font-size:24px}
+.note{font-size:17.5px}
+ul.plain{font-size:18.5px}
+.qs h3{font-size:19.5px}
+.qs p,.qs .opt{font-size:18px}
+.qs li::before{font-size:15px}
+.steps h3{font-size:19px}
+.steps p{font-size:18px}
+.pull{font-size:24px}
+footer{font-size:16px}
+.muted{font-size:18px}
+/* The contents: a prominent menu, not a footnote */
+.menu{list-style:none;margin:28px 0 0;padding:20px 22px;counter-reset:m;
+  background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--sea);border-radius:5px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:4px 24px}
+.menu .t{grid-column:1/-1;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--sea);font-weight:600;margin-bottom:6px}
+.menu li.i{counter-increment:m}
+.menu li.i a{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--rule-2);
+  color:var(--ink);text-decoration:none;font-size:20px;font-weight:500;line-height:1.3}
+.menu li.i a::before{content:counter(m);font-family:"IBM Plex Mono",monospace;font-size:16px;color:var(--sea);font-weight:600;min-width:1.2em}
+.menu li.i a:hover{color:var(--sea)}
+@media (max-width:520px){ .menu li.i a{font-size:19px} }
+
+/* Section headings in the green accent; photographs (7 Oct 2026) */
+h2{color:var(--sea)}
+.fig{margin:26px 0}
+.fig img{display:block;width:100%;height:auto;border-radius:5px;border:1px solid var(--rule)}
+.fig.two div{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.fig.two img{aspect-ratio:4/3;object-fit:cover}
+.fig figcaption{font-size:16.5px;color:var(--ink-2);margin-top:9px;line-height:1.45}
+.fig.hero img{aspect-ratio:4/3;object-fit:cover;object-position:center 30%}
+
+/* Print / PDF (7 Oct 2026) */
+@page{size:A4;margin:16mm 14mm}
+@media print{
+  :root,:root[data-theme="dark"]{--paper:#FFFFFF;--card:#FFFFFF;--ink:#16211C;--ink-2:#3E4D46;--ink-3:#6A776F;--rule:#D6D5CC;--rule-2:#E6E5DD;--sea:#0E6E6E;--warm:#9A5F12;--warm-bg:#FBF3E6;color-scheme:light}
+  body{font-size:12.5pt}
+  .wrap{max-width:none;padding:0}
+  section{margin-top:26px}
+  .fig,.ask,.note,.box,.qs li,.steps li,tr,.menu{break-inside:avoid}
+  h2,h3{break-after:avoid}
+  .menu a{text-decoration:none}
+  .fig img{max-height:95mm;object-fit:cover}
+  .fig.hero img{max-height:120mm}
+  footer{margin-top:24px}
+}
+
+.buys{list-style:none;margin:10px 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px}
+.buys li{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--sea);border-radius:4px;padding:12px 14px;font-size:18px;line-height:1.4;color:var(--ink-2);break-inside:avoid}
+.buys b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">The House at Simon &middot; a prospectus for the family &middot; October 2026</p>
+  <h1>Bringing Mum and Dad's house back, together</h1>
+  <p class="lead">Mum and Dad built it from stone that was already on the land, salvaged from the old water mill and the Georgian houses at the heart of the village. The walls are half a metre thick. The hurricane hit midway through the build and they carried on anyway. <em>It is standing empty now, and the damp, the cracks and the weather are winning.</em></p>
+  <figure class="fig hero"><img src="prospectus-images/mum-and-dad-2006.jpg" alt="Mum and Dad standing under the arch in front of the house" loading="lazy"><figcaption>Mum and Dad under the arch at the front of the house, January 2006.</figcaption></figure>
+  <p class="muted" style="margin-top:18px">This sets out everything: what the work is, what it costs line by line, how sure each number is, how your money comes back, and what I carry myself. It is not a finished deal. It's a proposal for us to talk through and shape together, and the questions at the end are real ones.</p>
+</header>
+
+<section style="margin-top:0">
+  <h2>In one minute</h2>
+  <div class="ask">
+    <div class="row">
+      <div><div class="l">Each of us puts in</div><div class="v sea">&pound;14,000</div><div class="d">Seven brothers and sisters, &pound;98,000 in all</div></div>
+      <div><div class="l">Comes back to each of us</div><div class="v">&pound;7,000</div><div class="d">Within five years of the house opening</div></div>
+      <div><div class="l">Our stake</div><div class="v">&pound;7,000</div><div class="d">A share of a working property that pays its way</div></div>
+    </div>
+    <div class="foot">The house is fully restored, it's let as a whole house for around twenty weeks a year, and that income pays back <b>&pound;49,000</b> between the seven of us: half of what we put in. The rest of the year it is the family's house, to use.</div>
+  </div>
+  <h3>What the house money buys</h3>
+  <ul class="buys">
+    <li><b>A sound roof and structure</b>, with the damp and cracks dealt with, checked by an engineer</li>
+    <li><b>A full rewire, new plumbing and a new septic system</b></li>
+    <li><b>A proper bathroom</b> for two parties at once: two showers, two WCs, two basins</li>
+    <li><b>A new kitchen</b>, and <b>skylights</b> to bring light in behind the stone walls</li>
+    <li><b>The back of the house opened to the land</b> with a five-metre hurricane-rated glass opening</li>
+    <li><b>A deck and a shading pergola</b>, so the house steps out into the garden</li>
+    <li><b>Solar on the roof</b>: no electricity bill</li>
+    <li><b>Furnished and ready to use</b>: the existing furniture restored, new white goods and beds</li>
+  </ul>
+  <p class="muted">The whole house, complete, costs &pound;95,500 to &pound;114,075. Section 2 has every line.</p>
+
+  <p>I've moved away from asking for one payment with nothing back. A shared stake, with most of it returned from what the house itself earns, is fairer to everyone, and it means the house carries its own weight rather than resting on goodwill.</p>
+
+  <h3>Who can take part</h3>
+  <ul class="plain">
+    <li><b>Firstly, the seven of us</b>: me, my three brothers and three sisters. If we're all willing and able to put in the same amount, that would be neat. But as I know too well, life isn't neat, and the rising cost of living is real. So this is an offer, not another bill. Where someone looks after one of us's finances, as one of our nieces does for her mum, they take part on that person's behalf.</li>
+    <li><b>Then Mum and Dad, and the next generation</b>, if they're interested and able, with no expectation on anyone. They'd contribute on payback terms we agree together. My suggestion: <b>they get all of it back</b>, half repaid before our &pound;7,000 and the rest after. If the build or the first seasons are slower than we hope, that could take six or seven years. <b>The house won't borrow more than &pound;49,000 in total, even if more is offered.</b> Our &pound;7,000 each that comes back already adds up to that, so money from Mum, Dad or the next generation would take the place of some of ours, for example where one of us can only put in less. It wouldn't add to what the house owes.</li>
+  </ul>
+  <ol class="menu">
+    <li class="t">What's in this prospectus</li>
+    <li class="i"><a href="#house">The house and the work</a></li>
+    <li class="i"><a href="#cost">What it costs, line by line</a></li>
+    <li class="i"><a href="#back">How the money comes back</a></li>
+    <li class="i"><a href="#companies">Two companies</a></li>
+    <li class="i"><a href="#rob">What I'm putting in</a></li>
+    <li class="i"><a href="#footprint">What this doesn't touch</a></li>
+    <li class="i"><a href="#unknown">What we don't know yet</a></li>
+    <li class="i"><a href="#questions">Questions for us to decide</a></li>
+    <li class="i"><a href="#how">How we decide</a></li>
+  </ol>
+</section>
+
+<section id="house">
+  <h2><span class="n">1</span>The house and the work</h2>
+  <p>The house is sound in its bones and failing everywhere else. Left as it is, the realistic end is a sale. The work brings it back to a house people can actually live in and enjoy:</p>
+  <figure class="fig two"><div><img src="prospectus-images/house-june-2026.jpg" alt="The house in June 2026, its curved roof and arched verandah weathered" loading="lazy"><img src="prospectus-images/verandah-june-2026.jpg" alt="The verandah in June 2026, paint peeling from the ceiling" loading="lazy"></div><figcaption>The house this June: sound in its bones, failing everywhere else.</figcaption></figure>
+  <figure class="fig two"><div><img src="prospectus-images/dad-and-the-build-team.jpg" alt="Dad with the building team beside a red van and a wheelbarrow of sand" loading="lazy"><img src="prospectus-images/then-and-now-gable-end.jpg" alt="The gable end then, with Dad among the pineapples, and the same wall in June 2026" loading="lazy"></div><figcaption>Dad (centre) with the building team, around 1998 to 2001; and the gable end then and now.</figcaption></figure>
+  <ul class="plain">
+    <li><b>Roof, damp and cracks</b> dealt with properly, with a structural engineer's view before anything is closed up.</li>
+    <li><b>A full rewire, new plumbing and a new septic system.</b></li>
+    <li><b>One proper bathroom laid out for two parties at once</b>: two showers, two WCs each in its own cubicle, two basins, with instant water heaters.</li>
+    <li><b>A new kitchen</b>, and skylights to get light into rooms behind a half-metre stone wall.</li>
+    <li><b>The back of the house opened to the land</b>: a five-metre hurricane-rated glass opening, so living and dining move to where you can see out.</li>
+    <li><b>A deck</b> that levels the house into the garden, and <b>a pergola</b> shading the two sides with no verandah.</li>
+    <li><b>Solar on the roof</b>, installed by a Grenadian supplier: a house with no electricity bill.</li>
+    <li><b>Furnished</b>: the beds, wardrobes, sofas and tables already there are kept and restored. New white goods, mattresses, TVs, blinds, and a fold-down bed so the studio doubles as a bedroom.</li>
+  </ul>
+  <figure class="fig two"><div><img src="prospectus-images/kitchen-impression.jpg" alt="An impression of the new kitchen" loading="lazy"><img src="prospectus-images/bathroom-impression.jpg" alt="An impression of the shared bathroom with its cubicles" loading="lazy"></div><figcaption>The new kitchen and bathroom. These are impressions to show the idea, not final designs.</figcaption></figure>
+  <p>The ideal timetable is <b>orders placed in November, and building from February 2027</b>, with LID Constructions, a Grenadian contractor whose quote we already hold. February is the start of the dry season, and a ten-to-fourteen-week build finishes by May, before the hurricane season. The timetable matters to me, but some of it is outside our control: shipping and fuel costs are moving with world events, and the weather sets the building season.</p>
+
+  <h3>The timetable</h3>
+  <p>Aiming for <b>a trial in June and opening for the carnival season</b>, July and August, with Spicemas on 9 and 10 August 2027.</p>
+  <div class="tw"><table>
+    <thead><tr><th>When</th><th>What happens</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">October</td><td>We talk it through. LID's revised quote, freight quotes, and the Tourism Authority's view come in.</td></tr>
+      <tr><td class="mono">Early November</td><td><b>We agree</b>, and start setting up the two companies, which depends on my citizenship application (see section 4).</td></tr>
+      <tr><td class="mono">November</td><td><b>Orders placed</b>, builder's contract signed, planning applications in.</td></tr>
+      <tr><td class="mono">Mid January</td><td><b>Goods leave China</b>, before Chinese New Year closes the factories in February.</td></tr>
+      <tr><td class="mono">February</td><td><b>Building starts</b>: roof, structure, rewire, plumbing. Goods arrive and fit-out begins.</td></tr>
+      <tr><td class="mono">May</td><td><b>Building finished</b>; inspections and licences.</td></tr>
+      <tr><td class="mono">June</td><td><b>Trial</b>: family and friends stay first, and we test the kitchen and the lets.</td></tr>
+      <tr><td class="mono">July&ndash;August</td><td><b>Open</b> for the carnival season.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="muted">The date that matters most is goods leaving China by mid January. If they miss it, everything slips by about two months and the carnival opening is at risk. That's why the November dates matter, but if we need longer to agree, the build moves.</p>
+</section>
+
+<section id="cost">
+  <h2><span class="n">2</span>What it costs, line by line</h2>
+  <p>Every figure here comes from a full item-by-item costing finished this month: each part priced against Grenada, China and the region, and matched to a real quote wherever one exists. Costs are shown as a range because not everything is quoted yet. The low end assumes things land where the evidence points; the high end allows for them not to.</p>
+  <div class="tw"><table>
+    <thead><tr><th>What</th><th class="n">Low</th><th class="n">High</th></tr></thead>
+    <tbody>
+      <tr><td><b>The house rescued</b><small>Roof, structure, rewire, plumbing, septic, bathroom, kitchen, skylights, furnishing, professional fees and permits, plus a 15% contingency on the works.</small></td><td class="n">&pound;69,768</td><td class="n">&pound;86,543</td></tr>
+      <tr><td><b>Solar</b><small>Installed quote from Mr Smith (Go Solar, Grand Anse): 12 panels, inverter and two batteries.</small></td><td class="n">&pound;8,256</td><td class="n">&pound;8,256</td></tr>
+      <tr><td><b>The back opening</b><small>Beam, columns and a five-metre hurricane-rated slider.</small></td><td class="n">&pound;7,700</td><td class="n">&pound;7,700</td></tr>
+      <tr><td><b>House deck</b>, 59 m&sup2;<small>Composite boards on an aluminium frame and steel screw piers.</small></td><td class="n">&pound;4,484</td><td class="n">&pound;4,484</td></tr>
+      <tr><td><b>Wrap pergola</b><small>Galvanised steel, shade only.</small></td><td class="n">&pound;2,100</td><td class="n">&pound;3,900</td></tr>
+      <tr><td><b>Pool deck</b>, 42 m&sup2;<small>Same system as the house deck. The pool itself is part of my business, not the house budget, so this can wait.</small></td><td class="n">&pound;3,192</td><td class="n">&pound;3,192</td></tr>
+      <tr class="tot"><td>The house, complete</td><td class="n">&pound;95,500</td><td class="n">&pound;114,075</td></tr>
+      <tr class="sub"><td>What we'd raise between us</td><td class="n">&pound;98,000</td><td class="n">&pound;98,000</td></tr>
+      <tr class="sub"><td>Difference</td><td class="n">&pound;2,500 to spare</td><td class="n">&pound;16,075 short</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>How sure are these numbers?</h3>
+  <div class="grid2">
+    <div class="box"><div class="l">From a real quote</div><div class="v">41&ndash;48%</div><div class="d">LID's renovation lines, the solar, the back opening, the appliances from Courts.</div></div>
+    <div class="box"><div class="l">Priced from listings and rates</div><div class="v">43&ndash;49%</div><div class="d">Real products and published prices, not yet a supplier's quote.</div></div>
+    <div class="box"><div class="l">Contingency and allowances</div><div class="v">9&ndash;10%</div><div class="d">Mostly the 15% contingency, which is there for the engineer's findings.</div></div>
+  </div>
+
+  <div class="note">
+    <div class="h">Being straight about the gap</div>
+    <p>At the low end there's &pound;2,500 to spare. At the high end we're <b>&pound;16,075 short</b>. I'm not going to hide that or promise I'll absorb it: the business side is already over my own budget (see section 5).</p>
+    <p>Three things should narrow it before anyone pays a penny. LID is requoting against the reduced scope. The pool deck can wait for a pool. And we've asked the Grenada Industrial Development Corporation for relief on import duty. How we handle whatever is left is <a href="#questions">question 2</a>, and it's a decision for all of us.</p>
+  </div>
+</section>
+
+<section id="back">
+  <h2><span class="n">3</span>How the money comes back</h2>
+  <p>The house earns its own way back. For around twenty weeks a year it's let as <b>one whole house, to one party</b>: typically two couples travelling together. It's never let room by room, so no guest shares it with a stranger. When it's let, I move out into one of the guest suites in the mango grove. The rest of the year it's the family's.</p>
+  <p>Everything the house earns goes into <b>a house account</b>, separate from the business, and visible to all seven of us. So does the rent the business pays the house from its third year, as a share of its turnover. Out of that account, &pound;7,000 each comes back to us before the house's money goes on anything else. If Mum, Dad or the next generation have lent money, half of theirs comes back first, as above.</p>
+
+  <h3>After we're repaid: an improvements and upgrades fund</h3>
+  <p>Once everyone is repaid, everything the house earns goes into <b>an improvements and upgrades fund</b>. It isn't for upkeep, which stays with me while I'm there. It's for making the house and the land ready for what the family will need next:</p>
+  <ul class="plain">
+    <li><b>Care as we get older</b>: adapting the house so any of us can live there, or be looked after there, later in life.</li>
+    <li><b>The next generation</b>: making it a place our children and grandchildren can use, stay in and look after in their turn.</li>
+    <li><b>Bursaries for local young people</b>, for education and training, so the house gives something back to Simon.</li>
+    <li><b>New technology as it arrives</b>, from better solar and storage to getting around without a driver. Yes, robot cars.</li>
+  </ul>
+  <p><b>Everyone with a stake in the house forms an investment committee</b>, the seven of us, to decide what the fund spends, and when. No one, me included, decides alone. How the committee works is a question for around 2032, when the fund starts, and we'll settle it then.</p>
+
+  <div class="tw"><table>
+    <thead><tr><th>Repaid by the end of each year of opening</th><th class="n">Yr 1</th><th class="n">Yr 2</th><th class="n">Yr 3</th><th class="n">Yr 4</th><th class="n">Yr 5</th></tr></thead>
+    <tbody>
+      <tr><td><b>Expected:</b> let 20 weeks a year<small>Paid off early in year 5.</small></td><td class="n">&pound;6.8k</td><td class="n">&pound;17.0k</td><td class="n">&pound;32.8k</td><td class="n">&pound;48.7k</td><td class="n">&pound;49.0k&nbsp;&check;</td></tr>
+      <tr><td><b>Cautious:</b> let only 10 weeks, business doing well<small>&pound;4,500 still owed at year 5; paid off in year 6.</small></td><td class="n">&pound;3.4k</td><td class="n">&pound;8.5k</td><td class="n">&pound;20.4k</td><td class="n">&pound;32.4k</td><td class="n">&pound;44.5k</td></tr>
+      <tr><td><b>Worst case modelled:</b> 10 weeks, business doing badly<small>&pound;13,300 still owed at year 5; paid off in year 7.</small></td><td class="n">&pound;3.4k</td><td class="n">&pound;8.5k</td><td class="n">&pound;17.5k</td><td class="n">&pound;26.6k</td><td class="n">&pound;35.7k</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><b>Five years is the aim, and it's what we get if the house lets as expected.</b> If it lets more slowly, it takes six or seven. Where the business has cash to spare, it will top up the house account to bring repayment forward. &pound;49,000 is the most the house will ever owe, whoever it's owed to, so these timings hold even if some of it is lent by Mum, Dad or the next generation.</p>
+
+  <div class="note">
+    <div class="h">Where the letting figure comes from</div>
+    <p>It uses the price already set for the guest suites, US$100 a night per couple at the quietest time of year, so US$200 (about &pound;150) a night for the whole house. It deliberately ignores the higher Carnival and summer rates, even though that's when most lets will fall. From the takings it takes off 35% for cleaning, laundry, electricity, water and booking fees, and assumes a slow start: half the bookings in year one, three-quarters in year two. That leaves about <b>&pound;13,600 a year</b> at twenty weeks.</p>
+    <p>It's an estimate, not a track record. Nobody has let this house before. That's why the table shows what happens at half the bookings, too.</p>
+  </div>
+</section>
+
+<section id="companies">
+  <h2><span class="n">4</span>Two companies, with a wall between them</h2>
+  <p>To keep the family's house and my business properly apart, we'd set up two companies:</p>
+  <div class="grid2">
+    <div class="box"><div class="l">The house company</div><div class="v">Owned by the seven of us</div><div class="d">Holds the house, in equal shares between the seven of us. Takes everything the house earns, plus the business's rent. Repays us and any family loans, then runs the improvements and upgrades fund. The investment committee is its board.</div></div>
+    <div class="box"><div class="l">The business company</div><div class="v">Mine</div><div class="d">Leases what it uses from the house company and pays rent for it. Runs the kitchen and the suites. Its costs, debts and risks stay inside it and never touch the house.</div></div>
+  </div>
+  <p>Separate companies means separate accounts. Anyone can see at a glance what the house has earned and what it's owed, and nobody ever has to wonder whether the business is quietly running on the back of the house. If the business fails, the house is untouched. I manage the house lets for the house company, and the money goes straight to it.</p>
+  <div class="note">
+    <div class="h">A reason to think about Grenadian citizenship</div>
+    <p>Non-citizens need a government licence to hold land in Grenada, and that applies to a company too when most of its shares are held by non-citizens. The more of us who are Grenadian citizens, the simpler it is for the house company to hold the house. I'm applying for citizenship by descent now, and I'll share how it goes with anyone who wants to do the same. Until it comes through, I'd place the orders in my own name and move everything into the companies once they exist. The import duty relief we've asked GIDC for is granted to the project, against a list of the goods, and has to be in place before the goods clear customs in February. We'd confirm with GIDC that it follows the project into the companies.</p>
+    <p>We'd confirm the details with a Grenadian lawyer before setting anything up.</p>
+  </div>
+</section>
+
+<section id="rob">
+  <h2><span class="n">5</span>What I'm putting in</h2>
+  <p>I'm one of the seven, and I put in my &pound;14,000 like everyone else. On top of that:</p>
+  <div class="grid2">
+    <div class="box"><div class="l">The business, Phase 1 and 1b</div><div class="v">All mine</div><div class="d">Phase 1 opens with the house: the warehouse kitchen, the first two guest suites, the warehouse's own solar, and e-scooters and trikes. Phase 1b follows from earnings and a crowdfunder: the third suite, the pergola and bar and, in year two, the pool. Cost, risk and any upside are mine, and it is costed separately from the house.</div></div>
+    <div class="box"><div class="l">Upkeep, while I'm there</div><div class="v">All of it</div><div class="d">Running costs and maintenance of the house, from my own pocket, not the house account.</div></div>
+    <div class="box"><div class="l">Rent to the house</div><div class="v">From year 3</div><div class="d">A share of the business's turnover, so it pays little in a thin year and properly in a good one.</div></div>
+  </div>
+  <h3>What Phase 1 and 1b look like: my side</h3>
+  <p>Phase 1 is the business, and it's mine to fund. It opens alongside the house in July 2027, and Phase 1b adds to it as it earns:</p>
+  <ul class="plain">
+    <li><b>The old warehouse becomes a commercial kitchen</b>, with a servery onto the garden for dining for up to 30, and a takeaway window to the road.</li>
+    <li><b>Guest suites in the mango grove</b>, built from flat-pack modules around one shared yard. Three suites, each sleeping up to six: a family, or a team. Two at the start, a third later.</li>
+    <li><b>Food that brings people in</b>: supper clubs with guest chefs, a Friday lunch, takeaway for the neighbourhood.</li>
+    <li><b>Electric scooters and trikes</b> for guests and deliveries, and the warehouse's own solar.</li>
+  </ul>
+  <figure class="fig two"><div><img src="prospectus-images/warehouse-impression.jpg" alt="An impression of the old warehouse as a kitchen, from the road side" loading="lazy"><img src="prospectus-images/suites-impression.jpg" alt="A model view of the mango grove with the guest suites around one yard" loading="lazy"></div><figcaption>The warehouse kitchen and the mango grove suites. Concepts from October 2026; layouts are not final.</figcaption></figure>
+  <p>There's a two-minute film walking through the whole site, the house, the warehouse and the grove, at <a href="https://blkoutuk.github.io/the-land-grenada/site/">blkoutuk.github.io/the-land-grenada/site</a>.</p>
+    <p>The business is mine to fund, and I'll build it in stages: Phase 1 to open, Phase 1b as it earns. It's why I can't also promise to cover any overrun on the house on my own.</p>
+  <p>And I'll be living there, years one to five, more or less. That's not a favour I'm asking for. An empty house in that climate is what's been killing this one: damp, termites, bush through the windows. Someone on the ground meets the builder, chases the engineer, takes the shutters down when a storm is named, and looks after the guests.</p>
+</section>
+
+<section id="footprint">
+  <h2><span class="n">6</span>What this doesn't touch</h2>
+  <figure class="fig"><img src="prospectus-images/mango-tree.jpg" alt="A mango tree heavy with fruit in the grove" loading="lazy"><figcaption>The mango grove, this June.</figcaption></figure>
+  <p>The business stays inside a fixed footprint: the house and the mango grove. <b>The old mill and the rest of the land, currently rented out for farming, are not part of this.</b> If I ever want to extend into them, that comes back to all of us, every time, not once.</p>
+  <p>That works both ways. If any of you, or your children, want to build something of your own on the land, the door is open. So is joining in on what I'm building, later, once it's proven rather than a hope.</p>
+</section>
+
+<section id="unknown">
+  <h2><span class="n">7</span>What we don't know yet</h2>
+  <ul class="plain">
+    <li><b>The structural engineer hasn't been.</b> What the cracks need is the biggest number still moving. The contingency is there for it.</li>
+    <li><b>LID's revised quote</b> against the reduced scope is still to come.</li>
+    <li><b>The Tourism Authority's view on letting the house.</b> The two let rooms are just under their size standard for villa bedrooms. I sent them the full plan on 7 October and asked whether, since the house is only ever let whole, they'll accept them.</li>
+    <li><b>Import duty relief</b> from GIDC: asked for, not yet answered.</li>
+    <li><b>Legal advice on the two companies</b>, including how the land licence rules apply to us.</li>
+    <li><b>Shipping and fuel costs are rising.</b> War and climate disruption are pushing container and fuel prices up: one Grenadian solar supplier paused quoting in October because shipping had added about 40% to its costs. Our quotes need re-confirming before we commit, and the contingency may be needed for more than the engineer.</li>
+    <li><b>Labour is hard to get</b> on the island right now. One large contractor was on the news this year bringing in workers from four countries.</li>
+    <li><b>The letting income is an estimate.</b> It's built cautiously, but it hasn't been tested.</li>
+  </ul>
+</section>
+
+<section id="questions">
+  <h2><span class="n">8</span>Questions for us to decide</h2>
+  <p>These are the things I don't think I should decide on my own. Have a view on any of them? Send it to me, or bring it to the call.</p>
+  <ol class="qs">
+    <li><h3>Is this the right shape?</h3>
+      <p>Seven shares of &pound;14,000, with &pound;7,000 each coming back within about five years and &pound;7,000 each as our stake. Does that feel fair? If someone can only put in less, how should their share work? And are you happy for us to ask Mum and Dad, and the next generation, on the payback terms above?</p></li>
+    <li><h3>If the costs come in high, what do we do?</h3>
+      <p>Up to &pound;16,075 could be uncovered at the high end. The options I can see:</p>
+      <ul class="opt">
+        <li><b>Do it in two stages</b>: rescue the house and fit the solar first (&pound;78,000&ndash;94,800), then add the back opening, decks and pergola from the first letting income.</li>
+        <li><b>Agree a top-up now</b>, only drawn if needed, as extra stake rather than borrowing, since the house won't owe more than &pound;49,000.</li>
+        <li><b>Cut scope</b>, and decide together what goes.</li>
+      </ul></li>
+    <li><h3>Letting the house: which weeks are ours?</h3>
+      <p>The weeks that let best, Carnival and the summer, are the weeks many of us would want to be there. I think we can have both. The house is let to two couples in the two largest rooms, which leaves the two smaller bedrooms free. If we encourage people we know to book the house, family can use those two: two of us in each. Two more can stay with me in my suite in the grove. So six of us at Carnival wouldn't get in the way of the lettings.</p><p>What would you add? A set number of family weeks outside the peak, or first call on the small bedrooms?</p></li>
+    <li><h3>What goes in the house company's rules?</h3>
+      <p>The house company needs a short agreement between us: the shares, the repayment, the improvements and upgrades fund, how the committee decides, the footprint, the lease to my business, and what happens if someone wants out, or the house is ever sold. What matters most to you in it?</p></li>
+  </ol>
+</section>
+
+<section id="how">
+  <h2><span class="n">9</span>How we decide</h2>
+  <ol class="steps">
+    <li><h3>Read it, take your time</h3><p>Ask me anything, one to one, whenever it suits you. No question is a small one.</p></li>
+    <li><h3>A family call</h3><p>We go through it together, especially the questions above, and I take notes for everyone.</p></li>
+    <li><h3>I revise it</h3><p>A second version that reflects what we agreed, with LID's revised quote in it.</p></li>
+    <li><h3>We decide together</h3><p>Nobody pays anything until we've all agreed, and then on a timetable tied to the build, not before it's needed. To place orders in November for a February start, we'd need to agree by early November. If we need longer, the build moves back; the conversation doesn't get rushed.</p></li>
+  </ol>
+  <h3>Once we're under way</h3>
+  <p>A <b>monthly update call</b> for everyone, with the house account open to all seven of us. And I'll keep filming the build and the first seasons for The Land on YouTube, so you can watch it happen. The same films help bring in bookings.</p>
+  <p class="pull">Not whether to back a venture. Whether Mum and Dad's house stays in the family and gets used, or whether we let the weather finish it.</p>
+</section>
+
+<footer>
+  Costs: full itemised costing, October 2026, held in the project workbook. Quotes from LID Constructions (renovation), Go Solar / Mr Smith (installed solar, EC$29,722), Courts Grenada (appliances). Letting estimate uses the suite rate set 2 October 2026; business figures are from the same workbook. &pound;1 = US$1.335 = EC$3.60. Every figure is available line by line to anyone who wants it.
+</footer>
+
+</div>
+</body>
+</html>
