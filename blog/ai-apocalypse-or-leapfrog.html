@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>AI apocalypse, or development leapfrog? — Thinking — TheLand</title>
+<meta name="description" content="Two framings of AI for a small island economy, weighed against one family project's own use of AI to plan the land.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:    '#1B201A',
+        ink2:   '#232B23',
+        canvas: '#EFE7D6',
+        canvas2:'#E5D9C1',
+        gold:   '#D8A12E',
+        teal:   '#2C534A',
+        brick:  '#A24A2B',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        body:    ['"Work Sans"', 'system-ui', 'sans-serif'],
+        mono:    ['"DM Mono"', 'ui-monospace', 'monospace'],
+      },
+    }
+  }
+}
+</script>
+<style>
+  :root{ --gold:#D8A12E; --teal:#2C534A; --canvas:#EFE7D6; --ink:#1B201A; }
+  body{ background:var(--canvas); color:#2A2E26; font-family:"Work Sans",sans-serif; -webkit-font-smoothing:antialiased; }
+  .font-display{ font-variation-settings:"opsz" 120,"SOFT" 30,"WONK" 0; letter-spacing:-0.015em; }
+  .eyebrow{ font-family:"DM Mono",monospace; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; }
+  a:focus-visible,button:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  .post{ max-width:65ch; }
+  .post p, .post li{ font-size:1.08rem; line-height:1.75; }
+  .post p{ margin:0 0 1.2em; }
+  .post h2{ font-family:Fraunces,Georgia,serif; font-variation-settings:"opsz" 72; font-weight:500; font-size:1.55rem; line-height:1.25; color:var(--ink); margin:2.2em 0 .7em; letter-spacing:-.01em; }
+  .post ul{ margin:0 0 1.2em; padding-left:1.2em; list-style:disc; }
+  .post li{ margin-bottom:.45em; }
+  .post a{ color:var(--teal); text-decoration:underline; text-decoration-color:rgba(216,161,46,.7); text-underline-offset:3px; }
+  .post a:hover{ color:var(--ink); }
+  .post blockquote{ border-left:3px solid var(--gold); padding:.2em 0 .2em 1.1em; margin:1.6em 0; font-family:Fraunces,Georgia,serif; font-style:italic; font-size:1.25rem; line-height:1.5; color:var(--ink); }
+  .post .lead{ font-size:1.22rem; line-height:1.6; color:#3A4036; }
+  .post figure{ margin:2em 0; }
+  .post video{ width:100%; height:auto; display:block; background:#10130F; border:1px solid rgba(27,32,26,.15); }
+  .post figcaption{ font-size:.92rem; color:#5A6055; margin-top:.6em; line-height:1.5; }
+  .rule{ height:1px; background:linear-gradient(90deg,transparent,rgba(27,32,26,.25),transparent); }
+</style>
+</head>
+<body class="font-body">
+
+<header class="bg-ink">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="../" class="flex items-baseline gap-2 group">
+      <span class="font-mono text-[.95rem] tracking-[.22em] text-canvas group-hover:text-gold transition-colors">THE LAND</span>
+      <span class="hidden sm:inline font-display italic text-canvas/70 text-sm">· TheLand</span>
+    </a>
+    <a href="./" class="text-canvas/80 hover:text-gold transition-colors text-[.85rem]">Thinking</a>
+  </div>
+</header>
+
+<main class="px-5 sm:px-8">
+<article class="post mx-auto py-12 sm:py-16">
+  <p class="eyebrow text-teal mb-4">Thinking · Tools</p>
+  <h1 class="font-display font-medium text-ink leading-[1.08] text-[2.3rem] sm:text-5xl mb-6">AI apocalypse, or development leapfrog?</h1>
+  <p class="lead">There are two stories about artificial intelligence and small island economies like Grenada's. In one, it lets a small place skip steps that bigger economies had to climb. In the other, it takes jobs, data and value away and deepens dependence. I've used AI heavily to plan this project, which gives me a view of both. I don't think either story is the whole truth.</p>
+  <p class="eyebrow text-ink/50 mt-6 mb-10">Rob Berkeley · October 2026</p>
+
+  <h2>How I've used it</h2>
+  <p>Since May I've had an open-source AI agent, Hermes, running on a small rented server as a planning companion for the land. It keeps a research library on Grenadian licensing, investment incentives, property law, suppliers and solar. It sends briefings, takes voice notes, and argues hard decisions through a panel of imagined advisers. Alongside it, I've used other AI assistants to cost the build line by line, compare four markets for materials, draft requests to factories, build the site plan and models, and help cut the films.</p>
+  <p>One person in London, with a family house in St Andrew, has been able to do work that would otherwise have needed a quantity surveyor, a researcher, a procurement adviser and an editor. That's the leapfrog case in miniature.</p>
+
+  <h2>The case for leapfrog</h2>
+  <p>The optimistic case in the region is concrete. The Caribbean AI Task Force calls for AI innovation in agriculture, disaster risk reduction, tourism, financial services, health and public administration. A review by the Portulans Institute points to early examples, from an AI agronomy adviser in Barbados to wellness chatbots in Trinidad and Tobago, and expects tourism to gain most. One review cites World Bank work suggesting that 8 to 12 per cent of jobs in Latin America and the Caribbean could see a productivity boost from generative AI. If a family project can plan to a professional standard on a modest budget, so in principle can a small business in Grenville or a co-operative in Gouyave.</p>
+
+  <h2>The case against</h2>
+  <p><strong>Accuracy.</strong> The tools are confident and often wrong. Our record is full of caught errors. A wind-speed requirement of 240 km/h came from our own research, not a regulator; it went to factories, and three withdrew before we corrected it. Another AI tool put container freight at under half the real quote and got the duty rules wrong. An early note said the villa licence had no minimum room size; it does. Figures were invented when a long discussion was lost from the AI's memory. Every mistake was caught because a person checked against a primary source. Without that, they'd have become decisions.</p>
+  <p><strong>Jobs.</strong> The same review cites World Bank estimates that 30 to 40 per cent of jobs in the region are exposed to generative AI, and that up to half of the possible productivity gain may be lost to weak technology infrastructure. The work I've done with AI is work a Grenadian consultant might otherwise have been paid for. The build itself still goes to Grenadian contractors and trades, but planning and professional services are exactly where AI competes.</p>
+  <p><strong>Data and value.</strong> The models, servers and companies are almost all elsewhere. The Caribbean AI Task Force warns that the region risks being a marginal "standards-taker". It describes a "connectivity paradox": heavy use, but weak infrastructure, costly connectivity and limited data governance. The same review notes that no CARICOM country had a national AI strategy, and, citing ECLAC, that Latin America and the Caribbean receives about 1 per cent of global AI investment against more than 6 per cent of world output. When I use these tools, my questions and the island's information flow out to them.</p>
+  <p><strong>Energy and culture.</strong> Training large models takes a lot of energy, and small islands are among the most exposed to the climate that energy affects. Systems trained mostly on Western data can misread Caribbean life. AI image tools kept adding air-conditioning units to our renders of a house designed without them. A small thing, but telling.</p>
+  <p><strong>Dependence.</strong> My planning agent has broken more than once when a provider changed something, and it runs on paid credit with a hard cap. A project that leans on tools it can't control inherits their fragility.</p>
+
+  <h2>Both at once</h2>
+  <p>My own experience fits both stories. AI let me do far more, far faster, than I could have otherwise. It also needed constant checking, sent money and data abroad, and may have stood in for local expertise I should have paid for. The task force's recommendations, from regional data infrastructure to AI literacy and a common Caribbean position, read to me as an attempt to keep the first story without accepting the second. Whether that happens isn't up to a family project in Simon.</p>
+
+  <h2>Where things stand</h2>
+  <p>For this project: AI as research assistant and drafting tool, with people deciding, every figure checked against a source, and nothing sent to anyone without me reading it first. The building stays with Grenadian builders, and the cooking with Grenadian cooks. What would change my mind, in either direction: evidence that the errors are getting rarer or more dangerous; whether Grenadian businesses get affordable, fair access to the same tools; and what local professionals say when they see work like this done with AI.</p>
+
+  <div class="rule my-12"></div>
+  <nav class="flex flex-wrap gap-x-8 gap-y-3 text-[.95rem]">
+    <a href="./">← All Thinking posts</a>
+    <a href="../">Back to TheLand</a>
+  </nav>
+</article>
+</main>
+
+<footer class="bg-ink text-canvas/60">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+    <p class="font-mono tracking-[.2em] text-canvas/80">THE LAND · SIMON</p>
+    <p class="text-center sm:text-right text-canvas/45">Simon · St Andrew · Grenada — TheLand, a film and a place.<br class="sm:hidden">
+      <span class="eyebrow">Small is all · Move at the speed of trust</span></p>
+  </div>
+</footer>
+
+<!--
+SOURCES (all under /home/robbe/grenada/docs/the-land/ unless a URL)
+- Hermes: open-source agent (Nous Research), deployed 18 May 2026 on a VPS; learning companion for The Land; research library (GIDC incentives, property law/citizenship, GTA licensing, local suppliers, solar spec); daily briefing; voice notes; advisor "Council"; breakages from provider changes; OpenRouter credit with hard spend cap: memory-history/history-project_hermes_agent.md
+- AI-assisted costings, four-market comparison, factory RFQs, models, films: phase0-builder/SHOPPING-REPORT-four-markets.md; phase1-2/rfq/; model/; memory-history/history-project_the_land_video.md (EDL engine, Seedance renders); memory-history/history-project_land_transformation_animation.md
+- Rob in London: wiki/the-land/the-grove-trees-and-light.md
+- CTU task force priority sectors (agriculture, disaster risk reduction, tourism, financial services, health, public administration): https://ctu.int/?p=22127
+- Barbados AI Agronomic Advisor; Trinidad and Tobago Virtual Wellness/Wellness Hub; tourism greatest regional growth impact: https://portulansinstitute.org/the-caribbean-of-the-future-ai/
+- Agriculture, health, disaster warning, tourism; World Bank 8–12% productivity boost; 30–40% of jobs exposed; up to half may not see full benefits due to weak infrastructure; no CARICOM national AI strategy; 6.6% of global GDP vs 1.12% of AI investment (ECLAC); energy footprint; Western-data bias: https://portulansinstitute.org/the-caribbean-of-the-future-ai/ (20 Oct 2025)
+- CTU Caribbean AI Task Force interim report, 13 Dec 2025: "standards-taker", "connectivity paradox", recommendations (data commons, AI literacy, unified regional position): https://ctu.int/?p=22127
+- 240 km/h our own figure; three factories withdrew: home/P-07_risk-register.md §9; memory-history/history-project_the_land_cabins.md
+- Alibaba AI freight US$5,800–7,170 vs US$14,700; GIDC concession wrong: phase1-2/alibaba-ai-sourcing-insights-2026-09-30.md §1
+- "No minimum room-size rule applies per GTA" (wrong): hermes/the-land-phase0-technical-spec.md line 38; phase0-builder/OPEN-QUESTION-room-size-licensing.md; GTA's 23.2 m² per bedroom: gta site pack §7
+- Discussion lost to context compaction; invented £1,497 figure: pool-container-decision.md
+- Image models invent AC units: session-summary-2026-08-20.md line 19; memory-history/history-project_the_land_cabins.md line 295
+- Build by Grenadian contractors and trades: gta/site-pack-2026-10/the-land-site-pack-gta.html §6
+-->
+</body>
+</html>
