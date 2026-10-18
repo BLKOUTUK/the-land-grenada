@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Phase 1 Business Plan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Work+Sans:wght@400;600;700&display=swap">
+<style>
+  /* Layout: a readable long document; wide tables scroll inside their own box. */
+  :root{--paper:#F4F2EC;--ink:#1B201A;--mute:#5B6358;--rule:#D9D5CA;--gold:#9A6B12;--teal:#2F7F78}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 "Work Sans",system-ui,sans-serif}
+  main{max-width:46rem;margin:0 auto;padding-block:2rem 4rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;line-height:1.2;text-wrap:balance} h1{font-size:2rem} h2{margin-top:2.2rem;border-top:1px solid var(--rule);padding-top:1.2rem}
+  blockquote{margin:1rem 0;padding:.6rem 1rem;border-left:4px solid var(--teal);background:#EAE7DE}
+  .t{overflow-x:auto;margin:1rem 0} table{border-collapse:collapse;font-size:.92rem;font-variant-numeric:tabular-nums;min-width:100%}
+  th,td{border-bottom:1px solid var(--rule);padding:.4rem .5rem;text-align:left;vertical-align:top}
+  a{color:var(--teal)} .top{font-size:.95rem;color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+<p class="top">Family only · <a href="finance.html">Back to family finance</a></p>
+<h1>The Land, Simon — Phase 1 business plan, years 1–5</h1>
+<h3>v4 · 22 September 2026 · Rob's business. The house is the family's and is not part of this plan.</h3>
+<blockquote>
+<p><strong>Updated 18 Oct 2026: three-suite model (Rob). Tents version kept as PHASE-1-BUSINESS-PLAN-5YR.tents-version-2026-09-21.md.</strong> Accommodation is now three L-suites (flat-pack modules, mango grove), each sleeping up to 6 — a family or a team. Figures come from <code>phase1-5yr-model-v4.py</code> and the live Sheet (Dashboard rows 60–75).</p>
+<p><strong>Reconciled 18 Oct 2026 (Rob: "bias towards more evidence"): every figure below now comes from the live Sheet "The Land, Simon — Project Overview", tabs Dashboard (rows 60–73) and Phase 1 income.</strong> The Sheet carries the installed solar quote, the itemised build, the third suite from year 2, and the 29 Sep method (each case keeps its own drivers). <code>phase1-5yr-model-v4.py</code> used the older v3 walk from the low to the high case and a narrower capex, so it no longer sets any total here; it stays as the source of the suite pricing rule.</p>
+</blockquote>
+<p><em>Supersedes v3 (accommodation re-based 18 Oct 2026 on <code>phase1-5yr-model-v4.py</code>). Folds in the neighbourhood intelligence pass — Seamoon Industrial Park and its 800-employee call centre, the existing evening venues and the positioning they produce, delivery and loyalty mechanics, Rover's Return, and the worked staffing plan. Full detail on all of it: <code>seamoon-neighbourhood-intelligence.md</code>. Grading: </em><em>QUOTE</em><em> = a real figure with a named source · </em><em>DESK</em><em> = arithmetic on a real rate · </em><em>ASSUMPTION</em><em> = judgement, no benchmark.</em></p>
+<hr />
+<h2>1 · Executive summary</h2>
+<p><strong>The business is Rob's alone.</strong> Family fund the house (£90,000, no return owed); Rob funds the business from £50,000 across the build year and year one.</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Business build before trading</strong></td>
+<td><strong>£65,350–77,145</strong> (Sheet Dashboard row 70): Phase 1a kitchen £27,588–30,581 with 15% contingency · the T (two L-suites) £14,926–18,929 · import and landing £5,136–7,333 · fees £486–680 · warehouse power £17,213–19,622 (Mr Smith's installed solar £14,452 plus a backup generator £2,761–5,170). <strong>£15,350–27,145 more than Rob's £50,000</strong> (row 71). Freight share, engineer, Inspectorate, insurance and PDA are still unpriced.</td>
+</tr>
+<tr>
+<td><strong>The L (third suite)</strong></td>
+<td>Kickstarter/earnings-funded, not Rob's build. Trades from <strong>year 2</strong> in the Sheet. The Sheet holds £13,473–17,772 for the L plus stretch goals (Dashboard row 73)</td>
+</tr>
+<tr>
+<td><strong>Warehouse power</strong></td>
+<td><strong>£17,213–19,622, inside the build above</strong> (Sheet SOLAR-WH rows): Mr Smith's installed solar, <strong>£14,452</strong> (EC$52,094, Invoice #97-1, 30 Sep; replaced the £5,792 desk figure), plus a backup diesel generator, <strong>£2,761–5,170</strong> (DESK). Counted once, as Rob's build money, not as a year-1 trading cost. The house has its own, separate system (Invoice #96, EC$29,722) in the house budget</td>
+</tr>
+<tr>
+<td><strong>Pergola+deck, bar shed, projector+screen</strong></td>
+<td><strong>~£7,793</strong> — Kickstarter stretch-goal candidates, genuinely optional, not yet committed</td>
+</tr>
+<tr>
+<td><strong>Five-year path</strong></td>
+<td>Sheet, three cases. <strong>Central:</strong> pays back in year 3 (cumulative −£46,384 to −£58,179 after year 1; +£154,604 / +£142,809 by year 5, against the low / high build). <strong>Low:</strong> does not pay back within five years (−£8,231 / −£20,026 at year 5). <strong>High:</strong> pays back in year 1</td>
+</tr>
+<tr>
+<td><strong>Weakest number in the plan</strong></td>
+<td>accommodation occupancy and rate — seasonal now, but still untested locally</td>
+</tr>
+<tr>
+<td><strong>Cheapest research still outstanding</strong></td>
+<td>ask a Grenadian what they'd pay for a supper club seat and a Saturday lunch</td>
+</tr>
+<tr>
+<td><strong>Largest confirmed daytime demand pool</strong></td>
+<td><strong>800 employees at KM2 Solutions' call centre, Seamoon Industrial Park — inside Simon itself</strong>, not modelled into any revenue line yet, but bigger than everything else this plan has considered</td>
+</tr>
+</tbody>
+</table></div>
+<p>This is a shape, not a forecast. Build costs, regulations, wage rates and several real comparator prices are QUOTE-grade; almost every revenue figure is ASSUMPTION, graded as such throughout.</p>
+<hr />
+<h2>2 · Structure and ownership</h2>
+<div class="t"><table>
+<thead>
+<tr>
+<th></th>
+<th>Funded by</th>
+<th>Gets</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>House</td>
+<td>Family, £90,000</td>
+<td>A share of the family house, no return owed</td>
+</tr>
+<tr>
+<td>Business</td>
+<td>Rob, plus Kickstarter backers (reward-only, no equity)</td>
+<td>All of it — cost, risk, upside</td>
+</tr>
+</tbody>
+</table></div>
+<p>No loan, no equity. Kickstarter changes nothing here — reward-based only, no financial return permitted under its own rules. Rent to the house from year 3, a percentage of turnover (5% used as an illustrative placeholder — Rob's rate to set).</p>
+<hr />
+<h2>3 · Market and site — what is evidence</h2>
+<div class="t"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Grade</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Licensing: one licence per compound, later phases assessed at annual inspection</td>
+<td>QUOTE</td>
+<td>S.R.O. 63/2020; Keron Moore (GTA), 17 Jun 2026</td>
+</tr>
+<tr>
+<td>A glampsite is already licensed and GTA-listed</td>
+<td>QUOTE</td>
+<td>puregrenada.com/glamping-grenada/</td>
+</tr>
+<tr>
+<td>Day-pass benchmark EC$160–230 = £44–64</td>
+<td>QUOTE</td>
+<td><code>../2026/the-land-competitor-scan.md</code></td>
+</tr>
+<tr>
+<td><strong>Petite Anse's real seasonal spread, high vs low season, ~1.75×</strong></td>
+<td>QUOTE</td>
+<td>same scan — the peak-pricing multiplier used throughout §6</td>
+</tr>
+<tr>
+<td>Egmont occupancy: average 33.5%, peak 51% (Oct/Nov/Jul), low 20%</td>
+<td>QUOTE</td>
+<td>Airbtics, via Rob. The quote's own peak months differ from Rob's 2 Oct pricing peak (carnival, July/August, ~9 weeks); the model uses Rob's peak with the quote's 51% and 33.5%</td>
+</tr>
+<tr>
+<td><strong>Seamoon Industrial Park is inside Simon</strong> (12.5 acres, 5 buildings, 40,000 sq ft); <strong>KM2 Solutions runs an 800-employee call centre there</strong>, 1,450 total across Grenada</td>
+<td>QUOTE</td>
+<td>GIDC's own site; Nearshore Americas / KM2's own site</td>
+</tr>
+<tr>
+<td><strong>Vendors already work the gate every morning for the lunchtime rush</strong> — the daily-volume trade is proven and already served; the real gap is management-level networking lunches and office celebrations, which no street vendor can host</td>
+<td>RECORD</td>
+<td>Rob's own observation</td>
+</tr>
+<tr>
+<td><strong>Three real evening/night venues already operate in the immediate area</strong> (a Friday nightclub adjacent to the nearest beach, a Fri–Sat restaurant a village over, a daily sports bar) — none serving the register The Land is built around</td>
+<td>RECORD + QUOTE</td>
+<td>full detail in <code>seamoon-neighbourhood-intelligence.md</code>; caution logged there too — "they exist, not all are doing well"</td>
+</tr>
+<tr>
+<td>FIFA Technical Development Centre under construction in Simon, 5 min walk</td>
+<td>QUOTE</td>
+<td>NOW Grenada, 4 Mar 2026 — kept as a minor aside; KM2's confirmed headcount is the stronger evidence</td>
+</tr>
+<tr>
+<td>Small properties on this coast already sell whole-property events (Cabier, Petite Anse); US comparator sells 3-day buyouts at $15–18k</td>
+<td>QUOTE</td>
+<td><code>../2026/the-land-hospitality-research.md</code></td>
+</tr>
+<tr>
+<td>Kickstarter fees ~8–10% all-in, reward-only</td>
+<td>QUOTE</td>
+<td>Kickstarter's own fee schedule</td>
+</tr>
+<tr>
+<td>S.R.O. 42/2023 skilled-trade day rate EC$110–120 (carpenter/electrician), mason EC$110</td>
+<td>QUOTE</td>
+<td>the project's own wage table — anchors the Friday chef's wage in §4</td>
+</tr>
+<tr>
+<td>Liquor permit EC$150/yr (Simon confirmed outside the 1-mile-of-a-town rate); an Occasional Licence (per-day, up to 4 days/week) likely fits actual trading better, fee unconfirmed</td>
+<td>QUOTE + open</td>
+<td>gov.gd's liquor-license page; full detail <code>QUESTIONS.md</code> item D10</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>4 · The offer</h2>
+<p><strong>Positioning, settled from the neighbourhood itself, not from a mood board:</strong> artists, women, dining, live music, diaspora, culture, under fairy lights. Three real venues already operate nearby — a Friday nightclub, a Friday–Saturday restaurant-with-a-party-side, a daily sports bar — none serving this register.</p>
+<p><strong>The daily menu carries a second, genuinely urgent mission, not just differentiation:</strong> seasonal, more fish and vegetarian, less meat, less fried — traditional Caribbean food done well, not an imported health-food trope. Grenada's own numbers are real and serious (59.9% of adults overweight or obese, NCDs account for 82.8% of deaths), and a real government drive already exists (NCNCDC, GFNC, National Nutrition Week each June) to eventually align with, once there's a track record to show them. Cookery classes are the natural extension, using the same Studio infrastructure already planned for artists' workshops. Full grounding in <code>seamoon-neighbourhood-intelligence.md</code>.</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th>Occasion</th>
+<th>Model</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Takeaway plate</td>
+<td><strong>a proper rotating weekly menu, one defined meal per day (not "generic")</strong> — same identity discipline as Friday's set menu, keeps the kitchen earning on days nothing else is scheduled. Real EC$20–30/meal comparator found locally (KB Cooking with Style, St George — different parish, same pricing band as the Grenville/Gouyave research). WhatsApp-bot ordering + own e-bike delivery, Simon and immediate reach only at launch</td>
+<td>road-side hatch</td>
+</tr>
+<tr>
+<td><strong>Friday Lunch &amp; Lime</strong></td>
+<td><strong>employed chef, set menu (Elevated Oil-Down, Oxtail Stew, seasonal fish course); lunch phase first, dinner and evening screening gated on demand; same menu feeds the takeaway window. Target customer: Seamoon's management tier — networking lunches, office celebrations, leaving-dos — not the daily lunch-rush volume, which street vendors already serve</strong></td>
+<td>verandah + hatch, extending into the amphitheatre once entertainment phase triggers</td>
+</tr>
+<tr>
+<td>Saturday lunch</td>
+<td>unpriced, runs on existing assets</td>
+<td>verandah</td>
+</tr>
+<tr>
+<td>Supper club — chef collaboration</td>
+<td>flat kitchen+FOH fee (EC$500) + 30% of the chef's own ticket revenue; Rob suggests a price range, the chef sets it and bears their own food cost</td>
+<td>verandah</td>
+</tr>
+<tr>
+<td>Sunset terrace, 6</td>
+<td>zero capital</td>
+<td>roof terrace</td>
+</tr>
+<tr>
+<td><strong>Whole-site block hire</strong></td>
+<td>4–16 weeks/year, quiet-week floor at base rate, peak weeks (Carnival/Christmas/July) at the same 1.75× seasonal premium or declined</td>
+<td>the whole non-house estate</td>
+</tr>
+<tr>
+<td><strong>Rover's Return nights</strong></td>
+<td>monthly, UK-diaspora gathering, anglophiles welcome — UK comforts, networking. Deliberately a quiet weeknight (Tue/Wed), following a Studio workshop the same day, run by/with members rather than solely Rob-hosted</td>
+<td>Studio → verandah/garden</td>
+</tr>
+<tr>
+<td>Accommodation</td>
+<td>three L-suites, each sleeping up to 6 (a family or a team). Price per suite-night = B×S + E×(guests−2): B = US$100 (couple, off-peak), E = US$25 per extra guest, both from the Sheet's pricing rule; B rises 5% a year. Peak = carnival, July/August (~9 weeks) at 1.75×; occupancy solved to the Egmont annual average, maturity ramp to year 3</td>
+<td>the T (two suites) at the build, the L (third suite) from ~year 2</td>
+</tr>
+<tr>
+<td><strong>Bar</strong></td>
+<td>bottles and rum only, year one — no cocktail equipment or bartender premium; 100% of bar revenue is Rob's, on every occasion above</td>
+<td>a shed: shelves, a small cooler or ice buckets, a till, the same hatch spec as the takeaway window</td>
+</tr>
+<tr>
+<td>Off-site partnerships (referral)</td>
+<td>near-zero cost</td>
+<td>Seamoon Cultural Centre, Bathway/Levera, Grenville market, Tivoli Drummers, local car hire</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Chef model, now fully resolved:</strong> visiting chefs collaborate on supper-club nights (variety, their own following, shared risk); Friday is the one day The Land employs its own chef, because recurring trade needs consistency a rotating roster can't give it.</p>
+<p><strong>Delivery and loyalty, both named lines not yet in the model:</strong> WhatsApp-direct ordering and third-party platform listing (CaribeEats/KariBites, both real and already operating in Grenada) run simultaneously, not sequenced — a platform listing costs nothing until it produces a sale. Loyalty (points, a free drink at meal 5, a draw for a spare supper-club or block-booking seat) is the actual mechanism that migrates a platform or WhatsApp customer onto Rob's own system — not a separate ask.</p>
+<hr />
+<h2>5 · Capital plan</h2>
+<div class="t"><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">£</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase 1a kitchen, with 15% contingency</td>
+<td style="text-align: right;"><strong>27,588–30,581</strong></td>
+<td>Sheet Dashboard rows 61–63</td>
+</tr>
+<tr>
+<td>The T (two L-suites)</td>
+<td style="text-align: right;"><strong>14,926–18,929</strong></td>
+<td>Sheet row 64: itemised like-for-like build-up (2 Oct). DESK, no formal quote yet. Freight (X4) unpriced, taxes in import</td>
+</tr>
+<tr>
+<td>Import and landing</td>
+<td style="text-align: right;"><strong>5,136–7,333</strong></td>
+<td>Sheet row 65: China overhead, CSC + VAT, CET if GIDC refuses. Freight share unpriced</td>
+</tr>
+<tr>
+<td>Fees and statutory</td>
+<td style="text-align: right;"><strong>486–680</strong></td>
+<td>Sheet row 66. Engineer, Inspectorate, insurance, PDA unpriced</td>
+</tr>
+<tr>
+<td><strong>Business build before trading</strong></td>
+<td style="text-align: right;"><strong>65,350–77,145</strong></td>
+<td>Sheet row 70. <strong>£15,350–27,145 over Rob's £50,000</strong> (row 71)</td>
+</tr>
+<tr>
+<td>The L (third suite, year 2)</td>
+<td style="text-align: right;">—</td>
+<td>Kickstarter/earnings-funded, not capex (Sheet row 73: £13,473–17,772 for the L plus stretch goals)</td>
+</tr>
+<tr>
+<td>Warehouse power: solar, installed (Mr Smith), plus backup generator</td>
+<td style="text-align: right;"><strong>17,213–19,622</strong></td>
+<td>Inside the build above (Sheet row 67 = SW1 + SW2). Solar £14,452: QUOTE EC$52,094, Invoice #97-1, 30 Sep (2 inverters, 4 batteries, 16 panels); replaced the £5,792 desk figure. Generator £2,761–5,170: DESK</td>
+</tr>
+<tr>
+<td>Warehouse pergola + D1a deck (doubles as the solar mount, storm-removable)</td>
+<td style="text-align: right;">4,384–5,452</td>
+<td>Kickstarter stretch-goal candidate</td>
+</tr>
+<tr>
+<td>Bar shed (shelves, cooler/ice buckets, till; hatch reuses the W22 spec)</td>
+<td style="text-align: right;">~1,000–1,500</td>
+<td>Kickstarter stretch-goal candidate</td>
+</tr>
+<tr>
+<td>Projector + screen (5,000–6,000 lumen, FOB-China; throw distance estimated, not surveyed)</td>
+<td style="text-align: right;">757–2,494</td>
+<td>Kickstarter stretch-goal candidate</td>
+</tr>
+<tr>
+<td>E-bikes ×4 + charging post, pulled forward from the cluster phase</td>
+<td style="text-align: right;">unpriced</td>
+<td>scope decision only</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Why the warehouse gets its own solar, not a share of the house's:</strong> the split's whole point was no cross-subsidy; the warehouse currently has no grid connection at all, so a dedicated system is genuinely comparable in cost to any alternative. Deye is the fixed brand because it's confirmed serviceable on-island. Gates on the still-open hot-water decision — one electric instant shower would add ~5 kW to peak demand against a design built around gravity showers.</p>
+<h3>5.1 Staffing — worked role by role, not just totalled up</h3>
+<p>Every explicit labour cost currently in the model: "kitchen help" inside the F&amp;B opex line (£6,000–9,000/yr across the maturity ladder) and the Friday employed chef (£1,463–2,393/yr). Both were sized for a narrower plan than this one now is — <strong>block-booking weeks, suite housekeeping, delivery riding and loyalty-system administration have no labour line at all yet</strong>, a real gap flagged for the next costing pass, not invented here.</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Verdict</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Friday employed chef</td>
+<td>Already committed</td>
+<td>Year 1</td>
+</tr>
+<tr>
+<td>Housekeeping (folded into the kitchen-help line, not a separate hire yet)</td>
+<td>Yes</td>
+<td>Closer to year 1 than year 2 — the T (two suites) trades from the start of year 1 and the L adds a third suite from year 2</td>
+</tr>
+<tr>
+<td>Sous chef</td>
+<td>Yes, but not yet</td>
+<td>Triggers with Friday's own dinner-phase gate — same rule doing double duty, not a separate judgement call</td>
+</tr>
+<tr>
+<td>Caretaker</td>
+<td>No, as a paid role</td>
+<td>Rob is resident years 1–5; paying for a function he's already providing would duplicate it</td>
+</tr>
+<tr>
+<td>Business manager</td>
+<td>No, not yet</td>
+<td>Trigger is turnover, not a calendar year — worth revisiting once year 3's jump (turnover roughly doubling) actually lands</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Rob's own time in London (~3 months/year, timing not yet fixed) reopens the caretaker question for those months specifically</strong> — best solved by a small, cross-trained team able to cover for each other and for his absence, rather than one indispensable hire whose own absence would be a single point of failure. <strong>TAMCC (Culinary Arts, Food &amp; Beverage, Hospitality, Business Studies — Mirabeau campus is in this same parish) is the named talent pipeline for that team</strong>, developed rather than hired in senior. A formal placement partnership was drafted and explicitly held until there's a trading kitchen to actually place a student into — see <code>seamoon-neighbourhood-intelligence.md</code>.</p>
+<hr />
+<h2>6 · Revenue model, years 1–5</h2>
+<h3>6.1 F&amp;B — chef collaboration, settled</h3>
+<p>EC$500 flat kitchen+FOH fee + 30% of the chef's own ticket revenue + 100% of bar. The chef prices within a suggested range and bears their own food cost.</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">Events</th>
+<th style="text-align: right;">Chef's ticket rev.</th>
+<th style="text-align: right;">Rob's F&amp;B income</th>
+<th style="text-align: right;">Bar</th>
+<th style="text-align: right;"><strong>Rob's total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOW</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">£5,777</td>
+<td style="text-align: right;">£3,672</td>
+<td style="text-align: right;">£695</td>
+<td style="text-align: right;">£4,367</td>
+</tr>
+<tr>
+<td>MID</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">£23,089</td>
+<td style="text-align: right;">£10,666</td>
+<td style="text-align: right;">£3,515</td>
+<td style="text-align: right;">£14,181</td>
+</tr>
+<tr>
+<td>HIGH</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">£65,167</td>
+<td style="text-align: right;">£25,506</td>
+<td style="text-align: right;">£11,338</td>
+<td style="text-align: right;">£36,844</td>
+</tr>
+</tbody>
+</table></div>
+<p>Takeaway and day-workshop lines carry forward unchanged from the original model (£1,309/£5,584/£16,620 and £558/£5,011/£33,391 net, low/mid/high).</p>
+<h3>6.2 Friday Lunch &amp; Lime — employed chef, settled</h3>
+<p>Chef wage anchored to S.R.O. 42/2023's skilled-trade day rate (EC$110–180/day, 48 weeks/year); lunch covers and lime/bar attendance are ASSUMPTION, untested.</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">Chef cost/yr</th>
+<th style="text-align: right;">Gross (lunch+lime)</th>
+<th style="text-align: right;"><strong>Net</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOW</td>
+<td style="text-align: right;">£1,463</td>
+<td style="text-align: right;">£5,864</td>
+<td style="text-align: right;">£4,401</td>
+</tr>
+<tr>
+<td>MID</td>
+<td style="text-align: right;">£1,861</td>
+<td style="text-align: right;">£14,841</td>
+<td style="text-align: right;">£12,980</td>
+</tr>
+<tr>
+<td>HIGH</td>
+<td style="text-align: right;">£2,393</td>
+<td style="text-align: right;">£35,162</td>
+<td style="text-align: right;">£32,769</td>
+</tr>
+</tbody>
+</table></div>
+<p>Self-funding at every level modelled. The lime/bar component is the majority of the upside at scale — the same reason the unpriced liquor licence keeps recurring as the thing most worth resolving.</p>
+<h3>6.3 Accommodation — three L-suites, seasonal</h3>
+<p>Three suites, each sleeping up to 6: the T (two suites) trades from the start of year 1 and the L (third) from year 2, as the Sheet has it. Month 6 was the earlier assumption, but the L needs a Kickstarter (~3 months to raise) and then manufacture and shipping, so year 2 is the better-supported date. Price per suite-night = B×S + E×(guests−2), B = US$100 (couple, off-peak) rising 5% a year, E = US$25 per extra guest. That is <strong>£75 for a couple off-peak and £169 for a family of four at peak</strong> (US$225) in year 1. Peak is carnival and July/August, ~9 of 52 weeks, at the 1.75× premium and 51% occupancy; off-peak occupancy is solved to reconcile with the known 33.5% annual average (<strong>29.8%</strong>), not guessed. Families at peak (4 guests), couples the rest of the year. A separate maturity ramp (50%/75%/100% by year 3) sits on top, directionally supported by the hospitality research's own "occupancy stabilises slowly" finding. Year 5 rises only with the 5% rate increase because capacity is fixed at three suites.</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th style="text-align: right;">Yr</th>
+<th style="text-align: right;">Low</th>
+<th style="text-align: right;">Central</th>
+<th style="text-align: right;">High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">£8,424</td>
+<td style="text-align: right;">£12,176</td>
+<td style="text-align: right;">£14,611</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">£19,794</td>
+<td style="text-align: right;">£28,630</td>
+<td style="text-align: right;">£34,356</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">£27,567</td>
+<td style="text-align: right;">£39,901</td>
+<td style="text-align: right;">£47,881</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">£28,800</td>
+<td style="text-align: right;">£41,715</td>
+<td style="text-align: right;">£50,058</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">£30,096</td>
+<td style="text-align: right;">£43,619</td>
+<td style="text-align: right;">£52,343</td>
+</tr>
+</tbody>
+</table></div>
+<p>Source: Sheet, Phase 1 income rows 6, 25 and 44. Low = US$85 and 80% of Egmont occupancy; central = US$100 and 100%; high = US$100 and 120%.</p>
+<h3>6.4 Whole-site block-booking — concluded</h3>
+<p>Rate: a whole-site team week (3 suites × 6 guests = 18) is £3,146 off-peak and £4,326 at peak on year-1 suite prices (model v4); weeks target 4 (Rob's own) → 16/year; <strong>the rule that decides whether this adds value or destroys it: quiet weeks only at the base rate, peak-period enquiries at the same 1.75× premium or declined.</strong> Net of displaced ordinary trade:</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th>Yr</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">2</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">4</th>
+<th style="text-align: right;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Net uplift, low</td>
+<td style="text-align: right;">£1,444</td>
+<td style="text-align: right;">£2,166</td>
+<td style="text-align: right;">£2,888</td>
+<td style="text-align: right;">£2,888</td>
+<td style="text-align: right;">£2,888</td>
+</tr>
+<tr>
+<td>Net uplift, central</td>
+<td style="text-align: right;">£4,988</td>
+<td style="text-align: right;">£7,482</td>
+<td style="text-align: right;">£9,976</td>
+<td style="text-align: right;">£9,976</td>
+<td style="text-align: right;">£9,976</td>
+</tr>
+<tr>
+<td>Net uplift, high</td>
+<td style="text-align: right;">£24,504</td>
+<td style="text-align: right;">£36,756</td>
+<td style="text-align: right;">£49,008</td>
+<td style="text-align: right;">£49,008</td>
+<td style="text-align: right;">£49,008</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sheet, Phase 1 income rows 12, 31, 50. Still the least evidenced line in the plan (a prior conclusion, not re-derived from the suite prices), and the largest in the high case.</p>
+<h3>6.5 Kickstarter — how the L (third suite), the pergola, the bar and the projector actually get funded</h3>
+<p>Launched when the T opens — by then the delivery promise is real and the licensing question is already answered by definition. The L (one suite, replacing the old tents 3–4) trades from year 2, after ~3 months to raise and then manufacture and shipping. Reward-based only. The pergola, bar shed and projector are natural stretch goals on the same campaign rather than a second financing conversation. The Sheet carries <strong>£13,473–17,772</strong> for the L plus stretch goals (Dashboard row 73); that is out of Rob's build and out of the trading cash flow. <strong>Derived target: about £19,750</strong> (DESK, 18 Oct). It nets the Sheet's high figure of £17,772 after fees at the old campaign's own ratio (£20,262 net from £22,500, 90%). The old ~£22,500 was sized for two tents. Rob to confirm. Akay's indication is US$4,102 per L-suite FOB Nansha, not a formal offer.</p>
+<h3>6.6 The five-year trajectory</h3>
+<p>From the Sheet, Phase 1 income. Each case keeps its own drivers for all five years (method changed 29 Sep). Cumulative cash is shown against the low and high build (£65,350 / £77,145).</p>
+<div class="t"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th style="text-align: right;">Yr 1 net</th>
+<th style="text-align: right;">Yr 2</th>
+<th style="text-align: right;">Yr 3</th>
+<th style="text-align: right;">Yr 4</th>
+<th style="text-align: right;">Yr 5</th>
+<th style="text-align: right;">5-yr net</th>
+<th style="text-align: right;">Cumulative yr 5 (low / high build)</th>
+<th>Pays back</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low</td>
+<td style="text-align: right;">£3,119</td>
+<td style="text-align: right;">£5,870</td>
+<td style="text-align: right;">£14,852</td>
+<td style="text-align: right;">£16,023</td>
+<td style="text-align: right;">£17,255</td>
+<td style="text-align: right;">£57,119</td>
+<td style="text-align: right;">−£8,231 / −£20,026</td>
+<td>after year 5</td>
+</tr>
+<tr>
+<td><strong>Central</strong></td>
+<td style="text-align: right;">£18,966</td>
+<td style="text-align: right;">£35,352</td>
+<td style="text-align: right;">£53,460</td>
+<td style="text-align: right;">£55,184</td>
+<td style="text-align: right;">£56,992</td>
+<td style="text-align: right;">£219,954</td>
+<td style="text-align: right;"><strong>£154,604 / £142,809</strong></td>
+<td><strong>year 3</strong></td>
+</tr>
+<tr>
+<td>High</td>
+<td style="text-align: right;">£77,427</td>
+<td style="text-align: right;">£127,330</td>
+<td style="text-align: right;">£168,929</td>
+<td style="text-align: right;">£170,997</td>
+<td style="text-align: right;">£173,167</td>
+<td style="text-align: right;">£717,850</td>
+<td style="text-align: right;">£652,500 / £640,705</td>
+<td>year 1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Central case in full: turnover £43,182 → £105,631; EBITDA £18,966 → £74,274; rent to the house (5% of turnover from year 3) £5,096–5,282; drawings £12,000 a year from year 2. Cumulative against the low build: −£46,384 · −£11,032 · £42,428 · £97,612 · £154,604.</p>
+<p><strong>What reconciling changed.</strong> The earlier v4-model table (−£43,989 start, break-even in year 2, £309,838 by year 5) carried a capex about £21,000–33,000 too low (it left out the installed solar, import and fees) and walked from the low case to the high case over five years, so its year 5 was the optimistic case. On the evidence, the central case pays back in year 3, and the low case does not pay back within five years.</p>
+<h3>6.7 The honest range</h3>
+<p>If local/diaspora pricing and occupancy never clear real-world testing, this collapses toward something close to a low-case shape, not this table. If the block-booking and Lunch &amp; Lime lines land closer to their high cases, this table is a floor. Both are inside a range this plan has tested; neither is a forecast.</p>
+<hr />
+<h2>7 · Rob's personal cash position</h2>
+<p>Rob needs £65,350–77,145 before trading starts, against £50,000: a gap of <strong>£15,350–27,145</strong> (Sheet rows 70–71), before the £14,000 family share (row 69, house money), upkeep (ASSUMPTION £4,500/yr) and rent to the house from year 3. Closing it: GIDC duty relief (import line £5,136–7,333), building in stages (Phase 1b, £11,703, is already held), and pre-selling stays. In the low case the business is still £8,231–20,026 short of paying back at year 5. (The earlier £53,352 deepest hole from <code>robs-side-affordability.md</code> was on the pre-solar basis and is superseded.)</p>
+<hr />
+<h2>8 · Risk register</h2>
+<div class="t"><table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Status</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Liquor licence</td>
+<td>EC$150/yr confirmed for the standard permit; the better-fitting Occasional Licence's fee, and which authority issues it, still unconfirmed</td>
+<td>Bar carries an increasing share of total revenue across F&amp;B, block-booking and Lunch &amp; Lime alike</td>
+</tr>
+<tr>
+<td>Suite approvals and wind rating</td>
+<td>the mango grove suites go to the Planning and Development Authority (mandatory before construction; GTA, 12 Oct); wind rating of the flat-pack modules unconfirmed (the superseded tents' band was 80–100 km/h)</td>
+<td>Ask the engineer and the insurer directly</td>
+</tr>
+<tr>
+<td>Accommodation occupancy/rate</td>
+<td>seasonal now, three suites, still untested</td>
+<td>Largest source of uncertainty in the five-year total</td>
+</tr>
+<tr>
+<td>Block-booking scheduling discipline</td>
+<td>a written rule, not yet a habit</td>
+<td>Get it wrong once (peak week at base rate) and the strategy's arithmetic goes negative</td>
+</tr>
+<tr>
+<td>Warehouse solar spec</td>
+<td>£14,452, Mr Smith's revised installed quote (30 Sep), plus a £2,761–5,170 backup generator; still gated on the hot-water decision</td>
+<td>Wrong choice saturates the inverter or exposes refrigeration to an unserviced failure; the price itself may move once GO SOLAR quotes</td>
+</tr>
+<tr>
+<td>Kickstarter's public visibility</td>
+<td>timing still Rob's to set</td>
+<td>Functionally the video series' real public launch, not just a financing mechanism</td>
+</tr>
+<tr>
+<td>Sport/film capital and rights</td>
+<td>unpriced except for the projector now costed here</td>
+<td>50 Shades Bar already runs a sports-viewing setup nearby — real competition for this specific line, not empty ground</td>
+</tr>
+<tr>
+<td><strong>Local evening/drink trade may be thinner than three existing venues suggests</strong></td>
+<td>unresolved — "they exist, not all are doing well," Rob's own caution</td>
+<td>Could mean thin overall demand rather than an execution gap at those venues; worth knowing which before the bar/entertainment lines are relied on</td>
+</tr>
+<tr>
+<td>Labour for block-booking weeks, suite housekeeping, delivery and loyalty admin</td>
+<td>no cost line exists yet</td>
+<td>The current "kitchen help" figure was sized for a narrower plan than this one now is</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2>9 · What would most improve this plan's credibility, in order</h2>
+<ol>
+<li>Ask a Grenadian what they'd pay for a supper club seat and a Saturday lunch.</li>
+<li>Ring Glamping Grenada, (473) 456-7991, and Cabier — licensing precedent and the real occupancy comparator.</li>
+<li>Get GO SOLAR's comparison quote for the warehouse array.</li>
+<li>Price the liquor licence and sport-viewing rights.</li>
+<li>Get a real RFQ for the bar shed's demountable frame kit, and survey the actual pergola-to-pool throw distance for the projector.</li>
+<li>Set the Kickstarter reward-tier mix so the redemption drag can be modelled.</li>
+<li>Six months of actual trading.</li>
+</ol>
+<hr />
+<h2>Related</h2>
+<p><code>seamoon-neighbourhood-intelligence.md</code> (KM2/Seamoon Industrial Park, the existing venues, delivery/loyalty mechanics, the full staffing reasoning) · <code>WHERE-IT-STANDS.md</code> · <code>phase1-2/PHASE-1-CONSOLIDATED.md</code> · <code>phase1-2/PHASE-1a-1b-SPLIT.md</code> · <code>income-decisions-register.md</code> · <code>robs-side-affordability.md</code> · <code>fb-strategy.md</code> · <code>evidence-grades.html</code> · <code>phase1-supper-club-model.py</code> · <code>phase1-5yr-model.py</code> (v1) · <code>phase1-5yr-model-v2.py</code> (v2) · <code>phase1-5yr-model-v3.py</code> (v3) · <code>phase1-5yr-model-v4.py</code> (this plan's model, three suites) · <code>PHASE-1-BUSINESS-PLAN-5YR.tents-version-2026-09-21.md</code> (superseded tents version) · <code>phase1-2/tent-licensing-position.md</code> and <code>phase1-2/tent-wind-rating-position.md</code> (tents-era) · <code>gta/project-portfolio-GTA.md</code> · <code>../2026/the-land-hospitality-research.md</code> · <code>../2026/the-land-competitor-scan.md</code> · <code>QUESTIONS.md</code> (item D10, liquor licence) · Method: <code>~/.claude/skills/cost-benefit/SKILL.md</code></p>
+<p class="top" style="margin-top:2rem"><a href="finance.html">Back to family finance</a></p>
+</main>
+<script>try{if(sessionStorage.getItem('fam-ok')!=='1')location.replace('finance.html')}catch(e){}</script>
+</body>
+</html>
