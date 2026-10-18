@@ -5,31 +5,45 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Family Call Tonight</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Work+Sans:wght@400;600;700&display=swap">
 <style>
-  /* Layout: one phone-width column under a photo of the house; three short blocks. */
+  /* Layout: one phone-width column; join first, then tonight's running order, each step linked to its slide and its part of the prospectus. */
   :root {
-    --ground: #2B3833; --ink: #EDEFEA; --mute: #A9B7AF; --gold: #D9A055; --teal: #57BDB5; --rule: #3B4A44;
+    --ground: #2B3833; --panel: #33433D; --ink: #EDEFEA; --mute: #A9B7AF; --gold: #D9A055; --teal: #57BDB5;
     --display: "Fraunces", Georgia, serif; --body: "Work Sans", system-ui, sans-serif;
     color-scheme: dark;
   }
+  * { box-sizing: border-box; }
   body { margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.5; }
-  .photo { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 55%; }
-  main { max-width: 34rem; margin: 0 auto; padding-block: 1.5rem 3rem;
+  .photo { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 8; object-fit: cover; object-position: 50% 55%; }
+  main { max-width: 36rem; margin: 0 auto; padding-block: 1.4rem 3rem;
          padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-         display: flex; flex-direction: column; gap: 1.6rem; }
+         display: flex; flex-direction: column; gap: 1.8rem; }
   .eyebrow { color: var(--gold); font-weight: 600; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin: 0; }
-  h1 { font-family: var(--display); font-weight: 600; font-size: clamp(2.4rem, 9vw, 3.4rem); line-height: 1.05; margin: 0.3rem 0 0.4rem; text-wrap: balance; }
-  .when { color: var(--mute); margin: 0; font-size: 1.05rem; }
-  section { border-left: 4px solid var(--teal); padding-left: 1rem; }
-  h2 { font-size: 1.15rem; font-weight: 700; margin: 0 0 0.3rem; }
-  section p { margin: 0; }
-  ol { margin: 0.4rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.3rem; }
-  .sign { font-family: var(--display); font-style: italic; color: var(--mute); margin: 0; }
+  h1 { font-family: var(--display); font-weight: 600; font-size: clamp(2.4rem, 9vw, 3.3rem); line-height: 1.05; margin: 0.3rem 0 0.4rem; text-wrap: balance; }
+  h2 { font-size: 1.2rem; font-weight: 700; margin: 0 0 0.5rem; }
+  p { margin: 0; }
+  .when, .small { color: var(--mute); }
+  .small { font-size: 0.95rem; }
+  .block { border-left: 4px solid var(--teal); padding-left: 1rem; }
+  .steps { margin: 0.3rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.3rem; }
+  .btn { display: inline-block; margin-top: 0.7rem; background: var(--gold); color: #1E2824; font-weight: 700; text-decoration: none; padding: 0.7rem 1.1rem; border-radius: 6px; }
+  .btn:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+  .order { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: step; }
+  .order li { background: var(--panel); border-radius: 6px; padding: 0.8rem 0.9rem; display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.2rem 0.6rem; counter-increment: step; }
+  .order li::before { content: counter(step); grid-row: span 3; font-family: var(--display); font-size: 1.6rem; color: var(--gold); line-height: 1; }
+  .order .t { font-weight: 700; }
+  .order .m { color: var(--mute); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+  .order .links { font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; }
+  a { color: var(--teal); }
+  .papers { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .papers a { flex: 1 1 12rem; background: var(--panel); border-radius: 6px; padding: 0.8rem 0.9rem; text-decoration: none; color: var(--ink); }
+  .papers b { display: block; color: var(--gold); }
+  .sign { font-family: var(--display); font-style: italic; color: var(--mute); }
   .sign b { color: var(--gold); font-weight: 400; }
 </style>
-
+</head>
+<body>
 <img class="photo" src="prospectus-images/house-june-2026.jpg" alt="The house at Simon, June 2026">
 <main>
   <header>
@@ -38,27 +52,48 @@
     <p class="when">Sunday 18 October · 7pm UK · 2pm Grenada</p>
   </header>
 
-  <section>
+  <section class="block">
     <h2>How to join</h2>
-    <ol>
+    <ol class="steps">
       <li>Open our family WhatsApp group just before 7pm.</li>
       <li>I'll start a video call in the group.</li>
       <li>Tap <b>Join</b> on the call banner at the top of the group, or on the call notification.</li>
     </ol>
+    <p class="small" style="margin-top:0.5rem">Phone or laptop both work. Earphones help.</p>
+  </section>
+
+  <section class="block">
+    <h2>Nothing to read beforehand, no rush to decide</h2>
+    <p>We'll go through it together on screen. Tonight is for questions and views. Nobody decides anything tonight.</p>
   </section>
 
   <section>
-    <h2>Nothing more to read</h2>
-    <p>No extra pre-reading. We'll go through it together, on screen.</p>
+    <h2>Follow along on your own screen</h2>
+    <p class="small">The slides I'll be sharing, if the shared screen is small on your phone. Tap → to move on.</p>
+    <a class="btn" href="slides.html">Open the slides</a>
   </section>
 
   <section>
-    <h2>No rush to decide</h2>
-    <p>Tonight is for questions and views. Nobody decides anything tonight.</p>
+    <h2>Tonight, in order</h2>
+    <ol class="order">
+      <li><span class="t">Welcome, and how it runs</span><span class="m">7.00 · 5 min</span><span class="links"><a href="slides.html#1">Slides 1–2</a></span></li>
+      <li><span class="t">The house now, and what the money buys</span><span class="m">7.05 · 10 min</span><span class="links"><a href="slides.html#3">Slides 3–4</a><a href="prospectus.html#house">Prospectus: the house and the work</a></span></li>
+      <li><span class="t">The offer, the cost, the money back, two companies</span><span class="m">7.15 · 15 min</span><span class="links"><a href="slides.html#5">Slides 5–8</a><a href="prospectus.html#cost">What it costs</a><a href="prospectus.html#back">How the money comes back</a><a href="prospectus.html#companies">Two companies</a></span></li>
+      <li><span class="t">What's changed since 7 October, and my side</span><span class="m">7.30 · 10 min</span><span class="links"><a href="slides.html#9">Slides 9–11</a><a href="prospectus.html#rob">What I'm putting in</a></span></li>
+      <li><span class="t">Four questions for us</span><span class="m">7.40 · 25 min</span><span class="links"><a href="slides.html#12">Slides 12–15</a><a href="prospectus.html#questions">The questions</a></span></li>
+      <li><span class="t">What happens next, and one line each</span><span class="m">8.05 · 10 min</span><span class="links"><a href="slides.html#16">Slides 16–17</a><a href="prospectus.html#how">How we decide</a></span></li>
+    </ol>
   </section>
 
-  <p class="when">To look again afterwards: <a href="summary.html" style="color:inherit">the summary</a> · <a href="prospectus.html" style="color:inherit">the prospectus</a></p>
-  <p class="sign">Phone or laptop both work. Earphones help.<br><b>Rob</b></p>
+  <section>
+    <h2>To look again afterwards</h2>
+    <div class="papers">
+      <a href="summary.html"><b>The summary</b>One page: what tonight covers.</a>
+      <a href="prospectus.html"><b>The prospectus</b>The full picture, section by section.</a>
+    </div>
+  </section>
+
+  <p class="sign">See you at 7.<br><b>Rob</b></p>
 </main>
-
+</body>
 </html>

@@ -1,0 +1,255 @@
+<meta name="robots" content="noindex,nofollow">
+<title>The house at Simon: family call</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--paper:#F7F6F1;--card:#FFFFFF;--ink:#16211C;--ink-2:#4A5A52;--ink-3:#7A8880;--rule:#DEDDD4;--sea:#0E6E6E;--sea-soft:#E3EFEE;--warm:#B2721C;--warm-bg:#FBF3E6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#111815;--card:#18211D;--ink:#EDEFEA;--ink-2:#A9B7AF;--ink-3:#7A8880;--rule:#2B3833;--sea:#57BDB5;--sea-soft:#17302E;--warm:#D9A055;--warm-bg:#2A2217;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#111815;--card:#18211D;--ink:#EDEFEA;--ink-2:#A9B7AF;--ink-3:#7A8880;--rule:#2B3833;--sea:#57BDB5;--sea-soft:#17302E;--warm:#D9A055;--warm-bg:#2A2217;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;overflow:hidden}
+.deck{position:relative;height:100vh;width:100vw}
+.slide{position:absolute;inset:0;padding:clamp(20px,5vh,56px) clamp(16px,6vw,96px);display:flex;flex-direction:column;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.slide.on{opacity:1;pointer-events:auto}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:clamp(12px,1.5vw,17px);letter-spacing:.16em;text-transform:uppercase;color:var(--sea);margin:0 0 2vh}
+h1{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(30px,5.6vw,76px);line-height:1.05;letter-spacing:-.02em;margin:0 0 3vh;max-width:20ch}
+h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(26px,4vw,54px);line-height:1.1;letter-spacing:-.015em;margin:0 0 3.5vh;color:var(--sea);max-width:24ch}
+p,li{font-size:clamp(17px,2.2vw,30px);line-height:1.4;max-width:46ch}
+p{margin:0 0 2vh;color:var(--ink-2)}
+ul{margin:0;padding-left:1.1em} li{margin-bottom:1.6vh}
+li b,p b{color:var(--ink)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:4vw;align-items:center}
+.split img{width:100%;max-height:72vh;object-fit:cover;border-radius:6px;border:1px solid var(--rule)}
+.cap{font-size:clamp(13px,1.4vw,18px);color:var(--ink-3);margin-top:1vh}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5vw;margin-top:2vh}
+.big div{background:var(--card);border:1px solid var(--rule);border-top:5px solid var(--sea);border-radius:6px;padding:3vh 2vw}
+.big .l{font-family:"IBM Plex Mono",monospace;font-size:clamp(11px,1.3vw,16px);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.big .v{font-family:"IBM Plex Mono",monospace;font-size:clamp(30px,5vw,68px);font-weight:600;letter-spacing:-.03em;margin:1vh 0}
+.big .d{font-size:clamp(14px,1.7vw,22px);color:var(--ink-2);line-height:1.35}
+table{border-collapse:collapse;width:100%;max-width:1100px;font-size:clamp(15px,1.9vw,26px)}
+th,td{text-align:left;padding:1.3vh 1vw;border-bottom:1px solid var(--rule)}
+th{font-family:"IBM Plex Mono",monospace;font-size:.62em;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+td.n,th.n{text-align:right;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+tr.tot td{border-top:3px solid var(--rule);font-weight:600}
+.q{font-family:"IBM Plex Mono",monospace;color:var(--sea);font-weight:600}
+.opts li{font-size:clamp(16px,2vw,27px)}
+.note{background:var(--warm-bg);border-left:4px solid var(--warm);border-radius:4px;padding:2vh 1.5vw;margin-top:3vh;font-size:clamp(15px,1.8vw,24px);color:var(--ink-2);max-width:60ch}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5vw;margin-top:1vh}
+.tl div{border-top:4px solid var(--sea);padding-top:1.5vh}
+.tl .w{font-family:"IBM Plex Mono",monospace;font-size:clamp(13px,1.6vw,21px);color:var(--sea);font-weight:600}
+.tl .t{font-size:clamp(15px,1.9vw,25px);line-height:1.35;margin-top:.8vh}
+.dense h2{font-size:clamp(22px,3.2vw,42px);margin-bottom:2vh}.dense table{font-size:clamp(13px,1.45vw,21px)}.dense th,.dense td{padding:.9vh .8vw}.dense p:not(.eyebrow){font-size:clamp(15px,1.7vw,24px)}
+.nav{position:fixed;right:max(16px,2vw);bottom:calc(env(safe-area-inset-bottom,0px) + 14px);display:flex;gap:8px;align-items:center;font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink-3);z-index:5}
+.nav button{font:inherit;background:var(--card);color:var(--ink);border:1px solid var(--rule);border-radius:4px;padding:6px 12px;cursor:pointer}
+@media (max-width:760px){.split,.big,.tl{grid-template-columns:1fr}.split img{max-height:34vh}.slide{justify-content:flex-start;overflow-y:auto;padding-bottom:70px}}
+</style>
+<div class="deck" id="deck">
+
+<section class="slide on">
+ <div class="split"><div>
+ <p class="eyebrow">Family call · Sunday 18 October 2026 · 7pm</p>
+ <h1>Bringing Mum and Dad's house back, together</h1>
+ <p>Tonight we talk it through. Nobody decides anything tonight.</p>
+ </div><div><img src="prospectus-images/mum-and-dad-2006.jpg" alt="Mum and Dad under the arch at the front of the house, 2006"><div class="cap">Mum and Dad under the arch, January 2006.</div></div></div>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">How tonight works</p>
+ <h2>An hour and a bit, four questions</h2>
+ <ul>
+ <li><b>Where it stands:</b> the house, the money, and what's changed since 7 October.</li>
+ <li><b>The four questions:</b> the things I shouldn't decide on my own.</li>
+ <li><b>What happens next.</b></li>
+ </ul>
+ <p style="margin-top:3vh">On the call? Unmute, or put a hand up in the chat. We'll hear from people on the call first.</p>
+</section>
+
+<section class="slide">
+ <div class="split"><div>
+ <p class="eyebrow">Why</p>
+ <h2>Sound in its bones, failing everywhere else</h2>
+ <p>Dad built it from the stone on the land, with walls half a metre thick. It's standing empty, and the damp, the cracks and the weather are winning. Left as it is, it ends in a sale.</p>
+ </div><div><img src="prospectus-images/house-june-2026.jpg" alt="The house in June 2026"><div class="cap">The house, June 2026.</div></div></div>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">What the house money buys</p>
+ <h2>A house people can live in and enjoy</h2>
+ <ul>
+ <li>Roof, damp and cracks fixed, with an engineer's check first</li>
+ <li>Full rewire, new plumbing and septic</li>
+ <li>One bathroom for two parties at once, a new kitchen, and skylights</li>
+ <li>The back opened to the land with hurricane-rated glass, plus a deck and a pergola</li>
+ <li>Solar on the roof, so no electricity bill</li>
+ <li>Furnished: what's there restored, new beds and white goods</li>
+ </ul>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">The offer</p>
+ <h2>Seven of us, the same share each</h2>
+ <div class="big">
+ <div><div class="l">Each of us puts in</div><div class="v">£14,000</div><div class="d">£98,000 between the seven of us</div></div>
+ <div><div class="l">Comes back to each of us</div><div class="v" style="color:var(--sea)">£7,000</div><div class="d">From the house's own letting income, aiming for within five years of opening</div></div>
+ <div><div class="l">Our stake</div><div class="v">£7,000</div><div class="d">A share of the house, held in a company we own together</div></div>
+ </div>
+ <p style="margin-top:3vh"><b>£7,000 back is the starting point, not the limit.</b> After that, we choose: keep repaying until all £14,000 each is back, or start the improvements fund.</p>
+ <p>The house is let as a whole house for about 20 weeks a year. The rest of the year it's ours.</p>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">What it costs</p>
+ <h2>Every line priced, not all of it quoted yet</h2>
+ <table>
+ <thead><tr><th>What</th><th class="n">Low</th><th class="n">High</th></tr></thead>
+ <tbody>
+ <tr><td>The house rescued, with 15% contingency</td><td class="n">£69,768</td><td class="n">£86,543</td></tr>
+ <tr><td>Solar (installed quote)</td><td class="n">£8,256</td><td class="n">£8,256</td></tr>
+ <tr><td>The back opening</td><td class="n">£7,700</td><td class="n">£7,700</td></tr>
+ <tr><td>Decks and pergola</td><td class="n">£9,776</td><td class="n">£11,576</td></tr>
+ <tr class="tot"><td>The house, complete</td><td class="n">£95,500</td><td class="n">£114,075</td></tr>
+ <tr><td>What we'd raise</td><td class="n">£98,000</td><td class="n">£98,000</td></tr>
+ <tr class="tot"><td>Difference</td><td class="n">£2,500 spare</td><td class="n">£16,075 short</td></tr>
+ </tbody></table>
+ <p style="margin-top:2vh">41–48% comes from real quotes. LID's revised quote lands <b>Wednesday 21 October</b>.</p>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">How the money comes back</p>
+ <h2>The house pays its own way back</h2>
+ <table>
+ <thead><tr><th>Repaid by the end of year…</th><th class="n">1</th><th class="n">3</th><th class="n">5</th></tr></thead>
+ <tbody>
+ <tr><td><b>Expected:</b> let 20 weeks a year</td><td class="n">£6.8k</td><td class="n">£32.8k</td><td class="n">£49.0k ✓</td></tr>
+ <tr><td><b>Cautious:</b> let only 10 weeks</td><td class="n">£3.4k</td><td class="n">£20.4k</td><td class="n">£44.5k</td></tr>
+ <tr><td><b>Worst modelled</b></td><td class="n">£3.4k</td><td class="n">£17.5k</td><td class="n">£35.7k</td></tr>
+ </tbody></table>
+ <p style="margin-top:3vh">At £7,000 each, the house's income then goes into an <b>improvements fund</b>: care as we get older, the next generation, bursaries for young people in Simon. Or we decide to keep repaying until all £14,000 is back, which takes roughly three more years if the house lets as expected. The choice is ours.</p>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">Keeping it separate</p>
+ <h2>Two companies, with a wall between them</h2>
+ <div class="big" style="grid-template-columns:1fr 1fr">
+ <div><div class="l">The house company</div><div class="v" style="font-size:clamp(24px,3.4vw,44px)">The seven of us</div><div class="d">Holds the house. Takes all the house's income plus rent from the business. Repays us, then runs the fund.</div></div>
+ <div><div class="l">The business company</div><div class="v" style="font-size:clamp(24px,3.4vw,44px)">Mine</div><div class="d">Leases from the house company. The kitchen and the suites. Its risks never touch the house.</div></div>
+ </div>
+ <p style="margin-top:3vh">We'd check all of this with a Grenadian lawyer first. The more of us who are citizens, the simpler it is for the company to hold land.</p>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">Since 7 October</p>
+ <h2>What's changed</h2>
+ <ul>
+ <li><b>Tourism Authority (12 Oct):</b> one licence for the whole place. The house can be ours for part of the year and let for the rest.</li>
+ <li><b>New step:</b> the smaller bedrooms and the suites need <b>planning approval</b> before building. I want it in hand before we order, so it could move the timetable.</li>
+ <li><b>LID's revised quote:</b> due Wednesday 21 October.</li>
+ <li><b>Duty relief:</b> GIDC reviewing, no answer yet.</li>
+ <li><b>My side:</b> two factories have priced the guest suites.</li>
+ </ul>
+</section>
+
+<section class="slide dense">
+ <p class="eyebrow">Two shapes, over 20 years</p>
+ <h2>A private home, or a house that pays its way</h2>
+ <table>
+ <thead><tr><th></th><th>A · Private home</th><th>B · The prospectus</th></tr></thead>
+ <tbody>
+ <tr><td><b>Each of us puts in</b></td><td>£7,000 (£49,000)</td><td>£14,000 (£98,000)</td></tr>
+ <tr><td><b>What it buys</b></td><td>A sound house: roof, cracks, rewire, plumbing, septic, windows, shutters. Kitchen and finishes only if the money stretches.</td><td>The house complete: kitchen, bathroom, solar, the back opened to the land, decks</td></tr>
+ <tr><td><b>Most of the year</b></td><td>Empty</td><td>Lived in, with someone on the ground</td></tr>
+ <tr><td><b>Upkeep, insurance, storms</b></td><td>From our pockets: roughly £4,000–10,000 a year, or £570–1,460 each</td><td>I cover upkeep while I live there, and the house earns enough to carry it after that</td></tr>
+ <tr><td><b>Money back</b></td><td>None</td><td>At least £7,000 by about year 5. All £14,000 by about year 8, if we choose.</td></tr>
+ <tr><td><b>After that</b></td><td>The same costs, every year</td><td>An improvements fund: care, the next generation, bursaries</td></tr>
+ </tbody></table>
+ <p style="margin-top:2vh">Both keep the house in the family. The question is which one still looks after it in 20 years.</p>
+</section>
+
+<section class="slide">
+ <div class="split"><div>
+ <p class="eyebrow">What I'm putting in</p>
+ <h2>The business is mine: cost, risk and upside</h2>
+ <p><b>Phase 1</b> opens with the house: the warehouse kitchen, the first two guest suites, solar and e-scooters. <b>Phase 1b</b> follows as it earns: the third suite, the pergola and bar, the pool. All mine to fund, in stages.</p>
+ <p><b>It makes the house easier to let.</b> A pool, a hot tub, group bookings and retreats bring in more and bigger bookings, so we get repaid sooner.</p>
+ <p>It sits in the back garden, and the farmed land and its tenants are untouched. On top of my £14,000: all the upkeep while I'm there, and rent to the house from year 3.</p>
+ </div><div><img src="prospectus-images/suites-impression.jpg" alt="Concept of the guest suites in the mango grove"><div class="cap">The mango-grove suites, concept only.</div></div></div>
+</section>
+
+<section class="slide">
+ <p class="eyebrow"><span class="q">Q1</span> · for us to decide</p>
+ <h2>Is this the right shape?</h2>
+ <ul>
+ <li>Seven shares of £14,000: at least £7,000 back, and up to all £14,000 if we choose. Does it feel fair?</li>
+ <li>If someone can only put in less, how should their share work?</li>
+ <li>Do we ask Mum and Dad, and the next generation, on payback terms?</li>
+ </ul>
+ <p style="margin-top:3vh">If any of this is easier to talk about one to one, ring me any time.</p>
+</section>
+
+<section class="slide">
+ <p class="eyebrow"><span class="q">Q2</span> · for us to decide</p>
+ <h2>If the costs come in high, what do we do?</h2>
+ <p>Up to <b>£16,075</b> could be uncovered at the high end. The options I can see:</p>
+ <ul class="opts">
+ <li><b>Two stages:</b> the house and solar first (£78,000–94,800), with the opening, decks and pergola paid from the first lettings</li>
+ <li><b>A top-up agreed now:</b> only drawn if needed, as extra stake rather than borrowing</li>
+ <li><b>Cut scope:</b> we decide together what goes</li>
+ </ul>
+</section>
+
+<section class="slide">
+ <p class="eyebrow"><span class="q">Q3</span> · for us to decide</p>
+ <h2>Which weeks are ours?</h2>
+ <p>The weeks that let best, Carnival and summer, are the weeks many of us will want to be there.</p>
+ <ul>
+ <li>Let the two big rooms and keep the two small ones for family, plus room in my suite. That could fit six of us at Carnival.</li>
+ <li>A set number of family weeks outside the peak?</li>
+ <li>Family gets first call on the small bedrooms?</li>
+ </ul>
+</section>
+
+<section class="slide">
+ <p class="eyebrow"><span class="q">Q4</span> · for us to decide</p>
+ <h2>What goes in the house company's rules?</h2>
+ <ul>
+ <li>The shares, and the repayment</li>
+ <li>The improvements fund, and how we decide</li>
+ <li>The footprint: the house and the mango grove only</li>
+ <li>The lease to my business</li>
+ <li>What happens if someone wants out, or the house is ever sold</li>
+ </ul>
+ <p style="margin-top:3vh">What matters most to you?</p>
+</section>
+
+<section class="slide">
+ <p class="eyebrow">What happens next</p>
+ <h2>Nobody pays anything until we've all agreed</h2>
+ <div class="tl">
+ <div><div class="w">This week</div><div class="t">Notes from tonight go to everyone. LID's quote arrives on Wednesday.</div></div>
+ <div><div class="w">Then</div><div class="t">Second version, with what we said and the new quote</div></div>
+ <div><div class="w">Fri 6 Nov</div><div class="t">We agree, if we're ready</div></div>
+ <div><div class="w">From Feb 2027</div><div class="t">Build in the dry season, open for Carnival</div></div>
+ </div>
+ <div class="note">If we need longer, the build moves. The conversation doesn't get rushed.</div>
+</section>
+
+<section class="slide">
+ <div class="split"><div>
+ <p class="eyebrow">Thank you</p>
+ <h1>One line each, before we go</h1>
+ <p>What's the one thing you'd want in the second version?</p>
+ </div><div><img src="prospectus-images/dad-and-the-build-team.jpg" alt="Dad with the building team"><div class="cap">Dad (centre) with the building team, around 1998–2001.</div></div></div>
+</section>
+
+</div>
+<div class="nav"><button id="prev" aria-label="Previous slide">←</button><span id="count"></span><button id="next" aria-label="Next slide">→</button></div>
+<script>
+const s=[...document.querySelectorAll('.slide')];let i=0;
+const c=document.getElementById('count');
+function go(n){i=Math.max(0,Math.min(s.length-1,n));s.forEach((x,k)=>x.classList.toggle('on',k===i));c.textContent=(i+1)+' / '+s.length;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+document.getElementById('prev').onclick=()=>go(i-1);
+document.getElementById('next').onclick=()=>go(i+1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(i-1)}});
+let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX);addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)go(i+(d<0?1:-1));x0=null});
+go((parseInt(location.hash.slice(1))||1)-1);
+</script>
