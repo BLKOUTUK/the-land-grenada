@@ -26,6 +26,15 @@
   .doors a{display:block;background:var(--panel);border-radius:6px;padding:.85rem 1rem;color:var(--ink);text-decoration:none}
   .doors b{display:block;color:var(--gold)}
   .back a{color:var(--teal)}
+  .goal{background:var(--panel);border-radius:6px;padding:1rem;display:grid;gap:.8rem}
+  .goal .big{font-family:var(--display);font-size:2rem;line-height:1}
+  .bar{height:14px;border-radius:7px;background:#1f2a26;overflow:hidden;display:flex}
+  .bar i{display:block;height:100%}
+  .seats{display:grid;grid-template-columns:repeat(7,1fr);gap:.35rem}
+  .seat{aspect-ratio:1;border-radius:50%;border:2px solid #556a61}
+  .paid{background:var(--teal);border-color:var(--teal)} .yes{background:var(--gold);border-color:var(--gold)}
+  .key{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.85rem}
+  .key span::before{content:"";display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-right:.35em;vertical-align:-.05em;background:var(--c)}
 </style>
 </head>
 <body>
@@ -47,9 +56,23 @@
 
   <section id="inside" hidden>
     <div style="display:grid;gap:1.4rem">
+      <div class="goal" aria-labelledby="goal-h">
+        <h2 id="goal-h">Seven answers by Saturday 31 October</h2>
+        <p class="mute">I need to hear from each of us by the end of the month, with a figure, even if that figure is £0. A no is an answer, and it helps me plan.</p>
+        <p><span class="big" id="g-sum"></span> <span class="mute" id="g-of"></span></p>
+        <div class="bar" role="img" id="g-bar"><i style="background:var(--teal)" id="g-paid"></i></div>
+        <div class="seats" id="g-seats"></div>
+        <div class="key"><span style="--c:var(--gold)">Answered</span><span style="--c:#556a61">Still to hear from</span></div>
+        <p class="mute" id="g-days"></p>
+      </div>
+      <div class="goal">
+        <h2>Tell me where you are, just between us</h2>
+        <p class="mute">Each of these opens a WhatsApp to me alone, not the group. Nobody else sees what you say or what you can put in; the count above only ever shows shares, never names.</p>
+        <div class="doors" id="talk"></div>
+      </div>
       <div>
         <h2>Our working papers</h2>
-        <p class="mute">The spreadsheet is live: when a quote comes in, it updates here. It opens for the seven of us through Google, so use the email I shared it with.</p>
+        <p class="mute">The spreadsheet is live: when a quote comes in, it updates here. To open it, sign in to Google, click the link and press “Request access”. Your request reaches me with your email on it, and I’ll let you in.</p>
       </div>
       <div class="doors">
         <a href="https://docs.google.com/spreadsheets/d/12lfhFOxxf-CMm4n5ebIDoNbop4EjUIVNpKFOjHi7_5Y/edit"><b>The working spreadsheet</b>The house, line by line: costs, sourcing, the offer. My business as totals only.</a>
@@ -63,6 +86,24 @@
   </section>
 </main>
 <script>
+// Answers: update as replies come in. pledged is the £ total promised; a £0 reply still counts as answered.
+const STATE={answered:0,pledged:0}, TARGET=98000, SEATS=7, DEADLINE=new Date('2026-10-31T23:59:00Z');
+// Rob's WhatsApp number, international format with no + or spaces.
+const WA='447764935770';
+document.getElementById('talk').innerHTML=[
+  ['I\'m in for my share','Hi Rob, I\'m in for my share of the house at Simon.'],
+  ['I\'d like to talk it through first','Hi Rob, I\'d like to talk through the house at Simon before I decide. When suits you?'],
+  ['Here\'s what I can put in','Hi Rob, on the house at Simon, I can put in: £'],
+  ['I can\'t put money in this time','Hi Rob, on the house at Simon, my answer is £0 for now.']
+].map(([t,m])=>'<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(m)+'"><b>'+t+'</b>Opens a private message to me</a>').join('');
+(function(){const gbp=n=>'£'+n.toLocaleString('en-GB');
+  document.getElementById('g-sum').textContent=gbp(STATE.pledged);
+  document.getElementById('g-of').textContent='promised of '+gbp(TARGET)+' · '+STATE.answered+' of '+SEATS+' answers in';
+  document.getElementById('g-paid').style.width=Math.min(STATE.pledged/TARGET,1)*100+'%';
+  document.getElementById('g-bar').setAttribute('aria-label',gbp(STATE.pledged)+' promised of '+gbp(TARGET));
+  document.getElementById('g-seats').innerHTML=Array.from({length:SEATS},(_,i)=>'<div class="seat '+(i<STATE.answered?'yes':'')+'"></div>').join('');
+  const d=Math.ceil((DEADLINE-new Date())/864e5);
+  document.getElementById('g-days').textContent=d>0?d+(d==1?' day':' days')+' to go.':'The date has passed.';})();
 const HASH="8c3b8381ca0141b822c0953dd777f97efe2c68a4e0fdec1736e43274fc47b89a";
 async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
 function open_(){document.getElementById('gate').hidden=true;document.getElementById('inside').hidden=false}
